@@ -1,0 +1,23 @@
+<svg width="100%" viewBox="0 0 680 300" role="img" style="" xmlns="http://www.w3.org/2000/svg">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">PRIME EDGE Chartered Certified Accountants Logo</title>
+
+  <!-- Upward pointing blade/arrow icon -->
+  <polygon points="90,45 135,195 90,175 45,195" fill="#6f068d" style="fill:rgb(111, 6, 141);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="105,75 148,210 105,192 75,210" fill="#170df2" style="fill:rgb(23, 13, 242);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="105,75 148,210 105,192" fill="#748ec4" style="fill:rgb(116, 142, 196);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="90,45 105,75 75,210 45,195" fill="#748ec4" opacity="0.35" style="fill:rgb(116, 142, 196);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.35;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Vertical divider -->
+  <line x1="178" y1="45" x2="178" y2="240" stroke="#748ec4" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(116, 142, 196);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- PRIME EDGE stacked wordmark -->
+  <text x="200" y="128" font-family="Georgia, serif" font-size="44" font-weight="700" letter-spacing="6" fill="#6f068d" style="fill:rgb(111, 6, 141);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:44px;font-weight:700;text-anchor:start;dominant-baseline:auto">PRIME</text>
+  <text x="200" y="178" font-family="Georgia, serif" font-size="44" font-weight="700" letter-spacing="6" fill="#170df2" style="fill:rgb(23, 13, 242);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:44px;font-weight:700;text-anchor:start;dominant-baseline:auto">EDGE</text>
+
+  <!-- Divider line -->
+  <line x1="200" y1="196" x2="645" y2="196" stroke="#748ec4" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(116, 142, 196);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Subtitle — larger and bolder -->
+  <text x="200" y="226" font-family="Arial, sans-serif" font-size="16.5" font-weight="700" letter-spacing="3" fill="#6f068d" style="fill:rgb(111, 6, 141);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:16.5px;font-weight:700;text-anchor:start;dominant-baseline:auto">CHARTERED CERTIFIED ACCOUNTANTS</text>
+
+</svg>
