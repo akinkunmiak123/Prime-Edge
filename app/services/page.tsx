@@ -25,6 +25,7 @@ const services = [
     id: 'bookkeeping',
     icon: BookOpen,
     title: 'Bookkeeping',
+    image: '/services/bookkeeping.avif',
     tagline: 'Clear records. Confident decisions.',
     description:
       'Accurate bookkeeping is the foundation of a healthy business. We maintain up-to-date, organised financial records that give you a real-time picture of your business performance — so you always know where you stand.',
@@ -41,6 +42,7 @@ const services = [
     id: 'accounts',
     icon: FileText,
     title: 'Account Preparation & Filing',
+    image: '/services/Account Preparation.avif',
     tagline: 'Compliant, accurate, always on time.',
     description:
       'We prepare your annual statutory accounts in full compliance with UK accounting standards and file them with Companies House and HMRC before every deadline — so you never face a late filing penalty.',
@@ -57,6 +59,7 @@ const services = [
     id: 'payroll',
     icon: Users,
     title: 'Payroll Services',
+    image: '/services/Payroll Services.avif',
     tagline: 'Your team paid right, every time.',
     description:
       'Managing payroll is time-consuming and full of compliance risk. We run your entire payroll function — from calculating wages and deductions to submitting RTI reports to HMRC — so your team is always paid correctly and on time.',
@@ -73,6 +76,7 @@ const services = [
     id: 'tax',
     icon: TrendingUp,
     title: 'Tax Planning & Filing',
+    image: '/services/Tax Filing.avif',
     tagline: 'Pay less. Stay compliant. Plan ahead.',
     description:
       'Reactive tax returns are not enough. We take a proactive approach to your tax position — identifying legitimate reliefs, planning ahead, and ensuring you never pay a penny more tax than you are legally required to.',
@@ -89,6 +93,7 @@ const services = [
     id: 'vat',
     icon: Receipt,
     title: 'VAT Registration & Filing',
+    image: '/services/VAT Filing.avif',
     tagline: 'Registered, compliant, penalty-free.',
     description:
       'Whether you are registering for VAT for the first time or need your ongoing returns managed, we handle everything. We also advise on the most suitable VAT scheme for your business to minimise your liability.',
@@ -105,6 +110,7 @@ const services = [
     id: 'advisory',
     icon: Briefcase,
     title: 'Business Advisory',
+    image: '/services/Business Advisory.avif',
     tagline: 'Strategy, clarity and direction.',
     description:
       'Beyond compliance, we act as a strategic partner to your business. Whether you are starting out, looking to scale, planning a sale, or navigating a difficult period — we provide the financial insight and commercial advice you need to move forward with confidence.',
@@ -144,7 +150,7 @@ export default function ServicesPage() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl lg:max-w-xl">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-8" style={{ background: '#748ec4' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
@@ -178,6 +184,80 @@ export default function ServicesPage() {
                   {s.title}
                 </a>
               ))}
+            </div>
+          </div>
+
+          {/* Hero image */}
+          <div className="hidden lg:flex items-center justify-center absolute right-8 top-1/2 -translate-y-1/2 xl:right-16">
+            <div
+              className="relative w-80 h-80 xl:w-96 xl:h-96"
+              style={{
+                borderRadius: '55% 45% 40% 60% / 60% 55% 45% 40%',
+                overflow: 'hidden',
+                border: '3px solid rgba(255,255,255,0.15)',
+                boxShadow:
+                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+              }}
+            >
+              {/* Overlay tint */}
+              <div
+                className="absolute inset-0 z-10"
+                style={{
+                  background:
+                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                }}
+              />
+              <img
+                src="/services/Services.avif"
+                alt="Prime Edge accounting services"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Floating badge 1 */}
+            <div
+              className="absolute -bottom-4 -left-6 px-4 py-3 rounded-xl shadow-lg z-20"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#f0eef8' }}
+                >
+                  <CheckCircle size={14} style={{ color: '#6f068d' }} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900">
+                    6 Core Services
+                  </p>
+                  <p className="text-xs text-gray-400">Fully Tailored</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating badge 2 */}
+            <div
+              className="absolute -top-4 -right-4 px-4 py-3 rounded-xl shadow-lg z-20"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#f0eef8' }}
+                >
+                  <Briefcase size={14} style={{ color: '#6f068d' }} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900">Fixed Fees</p>
+                  <p className="text-xs text-gray-400">No Surprises</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -257,39 +337,84 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Visual column */}
-                  <div className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}>
+                  <div
+                    className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}
+                  >
                     <div
-                      className="rounded-2xl p-10 flex flex-col items-center justify-center text-center min-h-72 relative overflow-hidden"
+                      className="rounded-2xl flex flex-col items-center justify-center text-center min-h-72 relative overflow-hidden"
                       style={{
-                        background: `linear-gradient(135deg, ${service.accent}18 0%, ${service.accent}08 100%)`,
                         border: `1px solid ${service.accent}20`,
+                        minHeight: '320px',
                       }}
                     >
-                      {/* Large background icon */}
-                      <Icon
-                        size={120}
-                        className="opacity-5 absolute"
-                        style={{ color: service.accent }}
-                      />
-                      {/* Foreground icon */}
-                      <div
-                        className="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 relative z-10"
-                        style={{ background: `${service.accent}15` }}
-                      >
-                        <Icon size={36} style={{ color: service.accent }} />
-                      </div>
-                      <h3
-                        className="font-black text-xl text-gray-900 mb-2 relative z-10"
-                        style={{ fontFamily: 'Merriweather, serif' }}
-                      >
-                        {service.title}
-                      </h3>
-                      <p
-                        className="text-sm font-medium relative z-10"
-                        style={{ color: service.accent }}
-                      >
-                        {service.tagline}
-                      </p>
+                      {/* Background image if available, else gradient */}
+                      {service.image ? (
+                        <>
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                          {/* Dark overlay so text stays readable */}
+                          <div
+                            className="absolute inset-0"
+                            style={{
+                              background: `linear-gradient(135deg, ${service.accent}cc 0%, ${service.accent}99 100%)`,
+                            }}
+                          />
+                          {/* Content over image */}
+                          <div className="relative z-10 p-10 flex flex-col items-center">
+                            <div
+                              className="w-20 h-20 rounded-2xl flex items-center justify-center mb-4"
+                              style={{ background: 'rgba(255,255,255,0.2)' }}
+                            >
+                              <Icon size={36} className="text-white" />
+                            </div>
+                            <h3
+                              className="font-black text-xl text-white mb-2"
+                              style={{ fontFamily: 'Merriweather, serif' }}
+                            >
+                              {service.title}
+                            </h3>
+                            <p className="text-sm font-medium text-white/80">
+                              {service.tagline}
+                            </p>
+                          </div>
+                        </>
+                      ) : (
+                        <div
+                          className="w-full h-full p-10 flex flex-col items-center justify-center"
+                          style={{
+                            background: `linear-gradient(135deg, ${service.accent}18 0%, ${service.accent}08 100%)`,
+                          }}
+                        >
+                          {/* Large background icon */}
+                          <Icon
+                            size={120}
+                            className="opacity-5 absolute"
+                            style={{ color: service.accent }}
+                          />
+                          {/* Foreground icon */}
+                          <div
+                            className="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 relative z-10"
+                            style={{ background: `${service.accent}15` }}
+                          >
+                            <Icon size={36} style={{ color: service.accent }} />
+                          </div>
+                          <h3
+                            className="font-black text-xl text-gray-900 mb-2 relative z-10"
+                            style={{ fontFamily: 'Merriweather, serif' }}
+                          >
+                            {service.title}
+                          </h3>
+                          <p
+                            className="text-sm font-medium relative z-10"
+                            style={{ color: service.accent }}
+                          >
+                            {service.tagline}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

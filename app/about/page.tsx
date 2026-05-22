@@ -142,7 +142,7 @@ export default function AboutPage() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl lg:max-w-xl">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-8" style={{ background: '#748ec4' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
@@ -160,6 +160,80 @@ export default function AboutPage() {
               dedicated to helping individuals and businesses across
               Gloucestershire and the UK manage their finances with confidence.
             </p>
+          </div>
+
+          {/* Hero image */}
+          <div className="hidden lg:flex items-center justify-center absolute right-8 top-1/2 -translate-y-1/2 xl:right-16">
+            <div
+              className="relative w-80 h-80 xl:w-96 xl:h-96"
+              style={{
+                borderRadius: '50% 50% 40% 60% / 60% 40% 60% 40%',
+                overflow: 'hidden',
+                border: '3px solid rgba(255,255,255,0.15)',
+                boxShadow:
+                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+              }}
+            >
+              {/* Overlay tint */}
+              <div
+                className="absolute inset-0 z-10"
+                style={{
+                  background:
+                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                }}
+              />
+              <img
+                src="/About.avif"
+                alt="About Prime Edge Accountants"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Floating badge 1 */}
+            <div
+              className="absolute -bottom-4 -left-6 px-4 py-3 rounded-xl shadow-lg z-20"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#f0eef8' }}
+                >
+                  <CheckCircle size={14} style={{ color: '#6f068d' }} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900">
+                    ACCA Regulated
+                  </p>
+                  <p className="text-xs text-gray-400">Fully Certified</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating badge 2 */}
+            <div
+              className="absolute -top-4 -right-4 px-4 py-3 rounded-xl shadow-lg z-20"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#f0eef8' }}
+                >
+                  <Award size={14} style={{ color: '#6f068d' }} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900">10+ Years</p>
+                  <p className="text-xs text-gray-400">Trusted Experience</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -194,8 +268,8 @@ export default function AboutPage() {
                   your specific needs and goals.
                 </p>
                 <p>
-                  What sets us apart is our commitment to being proactive. We
-                  do not just process numbers — we understand your business,
+                  What sets us apart is our commitment to being proactive. We do
+                  not just process numbers — we understand your business,
                   anticipate challenges, and deliver advice that makes a real
                   difference to your bottom line.
                 </p>
@@ -335,8 +409,8 @@ export default function AboutPage() {
               A Decade of Growth
             </h2>
             <p className="text-gray-500 leading-relaxed">
-              From our founding in Cheltenham to serving clients across the UK
-              — here are some of the milestones along the way.
+              From our founding in Cheltenham to serving clients across the UK —
+              here are some of the milestones along the way.
             </p>
           </div>
 
@@ -353,18 +427,12 @@ export default function AboutPage() {
 
             <div className="space-y-8">
               {milestones.map((milestone, index) => (
-                <div
-                  key={milestone.year}
-                  className="flex gap-6 items-start"
-                >
+                <div key={milestone.year} className="flex gap-6 items-start">
                   {/* Year bubble */}
                   <div
                     className="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-xs flex-shrink-0 relative z-10 shadow-md"
                     style={{
-                      background:
-                        index % 2 === 0
-                          ? '#6f068d'
-                          : '#748ec4',
+                      background: index % 2 === 0 ? '#6f068d' : '#748ec4',
                       fontFamily: 'Merriweather, serif',
                     }}
                   >
@@ -411,8 +479,8 @@ export default function AboutPage() {
               The Prime Edge Difference
             </h2>
             <p className="text-gray-500 leading-relaxed">
-              There are many accountants to choose from. Here is why our
-              clients stay with us year after year.
+              There are many accountants to choose from. Here is why our clients
+              stay with us year after year.
             </p>
           </div>
 
@@ -472,10 +540,7 @@ export default function AboutPage() {
             Prime Edge can do for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="btn-white text-base px-8 py-4"
-            >
+            <Link href="/contact" className="btn-white text-base px-8 py-4">
               <Calendar size={18} />
               Book Free Discovery Call
             </Link>

@@ -27,6 +27,7 @@ const stages = [
     phase: 'Stage 01',
     icon: Lightbulb,
     title: 'Start-Up',
+    image: '/lifestyle/Start-Up.avif',
     subtitle: 'Laying the right foundations',
     description:
       'Starting a business is exciting — but getting the financial and legal foundations right from day one is critical. We help new businesses launch with confidence, structure, and a clear financial plan.',
@@ -48,6 +49,7 @@ const stages = [
     phase: 'Stage 02',
     icon: Rocket,
     title: 'Growth',
+    image: '/lifestyle/Growth.avif',
     subtitle: 'Scaling with control',
     description:
       'As your business grows, so does its complexity. Managing cash flow, hiring staff, and staying on top of tax obligations becomes increasingly demanding. We keep your finances in order as you scale.',
@@ -69,6 +71,7 @@ const stages = [
     phase: 'Stage 03',
     icon: TrendingUp,
     title: 'Established',
+    image: '/lifestyle/Established.avif',
     subtitle: 'Maximising performance',
     description:
       'Once established, the focus shifts to maximising profitability, retaining top talent, and building long-term value. We provide the financial intelligence you need to make smart strategic decisions.',
@@ -90,6 +93,7 @@ const stages = [
     phase: 'Stage 04',
     icon: RefreshCw,
     title: 'Restructure',
+    image: '/lifestyle/Restructure.avif',
     subtitle: 'Adapting for the future',
     description:
       'Businesses evolve. Whether you are bringing in new partners, reorganising your group structure, or pivoting your model, we provide the financial and structural advice to make transitions smooth and tax-efficient.',
@@ -111,6 +115,7 @@ const stages = [
     phase: 'Stage 05',
     icon: Building2,
     title: 'Expansion',
+    image: '/lifestyle/Expansion.avif',
     subtitle: 'Growing beyond borders',
     description:
       'Whether you are opening new locations, entering new markets, or expanding internationally, we provide the financial planning and compliance support to ensure your expansion is strategic and sustainable.',
@@ -132,6 +137,7 @@ const stages = [
     phase: 'Stage 06',
     icon: LogOut,
     title: 'Exit & Succession',
+    image: '/lifestyle/Succession.avif',
     subtitle: 'Realising your value',
     description:
       'When the time comes to exit your business — whether through a sale, management buyout, or succession — we help you maximise the value you receive and minimise the tax you pay on exit.',
@@ -174,7 +180,7 @@ export default function LifecyclePage() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl lg:max-w-xl">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-8" style={{ background: '#748ec4' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
@@ -209,6 +215,82 @@ export default function LifecyclePage() {
                   {s.title}
                 </a>
               ))}
+            </div>
+          </div>
+
+          {/* Hero image */}
+          <div className="hidden lg:flex items-center justify-center absolute right-8 top-1/2 -translate-y-1/2 xl:right-16">
+            <div
+              className="relative w-80 h-80 xl:w-96 xl:h-96"
+              style={{
+                borderRadius: '45% 55% 60% 40% / 55% 45% 55% 45%',
+                overflow: 'hidden',
+                border: '3px solid rgba(255,255,255,0.15)',
+                boxShadow:
+                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+              }}
+            >
+              {/* Overlay tint */}
+              <div
+                className="absolute inset-0 z-10"
+                style={{
+                  background:
+                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                }}
+              />
+              <img
+                src="/lifestyle/Business-Lifecycle.avif"
+                alt="Business lifecycle support"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Floating badge 1 */}
+            <div
+              className="absolute -bottom-4 -left-6 px-4 py-3 rounded-xl shadow-lg z-20"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#f0eef8' }}
+                >
+                  <CheckCircle size={14} style={{ color: '#6f068d' }} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900">
+                    6 Business Stages
+                  </p>
+                  <p className="text-xs text-gray-400">Full Journey Support</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating badge 2 */}
+            <div
+              className="absolute -top-4 -right-4 px-4 py-3 rounded-xl shadow-lg z-20"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#f0eef8' }}
+                >
+                  <Rocket size={14} style={{ color: '#6f068d' }} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900">
+                    Start to Exit
+                  </p>
+                  <p className="text-xs text-gray-400">We Grow With You</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -366,68 +448,132 @@ export default function LifecyclePage() {
 
                   {/* Visual column */}
                   <div
-                    className={
-                      isEven
-                        ? ''
-                        : 'lg:col-start-1 lg:row-start-1'
-                    }
+                    className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}
                   >
                     <div
-                      className="rounded-2xl p-10 flex flex-col items-center justify-center text-center min-h-80 relative overflow-hidden sticky top-28"
+                      className="rounded-2xl flex flex-col items-center justify-center text-center min-h-80 relative overflow-hidden sticky top-28"
                       style={{
-                        background: `linear-gradient(135deg, ${stage.color}18 0%, ${stage.color}08 100%)`,
                         border: `1px solid ${stage.color}20`,
+                        minHeight: '360px',
                       }}
                     >
-                      {/* Large bg icon */}
-                      <Icon
-                        size={140}
-                        className="opacity-5 absolute"
-                        style={{ color: stage.color }}
-                      />
+                      {stage.image ? (
+                        <>
+                          {/* Background image */}
+                          <img
+                            src={stage.image}
+                            alt={stage.title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                          {/* Dark overlay */}
+                          <div
+                            className="absolute inset-0"
+                            style={{
+                              background: `linear-gradient(135deg, ${stage.color}dd 0%, ${stage.color}aa 100%)`,
+                            }}
+                          />
+                          {/* Content over image */}
+                          <div className="relative z-10 p-10 flex flex-col items-center w-full">
+                            {/* Phase pill */}
+                            <span
+                              className="text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5"
+                              style={{
+                                background: 'rgba(255,255,255,0.2)',
+                                color: 'white',
+                              }}
+                            >
+                              {stage.phase}
+                            </span>
 
-                      {/* Phase pill */}
-                      <span
-                        className="text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5 relative z-10"
-                        style={{
-                          background: `${stage.color}20`,
-                          color: stage.color,
-                        }}
-                      >
-                        {stage.phase}
-                      </span>
+                            {/* Icon */}
+                            <div
+                              className="w-24 h-24 rounded-2xl flex items-center justify-center mb-5"
+                              style={{ background: 'rgba(255,255,255,0.2)' }}
+                            >
+                              <Icon size={42} className="text-white" />
+                            </div>
 
-                      {/* Foreground icon */}
-                      <div
-                        className="w-24 h-24 rounded-2xl flex items-center justify-center mb-5 relative z-10"
-                        style={{ background: `${stage.color}15` }}
-                      >
-                        <Icon size={42} style={{ color: stage.color }} />
-                      </div>
+                            <h3
+                              className="font-black text-2xl text-white mb-2"
+                              style={{ fontFamily: 'Merriweather, serif' }}
+                            >
+                              {stage.title}
+                            </h3>
+                            <p className="text-sm font-medium text-white/80 mb-6">
+                              {stage.subtitle}
+                            </p>
 
-                      <h3
-                        className="font-black text-2xl text-gray-900 mb-2 relative z-10"
-                        style={{ fontFamily: 'Merriweather, serif' }}
-                      >
-                        {stage.title}
-                      </h3>
-                      <p
-                        className="text-sm font-medium relative z-10 mb-6"
-                        style={{ color: stage.color }}
-                      >
-                        {stage.subtitle}
-                      </p>
+                            {/* Service count badge */}
+                            <div
+                              className="px-4 py-2 rounded-full text-xs font-bold"
+                              style={{
+                                background: 'rgba(255,255,255,0.25)',
+                                color: 'white',
+                              }}
+                            >
+                              {stage.services.length} services at this stage
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        /* No image — gradient fallback */
+                        <div
+                          className="w-full h-full p-10 flex flex-col items-center justify-center"
+                          style={{
+                            background: `linear-gradient(135deg, ${stage.color}18 0%, ${stage.color}08 100%)`,
+                          }}
+                        >
+                          {/* Large bg icon */}
+                          <Icon
+                            size={140}
+                            className="opacity-5 absolute"
+                            style={{ color: stage.color }}
+                          />
 
-                      {/* Service count badge */}
-                      <div
-                        className="px-4 py-2 rounded-full text-xs font-bold relative z-10"
-                        style={{
-                          background: stage.color,
-                          color: 'white',
-                        }}
-                      >
-                        {stage.services.length} services at this stage
-                      </div>
+                          {/* Phase pill */}
+                          <span
+                            className="text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5 relative z-10"
+                            style={{
+                              background: `${stage.color}20`,
+                              color: stage.color,
+                            }}
+                          >
+                            {stage.phase}
+                          </span>
+
+                          {/* Foreground icon */}
+                          <div
+                            className="w-24 h-24 rounded-2xl flex items-center justify-center mb-5 relative z-10"
+                            style={{ background: `${stage.color}15` }}
+                          >
+                            <Icon size={42} style={{ color: stage.color }} />
+                          </div>
+
+                          <h3
+                            className="font-black text-2xl text-gray-900 mb-2 relative z-10"
+                            style={{ fontFamily: 'Merriweather, serif' }}
+                          >
+                            {stage.title}
+                          </h3>
+                          <p
+                            className="text-sm font-medium relative z-10 mb-6"
+                            style={{ color: stage.color }}
+                          >
+                            {stage.subtitle}
+                          </p>
+
+                          {/* Service count badge */}
+                          <div
+                            className="px-4 py-2 rounded-full text-xs font-bold relative z-10"
+                            style={{
+                              background: stage.color,
+                              color: 'white',
+                            }}
+                          >
+                            {stage.services.length} services at this stage
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -464,10 +610,7 @@ export default function LifecyclePage() {
             conversation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="btn-white text-base px-8 py-4"
-            >
+            <Link href="/contact" className="btn-white text-base px-8 py-4">
               <Calendar size={18} />
               Book Free Discovery Call
             </Link>
