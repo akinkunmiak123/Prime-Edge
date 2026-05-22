@@ -72,11 +72,12 @@ export default function Navbar() {
             // className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-20'}`}
           >
             {/* Logo */}
-            <Link href="/" className="flex items-center group mt-4 mb-2">
+            <Link href="/" className="flex items-center group">
               <Image
                 src={logo}
                 alt="Prime Edge Accountants logo"
-                height={120}
+                height={66}
+                className="h-10 sm:h-12 lg:h-14 w-auto"
                 priority
               />
             </Link>
@@ -156,7 +157,12 @@ export default function Navbar() {
         >
           {/* Drawer Header */}
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-            <Image src={logo} alt="Prime Edge Accountants logo" height={36} />
+            <Image
+              src={logo}
+              alt="Prime Edge Accountants logo"
+              height={40}
+              className="h-9 w-auto"
+            />
             <button
               onClick={() => setMobileOpen(false)}
               className="p-2 rounded-lg hover:bg-gray-100 transition-colors"

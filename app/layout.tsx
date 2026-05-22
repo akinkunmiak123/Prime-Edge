@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import FloatingButtons from '@/components/FloatingButtons'
 
 export const metadata: Metadata = {
   title: {
@@ -59,7 +60,8 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main>{children}</main>
-        <Footer/>
+        <Footer />
+        <FloatingButtons />
       </body>
     </html>
   )
