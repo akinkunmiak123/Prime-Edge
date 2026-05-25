@@ -1,6 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
 
-@import "tailwindcss";
+/* ── Self-hosted Century Gothic ── */
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/centurygothic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/centurygothic_bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── CSS custom properties for font stacks ── */
+:root {
+  /* H1, H2, H4, H5, H6 — Century Gothic Bold */
+  --font-heading: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+
+  /* H3 subheadings — Sans-Serif collection */
+  --font-subheading:
+    'Gill Sans', 'Gill Sans MT', Optima, Candara, Calibri, 'Trebuchet MS',
+    Arial, Helvetica, sans-serif;
+
+  /* Body / paragraphs — Century Gothic Normal */
+  --font-body: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
 
 /* ── Brand tokens ── */
 @theme {
@@ -16,16 +46,19 @@
   --color-surface-1: #f8f7ff;
   --color-surface-2: #f0eef8;
 
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-serif: "Merriweather", Georgia, serif;
+  /* Updated font tokens */
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
 
-  --shadow-purple-sm: 0 2px 12px 0 rgba(111,6,141,0.15);
-  --shadow-purple-md: 0 4px 24px 0 rgba(111,6,141,0.25);
-  --shadow-purple-lg: 0 8px 48px 0 rgba(111,6,141,0.3);
+  --shadow-purple-sm: 0 2px 12px 0 rgba(111, 6, 141, 0.15);
+  --shadow-purple-md: 0 4px 24px 0 rgba(111, 6, 141, 0.25);
+  --shadow-purple-lg: 0 8px 48px 0 rgba(111, 6, 141, 0.3);
 }
 
 /* ── Base ── */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -33,16 +66,39 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Body — Century Gothic Normal */
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
   color: #0d0d0d;
   background: #ffffff;
   overflow-x: hidden;
 }
 
+/* Global heading defaults */
+h1,
+h2,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h3 {
+  font-family: var(--font-subheading);
+  font-weight: 400;
+}
+
+/* Global paragraph default */
+p {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
 /* ── Typography helpers ── */
 .section-label {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-subheading);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -65,6 +121,7 @@ body {
   color: white;
   padding: 0.875rem 2rem;
   border-radius: 4px;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.02em;
@@ -80,7 +137,7 @@ body {
   background: #520568;
   border-color: #520568;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(111,6,141,0.35);
+  box-shadow: 0 8px 24px rgba(111, 6, 141, 0.35);
 }
 
 .btn-outline {
@@ -88,6 +145,7 @@ body {
   color: #6f068d;
   padding: 0.875rem 2rem;
   border-radius: 4px;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.02em;
@@ -103,7 +161,7 @@ body {
   background: #6f068d;
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(111,6,141,0.25);
+  box-shadow: 0 8px 24px rgba(111, 6, 141, 0.25);
 }
 
 .btn-white {
@@ -111,6 +169,7 @@ body {
   color: #6f068d;
   padding: 0.875rem 2rem;
   border-radius: 4px;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.02em;
@@ -126,12 +185,13 @@ body {
   background: transparent;
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
 }
 
 /* ── Nav link with animated underline ── */
 .nav-link {
   position: relative;
+  font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
   color: #2a2a2a;
@@ -148,43 +208,60 @@ body {
   background: #6f068d;
   transition: width 0.25s ease;
 }
-.nav-link:hover { color: #6f068d; }
-.nav-link:hover::after { width: 100%; }
+.nav-link:hover {
+  color: #6f068d;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
 
 /* ── Cards ── */
 .service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(111,6,141,0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid rgba(111, 6, 141, 0.08);
 }
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(111,6,141,0.15);
-  border-color: rgba(111,6,141,0.2);
+  box-shadow: 0 16px 48px rgba(111, 6, 141, 0.15);
+  border-color: rgba(111, 6, 141, 0.2);
 }
 
 .testimonial-card {
   background: white;
   border-left: 4px solid #6f068d;
-  box-shadow: 0 2px 24px rgba(111,6,141,0.08);
+  box-shadow: 0 2px 24px rgba(111, 6, 141, 0.08);
   transition: box-shadow 0.3s ease;
 }
 .testimonial-card:hover {
-  box-shadow: 0 8px 32px rgba(111,6,141,0.16);
+  box-shadow: 0 8px 32px rgba(111, 6, 141, 0.16);
 }
 
 .blog-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .blog-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(111,6,141,0.12);
+  box-shadow: 0 12px 40px rgba(111, 6, 141, 0.12);
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f0eef8; }
-::-webkit-scrollbar-thumb { background: #6f068d; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #520568; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0eef8;
+}
+::-webkit-scrollbar-thumb {
+  background: #6f068d;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #520568;
+}
 
 /* ── Focus ring ── */
 :focus-visible {
@@ -193,31 +270,43 @@ body {
   border-radius: 2px;
 }
 
-/* ── TipTap Editor styles ── */
+/* ── TipTap / ProseMirror Editor styles ── */
 .ProseMirror {
   min-height: 400px;
   outline: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: 0.95rem;
   line-height: 1.8;
   color: #374151;
   padding: 1.25rem 1.5rem;
 }
-.ProseMirror p { margin-bottom: 1rem; }
+
+/* Paragraphs — Century Gothic Normal */
+.ProseMirror p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/* H2 — Century Gothic Bold */
 .ProseMirror h2 {
-  font-family: 'Merriweather', serif;
+  font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 700;
   color: #0d0d0d;
   margin: 1.75rem 0 0.75rem;
 }
+
+/* H3 — Sans-Serif collection (subheading) */
 .ProseMirror h3 {
-  font-family: 'Merriweather', serif;
+  font-family: var(--font-subheading);
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 400;
   color: #0d0d0d;
   margin: 1.5rem 0 0.5rem;
 }
+
 .ProseMirror ul {
   list-style: disc;
   padding-left: 1.5rem;
@@ -228,14 +317,26 @@ body {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
-.ProseMirror li { margin-bottom: 0.35rem; }
-.ProseMirror ul li::marker { color: #6f068d; }
-.ProseMirror ol li::marker { color: #6f068d; font-weight: 700; }
-.ProseMirror strong { font-weight: 700; color: #0d0d0d; }
-.ProseMirror em { font-style: italic; }
+.ProseMirror li {
+  margin-bottom: 0.35rem;
+}
+.ProseMirror ul li::marker {
+  color: #6f068d;
+}
+.ProseMirror ol li::marker {
+  color: #6f068d;
+  font-weight: 700;
+}
+.ProseMirror strong {
+  font-weight: 700;
+  color: #0d0d0d;
+}
+.ProseMirror em {
+  font-style: italic;
+}
 .ProseMirror hr {
   border: none;
-  border-top: 2px solid rgba(111,6,141,0.15);
+  border-top: 2px solid rgba(111, 6, 141, 0.15);
   margin: 2rem 0;
 }
 .ProseMirror blockquote {

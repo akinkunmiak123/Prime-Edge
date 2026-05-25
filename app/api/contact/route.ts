@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
       to: process.env.CONTACT_TO_EMAIL as string,
       subject: `New Contact Form Submission — ${name}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style=" max-width: 600px; margin: 0 auto;">
 
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #6f068d, #520568); padding: 32px; border-radius: 12px 12px 0 0;">

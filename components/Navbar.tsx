@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/lifecycle', label: 'Business Lifecycle' },
   { href: '/about', label: 'About Us' },
   { href: '/blog', label: 'Blog' },
+  { href: '/book', label: 'Book' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -77,7 +78,7 @@ export default function Navbar() {
                 src={logo}
                 alt="Prime Edge Accountants logo"
                 height={66}
-                className="h-10 sm:h-12 lg:h-14 w-auto"
+                className="h-10 sm:h-12 lg:h-20 w-auto"
                 priority
               />
             </Link>

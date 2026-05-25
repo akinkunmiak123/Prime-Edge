@@ -62,7 +62,7 @@ export default function Footer() {
             {/* Column 1 — Brand */}
             <div className="lg:col-span-1">
               <div className="mb-5">
-                <Image src={logo} alt="Prime Edge Accountants" height={52} />
+                <Image src={logo} alt="Prime Edge Accountants" height={72} />
               </div>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
                 Trusted accounting and financial advisory services for
