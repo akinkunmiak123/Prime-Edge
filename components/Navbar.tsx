@@ -13,7 +13,6 @@ const navLinks = [
   { href: '/lifecycle', label: 'Business Lifecycle' },
   { href: '/about', label: 'About Us' },
   { href: '/blog', label: 'Blog' },
-  { href: '/book', label: 'Book' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -113,7 +112,7 @@ export default function Navbar() {
                 <span>01244 565 227</span>
               </a>
               <Link
-                href="/contact"
+                href="/book"
                 className="btn-primary !py-2.5 !px-5 !text-sm"
               >
                 Book Free Call
@@ -199,7 +198,7 @@ export default function Navbar() {
               <Phone size={14} style={{ color: '#6f068d' }} />
               <span>01244 565 227</span>
             </a>
-            <Link href="/contact" className="btn-primary justify-center">
+            <Link href="/book" className="btn-primary justify-center">
               Book Free Discovery Call
             </Link>
           </div>

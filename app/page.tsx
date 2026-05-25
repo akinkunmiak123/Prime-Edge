@@ -204,7 +204,7 @@ export default function HomePage() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/contact" className="btn-white text-base px-7 py-4">
+              <Link href="/book" className="btn-white text-base px-7 py-4">
                 Book Free Discovery Call
                 <ArrowRight size={18} />
               </Link>
@@ -585,7 +585,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-10">
-            <Link href="/contact" className="btn-primary">
+            <Link href="/book" className="btn-primary">
               Book Your Free Call Today
               <ArrowRight size={16} />
             </Link>
@@ -780,7 +780,7 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-white text-base px-8 py-4">
+            <Link href="/book" className="btn-white text-base px-8 py-4">
               <Calendar size={18} />
               Book Free Discovery Call
             </Link>

@@ -540,7 +540,7 @@ export default function AboutPage() {
             Prime Edge can do for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-white text-base px-8 py-4">
+            <Link href="/book" className="btn-white text-base px-8 py-4">
               <Calendar size={18} />
               Book Free Discovery Call
             </Link>

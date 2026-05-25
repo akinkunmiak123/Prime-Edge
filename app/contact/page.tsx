@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react'
-import CalendlyEmbed from '@/components/CalendlyEmbed'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -26,7 +25,7 @@ const contactDetails = [
   {
     icon: MapPin,
     label: 'Location',
-    value: 'Cheltenham, Gloucestershire',
+    value: '62,Symphony Road,Cheltenham GL51 6GJ',
     href: null,
     description: 'Serving clients across England & Wales',
   },
@@ -209,7 +208,7 @@ export default function ContactPage() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="font-semibold text-gray-900 text-sm hover:text-primary transition-colors block mb-0.5"
+                        className="font-semibold text-gray-900 text-sm hover:text-primary transition-colors block mb-0.5 break-all"
                         style={{ color: '#0d0d0d' }}
                       >
                         {item.value}
@@ -229,43 +228,10 @@ export default function ContactPage() {
       </section>
 
       {/* ════════════════════════════════
-          CALENDLY BOOKING
-      ════════════════════════════════ */}
-      <section className="py-16 lg:py-24" style={{ background: '#f8f7ff' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="section-label">Free Discovery Call</span>
-            <div className="purple-rule mx-auto" />
-            <h2
-              className="text-3xl sm:text-4xl font-black text-gray-900 mb-4"
-              style={{ fontFamily: 'Merriweather, serif' }}
-            >
-              Book a Free Call
-            </h2>
-            <p className="text-gray-500 leading-relaxed">
-              Choose a time that suits you. Our discovery calls are free,
-              informal, and carry absolutely no obligation. We will listen to
-              your situation and give you honest, practical advice.
-            </p>
-          </div>
-
-          {/* Calendly embed */}
-          <div
-            className="bg-white rounded-2xl overflow-hidden shadow-sm"
-            style={{ border: '1px solid rgba(111,6,141,0.08)' }}
-          >
-            <CalendlyEmbed url="https://calendly.com/tetisimiak" />
-          </div>
-        </div>
-      </section>
-
-
-{/* ════════════════════════════════
           LOCATION MAP
       ════════════════════════════════ */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           {/* Section header */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
             <div>
@@ -291,17 +257,22 @@ export default function ContactPage() {
 
           {/* Map + address card */}
           <div className="grid lg:grid-cols-3 gap-6">
-
             {/* Map embed */}
             <div
               className="lg:col-span-2 rounded-2xl overflow-hidden shadow-sm"
-              style={{ border: '1px solid rgba(111,6,141,0.08)', height: '420px' }}
+              style={{
+                border: '1px solid rgba(111,6,141,0.08)',
+                height: '420px',
+              }}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.1!2d-2.0823!3d51.8994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s62%20Symphony%20Road%2C%20Cheltenham%2C%20GL51%206GJ!5e0!3m2!1sen!2suk!4v1"
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: 'hue-rotate(240deg) saturate(0.7) brightness(0.95)' }}
+                style={{
+                  border: 0,
+                  filter: 'hue-rotate(240deg) saturate(0.7) brightness(0.95)',
+                }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -311,12 +282,12 @@ export default function ContactPage() {
 
             {/* Address card */}
             <div className="flex flex-col gap-4">
-
               {/* Address */}
               <div
                 className="rounded-2xl p-7 flex-1"
                 style={{
-                  background: 'linear-gradient(135deg, #6f068d 0%, #520568 100%)',
+                  background:
+                    'linear-gradient(135deg, #6f068d 0%, #520568 100%)',
                 }}
               >
                 <div className="flex items-center gap-3 mb-5">
@@ -355,14 +326,22 @@ export default function ContactPage() {
                     href="tel:01244565227"
                     className="flex items-center gap-3 text-white/80 hover:text-white transition-colors text-sm"
                   >
-                    <Phone size={14} className="flex-shrink-0" style={{ color: '#748ec4' }} />
+                    <Phone
+                      size={14}
+                      className="flex-shrink-0"
+                      style={{ color: '#748ec4' }}
+                    />
                     01244 565 227
                   </a>
                   <a
                     href="mailto:info@primeedgeaccountants.co.uk"
                     className="flex items-center gap-3 text-white/80 hover:text-white transition-colors text-sm"
                   >
-                    <Mail size={14} className="flex-shrink-0" style={{ color: '#748ec4' }} />
+                    <Mail
+                      size={14}
+                      className="flex-shrink-0"
+                      style={{ color: '#748ec4' }}
+                    />
                     info@primeedgeaccountants.co.uk
                   </a>
                 </div>
@@ -400,7 +379,9 @@ export default function ContactPage() {
                       key={row.day}
                       className="flex items-center justify-between text-xs"
                     >
-                      <span className="text-gray-500 font-medium">{row.day}</span>
+                      <span className="text-gray-500 font-medium">
+                        {row.day}
+                      </span>
                       <span
                         className="font-semibold"
                         style={{
@@ -413,12 +394,10 @@ export default function ContactPage() {
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
-
 
       {/* ════════════════════════════════
           CONTACT FORM + FAQ

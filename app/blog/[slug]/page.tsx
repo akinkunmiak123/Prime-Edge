@@ -159,7 +159,7 @@ export default async function BlogPostPage({ params }: Props) {
                     will talk through your situation.
                   </p>
                   <Link
-                    href="/contact"
+                    href="/book"
                     className="btn-white text-sm w-full justify-center"
                   >
                     Book Free Call
