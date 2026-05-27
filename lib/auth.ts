@@ -1,7 +1,18 @@
-// ── Admin credentials ──
-// Change these to your preferred email and password
-export const ADMIN_EMAIL = 'admin@primeedge.co.uk'
-export const ADMIN_PASSWORD = 'PrimeEdge2025!'
+const requiredEnv = ['ADMIN_EMAIL', 'ADMIN_PASSWORD']
 
-export const SESSION_KEY = 'pe_admin_session'
-export const SESSION_VALUE = 'authenticated'
+// Only perform strict environment validation on the server.
+// Importing this module in the browser (client component) should not throw.
+if (typeof window === 'undefined') {
+  requiredEnv.forEach((key) => {
+    if (!process.env[key]) {
+      throw new Error(`Missing environment variable: ${key}`)
+    }
+  })
+}
+
+export const ADMIN_EMAIL = process.env.ADMIN_EMAIL!
+export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD!
+
+export const SESSION_KEY = process.env.SESSION_KEY || 'pe_admin_session'
+
+export const SESSION_VALUE = process.env.SESSION_VALUE || 'authenticated'

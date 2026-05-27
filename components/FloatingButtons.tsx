@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import { ArrowUp } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 export default function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [showWhatsApp, setShowWhatsApp] = useState(false)
   const [waChatOpen, setWaChatOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 400)
@@ -44,14 +47,15 @@ export default function FloatingButtons() {
 
   // Don't render floating buttons when mobile menu is open
   if (mobileMenuOpen) return null
-
+ const pathname = usePathname()
+ if (pathname.startsWith('/dashboard')) return null
   return (
     <>
       {/* ── Scroll To Top ── */}
       <button
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className="fixed bottom-6 left-6 z-40 transition-all duration-300"
+        className="fixed bottom-6 left-6 z-40 transition-all duration-300 pointer-events-auto"
         style={{
           opacity: showScrollTop ? 1 : 0,
           transform: showScrollTop
@@ -73,11 +77,11 @@ export default function FloatingButtons() {
 
       {/* ── WhatsApp Widget ── */}
       <div
-        className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 transition-all duration-300"
+        className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3"
         style={{
           opacity: showWhatsApp ? 1 : 0,
           transform: showWhatsApp ? 'translateY(0)' : 'translateY(16px)',
-          pointerEvents: showWhatsApp ? 'auto' : 'none',
+          pointerEvents: showWhatsApp ? 'auto' : 'none', // ✅ whole wrapper disabled
         }}
       >
         {/* Chat popup card */}
@@ -88,7 +92,7 @@ export default function FloatingButtons() {
             transform: waChatOpen
               ? 'scale(1) translateY(0)'
               : 'scale(0.85) translateY(8px)',
-            pointerEvents: waChatOpen ? 'auto' : 'none',
+            pointerEvents: waChatOpen ? 'auto' : 'none', // ✅ card disabled when closed
           }}
         >
           <div
@@ -141,8 +145,8 @@ export default function FloatingButtons() {
                 👋 Hello! I&apos;m from Prime Edge Accountants.
                 <br />
                 <br />
-                How can we help you today? We are happy to answer any
-                questions about our services.
+                How can we help you today? We are happy to answer any questions
+                about our services.
               </div>
 
               <a
@@ -173,7 +177,7 @@ export default function FloatingButtons() {
         <button
           onClick={() => setWaChatOpen(!waChatOpen)}
           aria-label="Chat on WhatsApp"
-          className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-200 hover:scale-110 active:scale-95 relative"
+          className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-200 hover:scale-110 active:scale-95 relative pointer-events-auto"
           style={{
             background: '#25D366',
             boxShadow: '0 4px 24px rgba(37,211,102,0.45)',

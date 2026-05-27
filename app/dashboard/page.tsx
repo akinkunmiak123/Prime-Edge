@@ -17,21 +17,41 @@ export default function DashboardLoginPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
+
     setError('')
     setLoading(true)
 
-    // Small delay to feel like authentication
-    await new Promise((r) => setTimeout(r, 600))
+    try {
+      const res = await fetch('/api/admin-login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      })
 
-    const { ADMIN_EMAIL, ADMIN_PASSWORD } = await import('@/lib/auth')
+      const data = await res.json()
 
-    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-      localStorage.setItem(SESSION_KEY, SESSION_VALUE)
-      router.push('/dashboard/admin')
-    } else {
-      setError('Incorrect email or password. Please try again.')
+      if (data.success) {
+        localStorage.setItem(SESSION_KEY, SESSION_VALUE)
+        router.push('/dashboard/admin')
+      } else {
+        setError('Incorrect email or password. Please try again.')
+      }
+    } catch (err) {
+      setError('Something went wrong.')
+    } finally {
       setLoading(false)
     }
+  }
+
+  const togglePassword = (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setShowPassword((prev) => !prev)
   }
 
   return (
@@ -67,7 +87,7 @@ export default function DashboardLoginPage() {
           </div>
 
           {/* Form */}
-          <div className="px-8 py-8">
+          <form onSubmit={handleLogin} className="px-8 py-8">
             <h1
               className="text-xl font-black text-gray-900 mb-1"
               style={{ fontFamily: 'Merriweather, serif' }}
@@ -92,118 +112,114 @@ export default function DashboardLoginPage() {
               </div>
             )}
 
-            <div onSubmit={handleLogin as unknown as React.FormEventHandler}>
-              {/* Email */}
-              <div className="mb-4">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <div className="relative">
-                  <Mail
-                    size={16}
-                    className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
-                  />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="admin@primeedge.co.uk"
-                    required
-                    className="w-full pl-10 pr-4 py-3 rounded-lg text-sm border border-gray-200 focus:outline-none transition-all"
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                    }}
-                    onFocus={(e) => {
-                      e.target.style.borderColor = '#6f068d'
-                      e.target.style.boxShadow =
-                        '0 0 0 3px rgba(111,6,141,0.1)'
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.borderColor = '#e5e7eb'
-                      e.target.style.boxShadow = 'none'
-                    }}
-                  />
-                </div>
+            {/* Email */}
+            <div className="mb-4">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Email Address
+              </label>
+              <div className="relative">
+                <Mail
+                  size={16}
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="admin@primeedge.co.uk"
+                  required
+                  autoComplete="email"
+                  className="w-full pl-10 pr-4 py-3 rounded-lg text-sm border border-gray-200 focus:outline-none transition-all"
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#6f068d'
+                    e.target.style.boxShadow = '0 0 0 3px rgba(111,6,141,0.1)'
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e5e7eb'
+                    e.target.style.boxShadow = 'none'
+                  }}
+                />
               </div>
-
-              {/* Password */}
-              <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Password
-                </label>
-                <div className="relative">
-                  <Lock
-                    size={16}
-                    className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
-                  />
-                  <input
-                    type={showPassword ? 'text' : 'password'}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="••••••••••"
-                    required
-                    className="w-full pl-10 pr-12 py-3 rounded-lg text-sm border border-gray-200 focus:outline-none transition-all"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
-                    onFocus={(e) => {
-                      e.target.style.borderColor = '#6f068d'
-                      e.target.style.boxShadow =
-                        '0 0 0 3px rgba(111,6,141,0.1)'
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.borderColor = '#e5e7eb'
-                      e.target.style.boxShadow = 'none'
-                    }}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-                  >
-                    {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
-                  </button>
-                </div>
-              </div>
-
-              {/* Submit */}
-              <button
-                type="button"
-                onClick={handleLogin as unknown as React.MouseEventHandler}
-                disabled={loading}
-                className="btn-primary w-full justify-center py-3"
-                style={{ opacity: loading ? 0.7 : 1 }}
-              >
-                {loading ? (
-                  <>
-                    <svg
-                      className="animate-spin h-4 w-4 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      />
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8v8H4z"
-                      />
-                    </svg>
-                    Signing in...
-                  </>
-                ) : (
-                  <>
-                    <Lock size={15} />
-                    Sign In
-                  </>
-                )}
-              </button>
             </div>
-          </div>
+
+            {/* Password */}
+            <div className="mb-6">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Password
+              </label>
+              <div className="relative">
+                <Lock
+                  size={16}
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••••"
+                  required
+                  autoComplete="current-password"
+                  className="w-full pl-10 pr-12 py-3 rounded-lg text-sm border border-gray-200 focus:outline-none transition-all"
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#6f068d'
+                    e.target.style.boxShadow = '0 0 0 3px rgba(111,6,141,0.1)'
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e5e7eb'
+                    e.target.style.boxShadow = 'none'
+                  }}
+                />
+                {/* Eye toggle — larger tap target for mobile */}
+                <button
+                  type="button"
+                  onMouseDown={togglePassword}
+                  onTouchEnd={togglePassword}
+                  className="absolute right-0 top-0 h-full w-12 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
+              </div>
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-primary w-full justify-center py-3.5 text-base"
+              style={{ opacity: loading ? 0.7 : 1 }}
+            >
+              {loading ? (
+                <>
+                  <svg
+                    className="animate-spin h-4 w-4 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v8H4z"
+                    />
+                  </svg>
+                  Signing in...
+                </>
+              ) : (
+                <>
+                  <Lock size={15} />
+                  Sign In
+                </>
+              )}
+            </button>
+          </form>
         </div>
 
         <p className="text-center text-white/30 text-xs mt-6">
