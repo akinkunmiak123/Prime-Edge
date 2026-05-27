@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { put } from '@vercel/blob'
 
 export async function POST(req: NextRequest) {
   try {
@@ -28,29 +27,21 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const bytes = await file.arrayBuffer()
-    const buffer = Buffer.from(bytes)
-
-    // Save to public/blog-images
-    const uploadDir = path.join(process.cwd(), 'public/blog-images')
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true })
-    }
-
     // Sanitise filename
-    const ext = path.extname(file.name)
-    const baseName = path
-      .basename(file.name, ext)
+    const ext = file.name.split('.').pop()
+    const baseName = file.name
+      .replace(/\.[^/.]+$/, '')
       .replace(/[^a-zA-Z0-9-_]/g, '-')
       .toLowerCase()
-    const fileName = `${baseName}-${Date.now()}${ext}`
-    const filePath = path.join(uploadDir, fileName)
+    const fileName = `blog-images/${baseName}-${Date.now()}.${ext}`
 
-    fs.writeFileSync(filePath, buffer)
+    const blob = await put(fileName, file, {
+      access: 'public',
+    })
 
     return NextResponse.json({
       success: true,
-      url: `/blog-images/${fileName}`,
+      url: blob.url,
     })
   } catch (error) {
     console.error('Upload error:', error)
