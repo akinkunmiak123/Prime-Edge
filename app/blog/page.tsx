@@ -26,10 +26,19 @@ const categoryColors: Record<string, string> = {
   General: '#6b7280',
 }
 
-export default async function BlogPage() {
-  const posts = await getAllPosts()
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>
+}) {
+  const { category } = await searchParams
+  const allPosts = await getAllPosts()
   const categories = await getAllCategories()
 
+  const posts =
+    category && category !== 'All'
+      ? allPosts.filter((p) => p.category === category)
+      : allPosts
   return (
     <>
       {/* ════════════════════════════════
@@ -151,20 +160,21 @@ export default async function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category filter pills */}
           <div className="flex flex-wrap gap-2 mb-12">
-            {categories.map((cat) => (
-              <span
-                key={cat}
-                className="text-xs font-semibold px-4 py-2 rounded-full cursor-pointer transition-all"
-                style={{
-                  background: cat === 'All' ? '#6f068d' : 'white',
-                  color: cat === 'All' ? 'white' : '#6b7280',
-                  border: '1px solid',
-                  borderColor: cat === 'All' ? '#6f068d' : '#e5e7eb',
-                }}
-              >
-                {cat}
-              </span>
-            ))}
+           {categories.map((cat) => (
+  <Link
+    key={cat}
+    href={cat === 'All' ? '/blog' : `/blog?category=${cat}`}
+    className="text-xs font-semibold px-4 py-2 rounded-full cursor-pointer transition-all"
+    style={{
+      background: (category === cat) || (!category && cat === 'All') ? '#6f068d' : 'white',
+      color: (category === cat) || (!category && cat === 'All') ? 'white' : '#6b7280',
+      border: '1px solid',
+      borderColor: (category === cat) || (!category && cat === 'All') ? '#6f068d' : '#e5e7eb',
+    }}
+  >
+    {cat}
+  </Link>
+))}
           </div>
 
           {posts.length === 0 ? (
