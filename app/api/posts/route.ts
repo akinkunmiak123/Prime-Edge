@@ -47,6 +47,8 @@ ${content}`
     return NextResponse.json({ success: true, slug })
   } catch (error) {
     console.error('Save post error:', error)
-    return NextResponse.json({ error: 'Failed to save post' }, { status: 500 })
+    return NextResponse.json({
+       error: 'Failed to save post this messeage is from the api'
+       }, { status: 500 })
   }
 }
