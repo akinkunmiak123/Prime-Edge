@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
-
-const postsDirectory = path.join(process.cwd(), 'content/posts')
+import { sql } from '@vercel/postgres'
 
 export async function DELETE(
   req: NextRequest,
@@ -10,13 +7,15 @@ export async function DELETE(
 ) {
   try {
     const { slug } = await params
-    const filePath = path.join(postsDirectory, `${slug}.md`)
 
-    if (!fs.existsSync(filePath)) {
+    const { rowCount } = await sql`
+      DELETE FROM posts WHERE slug = ${slug}
+    `
+
+    if (rowCount === 0) {
       return NextResponse.json({ error: 'Post not found' }, { status: 404 })
     }
 
-    fs.unlinkSync(filePath)
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Delete post error:', error)
