@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { put } from '@vercel/blob'
 
 export async function POST(req: NextRequest) {
-   console.log('Token exists:', !!process.env.BLOB_READ_WRITE_TOKEN)
   try {
     const formData = await req.formData()
     const file = formData.get('file') as File
@@ -38,6 +37,7 @@ export async function POST(req: NextRequest) {
 
     const blob = await put(fileName, file, {
       access: 'public',
+      token: process.env.BLOB_READ_WRITE_TOKEN,
     })
 
     return NextResponse.json({
