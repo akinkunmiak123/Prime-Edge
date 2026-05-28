@@ -149,11 +149,9 @@ const testimonials = [
   },
 ]
 
-
-
 /* ── Page ── */
-export default function HomePage() {
-    const blogPosts = getAllPosts().slice(0, 3)
+export default async function HomePage() {
+  const blogPosts = (await getAllPosts()).slice(0, 3)
   return (
     <>
       {/* ════════════════════════════════

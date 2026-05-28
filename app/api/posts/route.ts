@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { sql } from '@vercel/postgres'
 import slugify from 'slugify'
-
-const postsDirectory = path.join(process.cwd(), 'content/posts')
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,38 +14,24 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // Generate slug from title
-    const slug = slugify(title, {
-      lower: true,
-      strict: true,
-      trim: true,
-    })
+    const slug = slugify(title, { lower: true, strict: true, trim: true })
 
-    // Build frontmatter
-    const frontmatter = `---
-title: "${title.replace(/"/g, "'")}"
-date: "${date || new Date().toISOString().split('T')[0]}"
-category: "${category || 'General'}"
-excerpt: "${excerpt?.replace(/"/g, "'") || ''}"
-image: "${image || ''}"
-author: "${author || 'Prime Edge Team'}"
----
-
-${content}`
-
-    // Ensure directory exists
-    if (!fs.existsSync(postsDirectory)) {
-      fs.mkdirSync(postsDirectory, { recursive: true })
-    }
-
-    const filePath = path.join(postsDirectory, `${slug}.md`)
-    fs.writeFileSync(filePath, frontmatter, 'utf8')
+    await sql`
+      INSERT INTO posts (slug, title, date, category, excerpt, image, author, content)
+      VALUES (${slug}, ${title}, ${date}, ${category}, ${excerpt}, ${image}, ${author}, ${content})
+      ON CONFLICT (slug) DO UPDATE SET
+        title = ${title},
+        date = ${date},
+        category = ${category},
+        excerpt = ${excerpt},
+        image = ${image},
+        author = ${author},
+        content = ${content}
+    `
 
     return NextResponse.json({ success: true, slug })
   } catch (error) {
     console.error('Save post error:', error)
-    return NextResponse.json({
-       error: 'Failed to save post this messeage is from the api'
-       }, { status: 500 })
+    return NextResponse.json({ error: 'Failed to save post' }, { status: 500 })
   }
 }

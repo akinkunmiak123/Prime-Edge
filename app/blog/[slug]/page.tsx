@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPostBySlug, getAllPostSlugs, formatDate } from '@/lib/posts'
 import { Calendar, User, ArrowLeft, Tag } from 'lucide-react'
 
@@ -10,13 +9,13 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs()
+  const slugs = await getAllPostSlugs()
   return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
   if (!post) return { title: 'Post Not Found' }
   return {
     title: post.title,
@@ -34,7 +33,7 @@ const categoryColors: Record<string, string> = {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
   if (!post) notFound()
 
   const color = categoryColors[post.category] || categoryColors.General
@@ -133,9 +132,8 @@ export default async function BlogPostPage({ params }: Props) {
                     '--tw-prose-counters': '#6f068d',
                   } as React.CSSProperties
                 }
-              >
-                <MDXRemote source={post.content} />
-              </div>
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
             </article>
 
             {/* Sidebar */}
