@@ -31,7 +31,7 @@ const services = [
     description: 'Accurate, up-to-date financial records for your business.',
     duration: '1 hour',
     price: '£75',
-    color: '#6f068d',
+    color: '#9B097A',
   },
   {
     id: 'accounts',
@@ -40,7 +40,7 @@ const services = [
     description: 'Statutory accounts prepared and filed with HMRC.',
     duration: '1 hour',
     price: '£100',
-    color: '#170df2',
+    color: '#2D6198',
   },
   {
     id: 'payroll',
@@ -49,7 +49,7 @@ const services = [
     description: 'Full payroll management and RTI submissions.',
     duration: '1 hour',
     price: '£75',
-    color: '#748ec4',
+    color: '#59A2AF',
   },
   {
     id: 'tax',
@@ -58,7 +58,7 @@ const services = [
     description: 'Proactive tax planning to minimise your liability.',
     duration: '1 hour',
     price: '£100',
-    color: '#6f068d',
+    color: '#9B097A',
   },
   {
     id: 'vat',
@@ -67,7 +67,7 @@ const services = [
     description: 'VAT registration and quarterly returns managed for you.',
     duration: '1 hour',
     price: '£75',
-    color: '#170df2',
+    color: '#2D6198',
   },
   {
     id: 'advisory',
@@ -76,7 +76,7 @@ const services = [
     description: 'Strategic financial advice tailored to your goals.',
     duration: '30 mins',
     price: 'Free',
-    color: '#748ec4',
+    color: '#59A2AF',
   },
 ]
 
@@ -142,8 +142,8 @@ const inputBase =
 
 const focusStyle = {
   onFocus: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.target.style.borderColor = '#6f068d'
-    e.target.style.boxShadow = '0 0 0 3px rgba(111,6,141,0.1)'
+    e.target.style.borderColor = '#9B097A'
+    e.target.style.boxShadow = '0 0 0 3px rgba(155,9,122,0.1)'
   },
   onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     e.target.style.borderColor = '#e5e7eb'
@@ -251,17 +251,17 @@ export default function BookingPage() {
         className="py-16 lg:py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 translate-x-1/2 -translate-y-1/2"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-6">
-              <div className="h-px w-8" style={{ background: '#748ec4' }} />
+              <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
                 Book a Consultation
               </span>
@@ -295,7 +295,7 @@ export default function BookingPage() {
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all"
                     style={{
-                      background: step >= s.n ? '#6f068d' : '#f0eef8',
+                      background: step >= s.n ? '#9B097A' : '#eaf3f4',
                       color: step >= s.n ? 'white' : '#6b7280',
                     }}
                   >
@@ -303,7 +303,7 @@ export default function BookingPage() {
                   </div>
                   <span
                     className="text-xs font-semibold hidden sm:block"
-                    style={{ color: step >= s.n ? '#6f068d' : '#9ca3af' }}
+                    style={{ color: step >= s.n ? '#9B097A' : '#9ca3af' }}
                   >
                     {s.label}
                   </span>
@@ -312,7 +312,7 @@ export default function BookingPage() {
                   <div
                     className="flex-1 h-px mx-2"
                     style={{
-                      background: step > s.n ? '#6f068d' : '#e5e7eb',
+                      background: step > s.n ? '#9B097A' : '#e5e7eb',
                     }}
                   />
                 )}
@@ -323,7 +323,7 @@ export default function BookingPage() {
       </div>
 
       {/* Main content */}
-      <div className="py-12 lg:py-16" style={{ background: '#f8f7ff' }}>
+      <div className="py-12 lg:py-16" style={{ background: '#f5f9fa' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* ── STEP 1: Choose Service ── */}
           {step === 1 && (
@@ -348,7 +348,7 @@ export default function BookingPage() {
                       className="text-left rounded-xl p-6 transition-all duration-200 hover:shadow-md"
                       style={{
                         background: selected ? s.color : 'white',
-                        border: `2px solid ${selected ? s.color : 'rgba(111,6,141,0.08)'}`,
+                        border: `2px solid ${selected ? s.color : 'rgba(155,9,122,0.08)'}`,
                         transform: selected ? 'scale(1.02)' : 'scale(1)',
                       }}
                     >
@@ -357,7 +357,7 @@ export default function BookingPage() {
                         style={{
                           background: selected
                             ? 'rgba(255,255,255,0.2)'
-                            : '#f0eef8',
+                            : '#eaf3f4',
                         }}
                       >
                         <Icon
@@ -431,7 +431,7 @@ export default function BookingPage() {
               </h2>
               <p className="text-gray-500 text-sm mb-8">
                 Select your preferred date and time for your{' '}
-                <strong style={{ color: '#6f068d' }}>
+                <strong style={{ color: '#9B097A' }}>
                   {selectedService?.title}
                 </strong>{' '}
                 consultation.
@@ -441,7 +441,7 @@ export default function BookingPage() {
                 {/* Calendar */}
                 <div
                   className="bg-white rounded-2xl p-6"
-                  style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+                  style={{ border: '1px solid rgba(155,9,122,0.08)' }}
                 >
                   {/* Month navigation */}
                   <div className="flex items-center justify-between mb-5">
@@ -497,10 +497,10 @@ export default function BookingPage() {
                           className="aspect-square rounded-lg text-xs font-medium transition-all flex items-center justify-center"
                           style={{
                             background: selected
-                              ? '#6f068d'
+                              ? '#9B097A'
                               : disabled
                                 ? 'transparent'
-                                : '#f8f7ff',
+                                : '#f5f9fa',
                             color: selected
                               ? 'white'
                               : disabled
@@ -524,7 +524,7 @@ export default function BookingPage() {
                 {/* Time slots */}
                 <div
                   className="bg-white rounded-2xl p-6"
-                  style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+                  style={{ border: '1px solid rgba(155,9,122,0.08)' }}
                 >
                   <h3
                     className="font-bold text-gray-900 text-sm mb-4"
@@ -559,9 +559,9 @@ export default function BookingPage() {
                             onClick={() => setSelectedTime(t)}
                             className="py-2.5 px-3 rounded-lg text-xs font-semibold transition-all"
                             style={{
-                              background: selected ? '#6f068d' : '#f8f7ff',
+                              background: selected ? '#9B097A' : '#f5f9fa',
                               color: selected ? 'white' : '#374151',
-                              border: `1px solid ${selected ? '#6f068d' : 'rgba(111,6,141,0.1)'}`,
+                              border: `1px solid ${selected ? '#9B097A' : 'rgba(155,9,122,0.1)'}`,
                             }}
                           >
                             {t}
@@ -578,15 +578,15 @@ export default function BookingPage() {
                 <div
                   className="mt-4 px-5 py-4 rounded-xl flex items-center gap-3"
                   style={{
-                    background: '#f0eef8',
-                    border: '1px solid rgba(111,6,141,0.15)',
+                    background: '#eaf3f4',
+                    border: '1px solid rgba(155,9,122,0.15)',
                   }}
                 >
-                  <CheckCircle size={16} style={{ color: '#6f068d' }} />
+                  <CheckCircle size={16} style={{ color: '#9B097A' }} />
                   <p className="text-sm text-gray-700">
-                    <strong style={{ color: '#6f068d' }}>{selectedDate}</strong>{' '}
+                    <strong style={{ color: '#9B097A' }}>{selectedDate}</strong>{' '}
                     at{' '}
-                    <strong style={{ color: '#6f068d' }}>{selectedTime}</strong>{' '}
+                    <strong style={{ color: '#9B097A' }}>{selectedTime}</strong>{' '}
                     selected
                   </p>
                 </div>
@@ -629,7 +629,7 @@ export default function BookingPage() {
 
               <div
                 className="bg-white rounded-2xl p-7"
-                style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+                style={{ border: '1px solid rgba(155,9,122,0.08)' }}
               >
                 {errorMsg && (
                   <div
@@ -648,7 +648,7 @@ export default function BookingPage() {
                 <div className="grid sm:grid-cols-2 gap-4 mb-4">
                   <div>
                     <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-                      Full Name <span style={{ color: '#6f068d' }}>*</span>
+                      Full Name <span style={{ color: '#9B097A' }}>*</span>
                     </label>
                     <div className="relative">
                       <User
@@ -669,7 +669,7 @@ export default function BookingPage() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-                      Email Address <span style={{ color: '#6f068d' }}>*</span>
+                      Email Address <span style={{ color: '#9B097A' }}>*</span>
                     </label>
                     <div className="relative">
                       <Mail
@@ -692,7 +692,7 @@ export default function BookingPage() {
 
                 <div className="mb-4">
                   <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-                    Phone Number <span style={{ color: '#6f068d' }}>*</span>
+                    Phone Number <span style={{ color: '#9B097A' }}>*</span>
                   </label>
                   <div className="relative">
                     <Phone
@@ -793,12 +793,12 @@ export default function BookingPage() {
               {/* Summary card */}
               <div
                 className="bg-white rounded-2xl overflow-hidden mb-6"
-                style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+                style={{ border: '1px solid rgba(155,9,122,0.08)' }}
               >
                 {/* Service header */}
                 <div
                   className="px-7 py-5 flex items-center gap-4"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
                   {selectedService && (
                     <>
@@ -848,9 +848,9 @@ export default function BookingPage() {
                       <div key={label} className="flex items-start gap-3">
                         <div
                           className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                          style={{ background: '#f0eef8' }}
+                          style={{ background: '#eaf3f4' }}
                         >
-                          <Icon size={13} style={{ color: '#6f068d' }} />
+                          <Icon size={13} style={{ color: '#9B097A' }} />
                         </div>
                         <div>
                           <p className="text-xs text-gray-400 font-medium">
@@ -867,7 +867,7 @@ export default function BookingPage() {
                   {form.message && (
                     <div
                       className="mt-4 p-4 rounded-lg"
-                      style={{ background: '#f8f7ff' }}
+                      style={{ background: '#f5f9fa' }}
                     >
                       <p className="text-xs text-gray-400 font-medium mb-1">
                         Notes
@@ -953,9 +953,9 @@ export default function BookingPage() {
             <div className="text-center py-10">
               <div
                 className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                style={{ background: '#f0eef8' }}
+                style={{ background: '#eaf3f4' }}
               >
-                <CheckCircle size={36} style={{ color: '#6f068d' }} />
+                <CheckCircle size={36} style={{ color: '#9B097A' }} />
               </div>
               <h2
                 className="text-3xl font-black text-gray-900 mb-3"
@@ -965,7 +965,7 @@ export default function BookingPage() {
               </h2>
               <p className="text-gray-500 leading-relaxed mb-3 max-w-md mx-auto">
                 Thank you <strong>{form.name}</strong>. Your request for a{' '}
-                <strong style={{ color: '#6f068d' }}>
+                <strong style={{ color: '#9B097A' }}>
                   {selectedService?.title}
                 </strong>{' '}
                 consultation on <strong>{selectedDate}</strong> at{' '}

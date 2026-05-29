@@ -71,22 +71,22 @@ export default function ContactPage() {
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 translate-x-1/2 -translate-y-1/2"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div
           className="absolute bottom-0 left-0 w-56 h-56 rounded-full opacity-10 -translate-x-1/2 translate-y-1/2"
-          style={{ background: '#170df2' }}
+          style={{ background: '#2D6198' }}
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl lg:max-w-xl">
             <div className="flex items-center gap-2 mb-6">
-              <div className="h-px w-8" style={{ background: '#748ec4' }} />
+              <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
                 Get In Touch
               </span>
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
                 }}
               />
               <img
@@ -142,9 +142,9 @@ export default function ContactPage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <Phone size={14} style={{ color: '#6f068d' }} />
+                  <Phone size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -166,9 +166,9 @@ export default function ContactPage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <Clock size={14} style={{ color: '#6f068d' }} />
+                  <Clock size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -197,9 +197,9 @@ export default function ContactPage() {
                 >
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: '#f0eef8' }}
+                    style={{ background: '#eaf3f4' }}
                   >
-                    <Icon size={18} style={{ color: '#6f068d' }} />
+                    <Icon size={18} style={{ color: '#9B097A' }} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
@@ -261,7 +261,7 @@ export default function ContactPage() {
             <div
               className="lg:col-span-2 rounded-2xl overflow-hidden shadow-sm"
               style={{
-                border: '1px solid rgba(111,6,141,0.08)',
+                border: '1px solid rgba(155,9,122,0.08)',
                 height: '420px',
               }}
             >
@@ -287,7 +287,7 @@ export default function ContactPage() {
                 className="rounded-2xl p-7 flex-1"
                 style={{
                   background:
-                    'linear-gradient(135deg, #6f068d 0%, #520568 100%)',
+                    'linear-gradient(135deg, #9B097A 0%, #74075B 100%)',
                 }}
               >
                 <div className="flex items-center gap-3 mb-5">
@@ -329,7 +329,7 @@ export default function ContactPage() {
                     <Phone
                       size={14}
                       className="flex-shrink-0"
-                      style={{ color: '#748ec4' }}
+                      style={{ color: '#59A2AF' }}
                     />
                     01244 565 227
                   </a>
@@ -340,7 +340,7 @@ export default function ContactPage() {
                     <Mail
                       size={14}
                       className="flex-shrink-0"
-                      style={{ color: '#748ec4' }}
+                      style={{ color: '#59A2AF' }}
                     />
                     info@primeedgeaccountants.co.uk
                   </a>
@@ -351,16 +351,16 @@ export default function ContactPage() {
               <div
                 className="rounded-2xl p-6"
                 style={{
-                  background: '#f8f7ff',
-                  border: '1px solid rgba(111,6,141,0.08)',
+                  background: '#f5f9fa',
+                  border: '1px solid rgba(155,9,122,0.08)',
                 }}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div
                     className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: '#f0eef8' }}
+                    style={{ background: '#eaf3f4' }}
                   >
-                    <Clock size={16} style={{ color: '#6f068d' }} />
+                    <Clock size={16} style={{ color: '#9B097A' }} />
                   </div>
                   <h3
                     className="font-bold text-gray-900 text-sm"
@@ -385,7 +385,7 @@ export default function ContactPage() {
                       <span
                         className="font-semibold"
                         style={{
-                          color: row.hours === 'Closed' ? '#9ca3af' : '#6f068d',
+                          color: row.hours === 'Closed' ? '#9ca3af' : '#9B097A',
                         }}
                       >
                         {row.hours}
@@ -440,14 +440,14 @@ export default function ContactPage() {
                     key={faq.q}
                     className="rounded-xl p-5"
                     style={{
-                      background: '#f8f7ff',
-                      border: '1px solid rgba(111,6,141,0.08)',
+                      background: '#f5f9fa',
+                      border: '1px solid rgba(155,9,122,0.08)',
                     }}
                   >
                     <div className="flex items-start gap-3">
                       <div
                         className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{ background: '#6f068d' }}
+                        style={{ background: '#9B097A' }}
                       >
                         <MessageSquare size={11} className="text-white" />
                       </div>
@@ -478,12 +478,12 @@ export default function ContactPage() {
         className="py-16 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute right-0 top-0 w-80 h-80 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2

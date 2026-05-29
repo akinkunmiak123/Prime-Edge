@@ -41,7 +41,7 @@ const stages = [
     ],
     outcome:
       'You launch with the right structure, the right registrations, and a clear picture of your finances from day one.',
-    color: '#6f068d',
+    color: '#9B097A',
     bg: '#ffffff',
   },
   {
@@ -63,8 +63,8 @@ const stages = [
     ],
     outcome:
       'You scale with financial clarity — knowing your numbers, controlling your cash, and optimising your tax position.',
-    color: '#170df2',
-    bg: '#f8f7ff',
+    color: '#2D6198',
+    bg: '#f5f9fa',
   },
   {
     id: 'established',
@@ -85,7 +85,7 @@ const stages = [
     ],
     outcome:
       'Your business operates at peak efficiency — with a tax strategy that protects profit and a financial framework that drives decisions.',
-    color: '#748ec4',
+    color: '#59A2AF',
     bg: '#ffffff',
   },
   {
@@ -107,8 +107,8 @@ const stages = [
     ],
     outcome:
       'Your restructure is handled efficiently, with minimal tax leakage and a structure built to support your next chapter.',
-    color: '#6f068d',
-    bg: '#f8f7ff',
+    color: '#9B097A',
+    bg: '#f5f9fa',
   },
   {
     id: 'expansion',
@@ -129,7 +129,7 @@ const stages = [
     ],
     outcome:
       'Your expansion is financially sound — with the right structures, the right compliance, and a clear view of group-wide performance.',
-    color: '#170df2',
+    color: '#2D6198',
     bg: '#ffffff',
   },
   {
@@ -151,8 +151,8 @@ const stages = [
     ],
     outcome:
       'You exit on your terms — with maximum value realised, tax minimised, and a smooth transition for all stakeholders.',
-    color: '#748ec4',
-    bg: '#f8f7ff',
+    color: '#59A2AF',
+    bg: '#f5f9fa',
   },
 ]
 
@@ -167,22 +167,22 @@ export default function LifecyclePage() {
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 translate-x-1/2 -translate-y-1/2"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div
           className="absolute bottom-0 left-0 w-56 h-56 rounded-full opacity-10 -translate-x-1/2 translate-y-1/2"
-          style={{ background: '#170df2' }}
+          style={{ background: '#2D6198' }}
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl lg:max-w-xl">
             <div className="flex items-center gap-2 mb-6">
-              <div className="h-px w-8" style={{ background: '#748ec4' }} />
+              <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
                 Supporting You at Every Stage
               </span>
@@ -227,7 +227,7 @@ export default function LifecyclePage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -235,7 +235,7 @@ export default function LifecyclePage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
                 }}
               />
               <img
@@ -256,9 +256,9 @@ export default function LifecyclePage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <CheckCircle size={14} style={{ color: '#6f068d' }} />
+                  <CheckCircle size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -280,9 +280,9 @@ export default function LifecyclePage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <Rocket size={14} style={{ color: '#6f068d' }} />
+                  <Rocket size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -312,7 +312,7 @@ export default function LifecyclePage() {
                 >
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center transition-all group-hover:scale-110"
-                    style={{ background: '#f0eef8' }}
+                    style={{ background: '#eaf3f4' }}
                   >
                     <Icon size={18} style={{ color: stage.color }} />
                   </div>
@@ -590,12 +590,12 @@ export default function LifecyclePage() {
         className="py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute right-0 top-0 w-80 h-80 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2

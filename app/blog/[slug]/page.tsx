@@ -24,10 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const categoryColors: Record<string, string> = {
-  Tax: '#6f068d',
-  Business: '#170df2',
-  VAT: '#748ec4',
-  Payroll: '#520568',
+  Tax: '#9B097A',
+  Business: '#2D6198',
+  VAT: '#59A2AF',
+  Payroll: '#74075B',
   General: '#6b7280',
 }
 
@@ -47,12 +47,12 @@ export default async function BlogPostPage({ params }: Props) {
         className="py-16 lg:py-24 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 translate-x-1/2 -translate-y-1/2"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Back link */}
@@ -103,7 +103,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ════════════════════════════════
           POST CONTENT
       ════════════════════════════════ */}
-      <section className="py-16" style={{ background: '#f8f7ff' }}>
+      <section className="py-16" style={{ background: '#f5f9fa' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Main content */}
@@ -126,10 +126,10 @@ export default async function BlogPostPage({ params }: Props) {
                   {
                     '--tw-prose-headings': '#0d0d0d',
                     '--tw-prose-body': '#4b5563',
-                    '--tw-prose-links': '#6f068d',
+                    '--tw-prose-links': '#9B097A',
                     '--tw-prose-bold': '#0d0d0d',
-                    '--tw-prose-bullets': '#6f068d',
-                    '--tw-prose-counters': '#6f068d',
+                    '--tw-prose-bullets': '#9B097A',
+                    '--tw-prose-counters': '#9B097A',
                   } as React.CSSProperties
                 }
                 dangerouslySetInnerHTML={{ __html: post.content }}
@@ -143,7 +143,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <div
                   className="rounded-xl p-6 text-white"
                   style={{
-                    background: 'linear-gradient(135deg, #6f068d, #520568)',
+                    background: 'linear-gradient(135deg, #9B097A, #74075B)',
                   }}
                 >
                   <h3
@@ -169,7 +169,7 @@ export default async function BlogPostPage({ params }: Props) {
                   className="rounded-xl p-5"
                   style={{
                     background: 'white',
-                    border: '1px solid rgba(111,6,141,0.08)',
+                    border: '1px solid rgba(155,9,122,0.08)',
                   }}
                 >
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">

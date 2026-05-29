@@ -161,24 +161,24 @@ export default async function HomePage() {
         className="relative overflow-hidden py-20 lg:py-32"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         {/* Decorative background circles */}
         <div
           className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 translate-x-1/2 -translate-y-1/2"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div
           className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10 -translate-x-1/2 translate-y-1/2"
-          style={{ background: '#170df2' }}
+          style={{ background: '#2D6198' }}
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             {/* Label */}
             <div className="flex items-center gap-2 mb-6">
-              <div className="h-px w-8" style={{ background: '#748ec4' }} />
+              <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
                 Chartered Certified Accountants — Cheltenham
               </span>
@@ -190,7 +190,7 @@ export default async function HomePage() {
               style={{ fontFamily: 'Merriweather, serif' }}
             >
               Accounting That Works{' '}
-              <span style={{ color: '#748ec4' }}>As Hard</span> As You Do
+              <span style={{ color: '#59A2AF' }}>As Hard</span> As You Do
             </h1>
 
             {/* Subheadline */}
@@ -226,7 +226,7 @@ export default async function HomePage() {
                   key={text}
                   className="flex items-center gap-2 text-white/70 text-sm"
                 >
-                  <Icon size={15} style={{ color: '#748ec4' }} />
+                  <Icon size={15} style={{ color: '#59A2AF' }} />
                   <span>{text}</span>
                 </div>
               ))}
@@ -242,7 +242,7 @@ export default async function HomePage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -250,7 +250,7 @@ export default async function HomePage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
                 }}
               />
               <img
@@ -271,9 +271,9 @@ export default async function HomePage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <CheckCircle size={14} style={{ color: '#6f068d' }} />
+                  <CheckCircle size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -295,9 +295,9 @@ export default async function HomePage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <Star size={14} fill="#6f068d" style={{ color: '#6f068d' }} />
+                  <Star size={14} fill="#9B097A" style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -323,7 +323,7 @@ export default async function HomePage() {
                   className="text-3xl sm:text-4xl font-black mb-1"
                   style={{
                     fontFamily: 'Merriweather, serif',
-                    color: '#6f068d',
+                    color: '#9B097A',
                   }}
                 >
                   {stat.value}
@@ -340,7 +340,7 @@ export default async function HomePage() {
       {/* ════════════════════════════════
           SERVICES
       ════════════════════════════════ */}
-      <section className="py-20 lg:py-28" style={{ background: '#f8f7ff' }}>
+      <section className="py-20 lg:py-28" style={{ background: '#f5f9fa' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section header */}
           <div className="text-center max-w-2xl mx-auto mb-14">
@@ -371,11 +371,11 @@ export default async function HomePage() {
                   {/* Icon */}
                   <div
                     className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary"
-                    style={{ background: '#f0eef8' }}
+                    style={{ background: '#eaf3f4' }}
                   >
                     <Icon
                       size={22}
-                      style={{ color: '#6f068d' }}
+                      style={{ color: '#9B097A' }}
                       className="group-hover:text-white transition-colors"
                     />
                   </div>
@@ -394,7 +394,7 @@ export default async function HomePage() {
                   {/* Arrow */}
                   <div
                     className="flex items-center gap-1 text-sm font-semibold mt-auto"
-                    style={{ color: '#6f068d' }}
+                    style={{ color: '#9B097A' }}
                   >
                     Learn more
                     <ChevronRight size={15} />
@@ -444,9 +444,9 @@ export default async function HomePage() {
                     <div key={reason.title} className="flex flex-col gap-3">
                       <div
                         className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={{ background: '#f0eef8' }}
+                        style={{ background: '#eaf3f4' }}
                       >
-                        <Icon size={18} style={{ color: '#6f068d' }} />
+                        <Icon size={18} style={{ color: '#9B097A' }} />
                       </div>
                       <div>
                         <h3 className="font-bold text-gray-900 text-sm mb-1">
@@ -468,13 +468,13 @@ export default async function HomePage() {
                 className="rounded-2xl p-10 text-white relative overflow-hidden"
                 style={{
                   background:
-                    'linear-gradient(135deg, #6f068d 0%, #520568 100%)',
+                    'linear-gradient(135deg, #9B097A 0%, #74075B 100%)',
                 }}
               >
                 {/* Decorative circle */}
                 <div
                   className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"
-                  style={{ background: '#748ec4' }}
+                  style={{ background: '#59A2AF' }}
                 />
                 <div className="relative z-10">
                   <div
@@ -501,7 +501,7 @@ export default async function HomePage() {
                       >
                         <CheckCircle
                           size={16}
-                          style={{ color: '#748ec4', flexShrink: 0 }}
+                          style={{ color: '#59A2AF', flexShrink: 0 }}
                         />
                         {point}
                       </div>
@@ -527,7 +527,7 @@ export default async function HomePage() {
       {/* ════════════════════════════════
           HOW IT WORKS
       ════════════════════════════════ */}
-      <section className="py-20 lg:py-28" style={{ background: '#f8f7ff' }}>
+      <section className="py-20 lg:py-28" style={{ background: '#f5f9fa' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="section-label">Getting Started</span>
@@ -549,7 +549,7 @@ export default async function HomePage() {
             <div
               className="hidden md:block absolute top-10 left-1/4 right-1/4 h-px"
               style={{
-                background: 'linear-gradient(90deg, #6f068d, #748ec4, #6f068d)',
+                background: 'linear-gradient(90deg, #9B097A, #59A2AF, #9B097A)',
               }}
             />
 
@@ -557,13 +557,13 @@ export default async function HomePage() {
               <div
                 key={step.number}
                 className="relative bg-white rounded-xl p-8 text-center shadow-sm"
-                style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+                style={{ border: '1px solid rgba(155,9,122,0.08)' }}
               >
                 {/* Step number */}
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 text-white font-black text-lg relative z-10"
                   style={{
-                    background: 'linear-gradient(135deg, #6f068d, #520568)',
+                    background: 'linear-gradient(135deg, #9B097A, #74075B)',
                     fontFamily: 'Merriweather, serif',
                   }}
                 >
@@ -616,8 +616,8 @@ export default async function HomePage() {
                     <Star
                       key={i}
                       size={14}
-                      fill="#6f068d"
-                      style={{ color: '#6f068d' }}
+                      fill="#9B097A"
+                      style={{ color: '#9B097A' }}
                     />
                   ))}
                 </div>
@@ -630,7 +630,7 @@ export default async function HomePage() {
                   {/* Avatar placeholder */}
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                    style={{ background: '#6f068d' }}
+                    style={{ background: '#9B097A' }}
                   >
                     {t.name.charAt(0)}
                   </div>
@@ -650,7 +650,7 @@ export default async function HomePage() {
       {/* ════════════════════════════════
           BLOG PREVIEW
       ════════════════════════════════ */}
-      <section className="py-20 lg:py-28" style={{ background: '#f8f7ff' }}>
+      <section className="py-20 lg:py-28" style={{ background: '#f5f9fa' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-14">
             <div>
@@ -666,7 +666,7 @@ export default async function HomePage() {
             <Link
               href="/blog"
               className="text-sm font-semibold flex items-center gap-1 flex-shrink-0"
-              style={{ color: '#6f068d' }}
+              style={{ color: '#9B097A' }}
             >
               View All Posts <ChevronRight size={15} />
             </Link>
@@ -685,7 +685,7 @@ export default async function HomePage() {
                   key={post.slug}
                   href={`/blog/${post.slug}`}
                   className="blog-card bg-white rounded-xl overflow-hidden"
-                  style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+                  style={{ border: '1px solid rgba(155,9,122,0.08)' }}
                 >
                   {/* Image or placeholder */}
                   {post.image ? (
@@ -700,12 +700,12 @@ export default async function HomePage() {
                     <div
                       className="h-44 flex items-center justify-center"
                       style={{
-                        background: 'linear-gradient(135deg, #f0eef8, #e8e4f5)',
+                        background: 'linear-gradient(135deg, #eaf3f4, #d9edf0)',
                       }}
                     >
                       <BookOpen
                         size={32}
-                        style={{ color: '#6f068d', opacity: 0.3 }}
+                        style={{ color: '#9B097A', opacity: 0.3 }}
                       />
                     </div>
                   )}
@@ -715,7 +715,7 @@ export default async function HomePage() {
                     <div className="flex items-center justify-between mb-3">
                       <span
                         className="text-xs font-semibold px-3 py-1 rounded-full"
-                        style={{ background: '#f0eef8', color: '#6f068d' }}
+                        style={{ background: '#eaf3f4', color: '#9B097A' }}
                       >
                         {post.category}
                       </span>
@@ -736,7 +736,7 @@ export default async function HomePage() {
 
                     <div
                       className="flex items-center gap-1 text-sm font-semibold mt-4"
-                      style={{ color: '#6f068d' }}
+                      style={{ color: '#9B097A' }}
                     >
                       Read more <ChevronRight size={14} />
                     </div>
@@ -755,13 +755,13 @@ export default async function HomePage() {
         className="py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         {/* Decorative circle */}
         <div
           className="absolute right-0 top-0 w-80 h-80 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">

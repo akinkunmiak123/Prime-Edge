@@ -36,7 +36,7 @@ const services = [
       'Management accounts and financial reporting',
       'VAT-ready records for seamless filing',
     ],
-    accent: '#6f068d',
+    accent: '#9B097A',
   },
   {
     id: 'accounts',
@@ -53,7 +53,7 @@ const services = [
       'Companies House and HMRC filing included',
       'Director loan account reconciliation',
     ],
-    accent: '#170df2',
+    accent: '#2D6198',
   },
   {
     id: 'payroll',
@@ -70,7 +70,7 @@ const services = [
       'Auto-enrolment pension administration',
       'P60s, P45s and payslip preparation',
     ],
-    accent: '#748ec4',
+    accent: '#59A2AF',
   },
   {
     id: 'tax',
@@ -87,7 +87,7 @@ const services = [
       'R&D tax relief claims',
       'HMRC enquiry support and representation',
     ],
-    accent: '#6f068d',
+    accent: '#9B097A',
   },
   {
     id: 'vat',
@@ -104,7 +104,7 @@ const services = [
       'Making Tax Digital (MTD) compliant filing',
       'VAT investigation support',
     ],
-    accent: '#170df2',
+    accent: '#2D6198',
   },
   {
     id: 'advisory',
@@ -121,7 +121,7 @@ const services = [
       'Business growth and scaling strategy',
       'Company formation and registered office services',
     ],
-    accent: '#748ec4',
+    accent: '#59A2AF',
   },
 ]
 
@@ -136,23 +136,23 @@ export default function ServicesPage() {
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         {/* Decorative circles */}
         <div
           className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 translate-x-1/2 -translate-y-1/2"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div
           className="absolute bottom-0 left-0 w-56 h-56 rounded-full opacity-10 -translate-x-1/2 translate-y-1/2"
-          style={{ background: '#170df2' }}
+          style={{ background: '#2D6198' }}
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl lg:max-w-xl">
             <div className="flex items-center gap-2 mb-6">
-              <div className="h-px w-8" style={{ background: '#748ec4' }} />
+              <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
                 What We Offer
               </span>
@@ -196,7 +196,7 @@ export default function ServicesPage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -204,7 +204,7 @@ export default function ServicesPage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
                 }}
               />
               <img
@@ -225,9 +225,9 @@ export default function ServicesPage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <CheckCircle size={14} style={{ color: '#6f068d' }} />
+                  <CheckCircle size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -249,9 +249,9 @@ export default function ServicesPage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <Briefcase size={14} style={{ color: '#6f068d' }} />
+                  <Briefcase size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">Fixed Fees</p>
@@ -276,7 +276,7 @@ export default function ServicesPage() {
               key={service.id}
               id={service.id}
               className="py-16 lg:py-24 border-b border-gray-100 scroll-mt-24"
-              style={{ background: isEven ? '#ffffff' : '#f8f7ff' }}
+              style={{ background: isEven ? '#ffffff' : '#f5f9fa' }}
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
@@ -290,7 +290,7 @@ export default function ServicesPage() {
                     <div className="flex items-center gap-4 mb-5">
                       <div
                         className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                        style={{ background: '#f0eef8' }}
+                        style={{ background: '#eaf3f4' }}
                       >
                         <Icon size={22} style={{ color: service.accent }} />
                       </div>
@@ -431,12 +431,12 @@ export default function ServicesPage() {
         className="py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute right-0 top-0 w-80 h-80 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2

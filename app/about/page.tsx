@@ -81,7 +81,7 @@ const milestones = [
     year: '2022',
     title: 'MTD Ready',
     description:
-      'Led our entire client base through HMRC\'s Making Tax Digital transition — ahead of the industry average.',
+      "Led our entire client base through HMRC's Making Tax Digital transition — ahead of the industry average.",
   },
   {
     year: '2024',
@@ -129,22 +129,22 @@ export default function AboutPage() {
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 translate-x-1/2 -translate-y-1/2"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div
           className="absolute bottom-0 left-0 w-56 h-56 rounded-full opacity-10 -translate-x-1/2 translate-y-1/2"
-          style={{ background: '#170df2' }}
+          style={{ background: '#2D6198' }}
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl lg:max-w-xl">
             <div className="flex items-center gap-2 mb-6">
-              <div className="h-px w-8" style={{ background: '#748ec4' }} />
+              <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
                 Our Story
               </span>
@@ -171,7 +171,7 @@ export default function AboutPage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -179,7 +179,7 @@ export default function AboutPage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
                 }}
               />
               <img
@@ -200,9 +200,9 @@ export default function AboutPage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <CheckCircle size={14} style={{ color: '#6f068d' }} />
+                  <CheckCircle size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -224,9 +224,9 @@ export default function AboutPage() {
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#f0eef8' }}
+                  style={{ background: '#eaf3f4' }}
                 >
-                  <Award size={14} style={{ color: '#6f068d' }} />
+                  <Award size={14} style={{ color: '#9B097A' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">10+ Years</p>
@@ -285,7 +285,7 @@ export default function AboutPage() {
                     <CheckCircle
                       size={15}
                       className="flex-shrink-0"
-                      style={{ color: '#6f068d' }}
+                      style={{ color: '#9B097A' }}
                     />
                     {c}
                   </div>
@@ -299,12 +299,12 @@ export default function AboutPage() {
                 className="rounded-2xl p-10 text-white relative overflow-hidden"
                 style={{
                   background:
-                    'linear-gradient(135deg, #6f068d 0%, #520568 100%)',
+                    'linear-gradient(135deg, #9B097A 0%, #74075B 100%)',
                 }}
               >
                 <div
                   className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"
-                  style={{ background: '#748ec4' }}
+                  style={{ background: '#59A2AF' }}
                 />
                 <div className="relative z-10">
                   <p
@@ -347,7 +347,7 @@ export default function AboutPage() {
       {/* ════════════════════════════════
           OUR VALUES
       ════════════════════════════════ */}
-      <section className="py-20 lg:py-28" style={{ background: '#f8f7ff' }}>
+      <section className="py-20 lg:py-28" style={{ background: '#f5f9fa' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="section-label">What Drives Us</span>
@@ -374,9 +374,9 @@ export default function AboutPage() {
                 >
                   <div
                     className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                    style={{ background: '#f0eef8' }}
+                    style={{ background: '#eaf3f4' }}
                   >
-                    <Icon size={22} style={{ color: '#6f068d' }} />
+                    <Icon size={22} style={{ color: '#9B097A' }} />
                   </div>
                   <h3
                     className="font-bold text-gray-900 mb-2"
@@ -421,7 +421,7 @@ export default function AboutPage() {
               className="absolute left-8 top-0 bottom-0 w-px hidden sm:block"
               style={{
                 background:
-                  'linear-gradient(180deg, #6f068d, #748ec4, #6f068d)',
+                  'linear-gradient(180deg, #9B097A, #59A2AF, #9B097A)',
               }}
             />
 
@@ -432,7 +432,7 @@ export default function AboutPage() {
                   <div
                     className="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-xs flex-shrink-0 relative z-10 shadow-md"
                     style={{
-                      background: index % 2 === 0 ? '#6f068d' : '#748ec4',
+                      background: index % 2 === 0 ? '#9B097A' : '#59A2AF',
                       fontFamily: 'Merriweather, serif',
                     }}
                   >
@@ -443,8 +443,8 @@ export default function AboutPage() {
                   <div
                     className="flex-1 rounded-xl p-6 mb-2"
                     style={{
-                      background: '#f8f7ff',
-                      border: '1px solid rgba(111,6,141,0.08)',
+                      background: '#f5f9fa',
+                      border: '1px solid rgba(155,9,122,0.08)',
                     }}
                   >
                     <h3
@@ -467,7 +467,7 @@ export default function AboutPage() {
       {/* ════════════════════════════════
           WHY WORK WITH US
       ════════════════════════════════ */}
-      <section className="py-20 lg:py-28" style={{ background: '#f8f7ff' }}>
+      <section className="py-20 lg:py-28" style={{ background: '#f5f9fa' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="section-label">Why Choose Us</span>
@@ -494,9 +494,9 @@ export default function AboutPage() {
                 >
                   <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4"
-                    style={{ background: '#f0eef8' }}
+                    style={{ background: '#eaf3f4' }}
                   >
-                    <Icon size={24} style={{ color: '#6f068d' }} />
+                    <Icon size={24} style={{ color: '#9B097A' }} />
                   </div>
                   <h3
                     className="font-bold text-gray-900 mb-2"
@@ -521,12 +521,12 @@ export default function AboutPage() {
         className="py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
         }}
       >
         <div
           className="absolute right-0 top-0 w-80 h-80 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"
-          style={{ background: '#748ec4' }}
+          style={{ background: '#59A2AF' }}
         />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2

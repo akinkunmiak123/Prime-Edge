@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <footer style={{ background: '#0d0d0d' }} className="text-white">
       {/* ── Top CTA Banner ── */}
-      <div style={{ background: '#6f068d' }} className="py-12">
+      <div style={{ background: '#9B097A' }} className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -131,7 +131,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-9 h-9 rounded-lg flex items-center justify-center transition-all text-white/60 hover:text-white hover:bg-[#6f068d]"
+                    className="w-9 h-9 rounded-lg flex items-center justify-center transition-all text-white/60 hover:text-white hover:bg-[#9B097A]"
                     style={{ background: 'rgba(255,255,255,0.08)' }}
                   >
                     {icon}
@@ -157,7 +157,7 @@ export default function Footer() {
                     >
                       <span
                         className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors group-hover:bg-white"
-                        style={{ background: '#6f068d' }}
+                        style={{ background: '#9B097A' }}
                       />
                       {s.label}
                     </Link>
@@ -183,7 +183,7 @@ export default function Footer() {
                     >
                       <span
                         className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors group-hover:bg-white"
-                        style={{ background: '#6f068d' }}
+                        style={{ background: '#9B097A' }}
                       />
                       {l.label}
                     </Link>
@@ -209,7 +209,7 @@ export default function Footer() {
                     <Phone
                       size={15}
                       className="mt-0.5 flex-shrink-0"
-                      style={{ color: '#748ec4' }}
+                      style={{ color: '#59A2AF' }}
                     />
                     <span>01244 565 227</span>
                   </a>
@@ -222,7 +222,7 @@ export default function Footer() {
                     <Mail
                       size={15}
                       className="mt-0.5 flex-shrink-0"
-                      style={{ color: '#748ec4' }}
+                      style={{ color: '#59A2AF' }}
                     />
                     <span>info@primeedgeaccountants.co.uk</span>
                   </a>
@@ -232,7 +232,7 @@ export default function Footer() {
                     <MapPin
                       size={15}
                       className="mt-0.5 flex-shrink-0"
-                      style={{ color: '#748ec4' }}
+                      style={{ color: '#59A2AF' }}
                     />
                     <span>
                       Cheltenham, Gloucestershire
@@ -247,8 +247,8 @@ export default function Footer() {
               <div
                 className="mt-6 p-4 rounded-lg"
                 style={{
-                  background: 'rgba(111,6,141,0.15)',
-                  border: '1px solid rgba(111,6,141,0.3)',
+                  background: 'rgba(155,9,122,0.15)',
+                  border: '1px solid rgba(155,9,122,0.3)',
                 }}
               >
                 <p className="text-white/70 text-xs leading-relaxed">

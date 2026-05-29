@@ -83,7 +83,7 @@ export default function AdminPage() {
   }
 
   const categoryColors: Record<string, string> = {
-    Tax: '#6f068d',
+    Tax: '#9B097A',
     Business: '#170df2',
     VAT: '#748ec4',
     Payroll: '#520568',
@@ -101,7 +101,7 @@ export default function AdminPage() {
               <div className="h-6 w-px bg-gray-200" />
               <span
                 className="text-sm font-bold tracking-wide"
-                style={{ color: '#6f068d', fontFamily: 'Merriweather, serif' }}
+                style={{ color: '#9B097A', fontFamily: 'Merriweather, serif' }}
               >
                 Admin Dashboard
               </span>
@@ -181,14 +181,14 @@ export default function AdminPage() {
                 style={{ border: '1px solid rgba(111,6,141,0.08)' }}
               >
                 <div className="flex items-center gap-3 mb-1">
-                  <Icon size={15} style={{ color: '#6f068d' }} />
+                  <Icon size={15} style={{ color: '#9B097A' }} />
                   <span className="text-xs text-gray-400">{stat.label}</span>
                 </div>
                 <div
                   className="text-2xl font-black"
                   style={{
                     fontFamily: 'Merriweather, serif',
-                    color: '#6f068d',
+                    color: '#9B097A',
                   }}
                 >
                   {stat.value}
@@ -206,7 +206,7 @@ export default function AdminPage() {
           >
             <div
               className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin mx-auto"
-              style={{ borderColor: '#6f068d', borderTopColor: 'transparent' }}
+              style={{ borderColor: '#9B097A', borderTopColor: 'transparent' }}
             />
             <p className="text-gray-400 text-sm mt-3">Loading posts...</p>
           </div>
@@ -219,7 +219,7 @@ export default function AdminPage() {
               className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4"
               style={{ background: '#f0eef8' }}
             >
-              <FileText size={28} style={{ color: '#6f068d' }} />
+              <FileText size={28} style={{ color: '#9B097A' }} />
             </div>
             <h3
               className="font-bold text-gray-900 mb-2"
@@ -275,7 +275,7 @@ export default function AdminPage() {
                         className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                         style={{ background: '#f0eef8' }}
                       >
-                        <FileText size={14} style={{ color: '#6f068d' }} />
+                        <FileText size={14} style={{ color: '#9B097A' }} />
                       </div>
                     )}
                     <div className="min-w-0">

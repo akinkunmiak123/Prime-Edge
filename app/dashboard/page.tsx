@@ -59,17 +59,17 @@ export default function DashboardLoginPage() {
       className="min-h-screen flex items-center justify-center px-4"
       style={{
         background:
-          'linear-gradient(135deg, #6f068d 0%, #520568 50%, #0d0d0d 100%)',
+          'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
       }}
     >
       {/* Decorative circles */}
       <div
         className="fixed top-0 right-0 w-96 h-96 rounded-full opacity-10 translate-x-1/2 -translate-y-1/2 pointer-events-none"
-        style={{ background: '#748ec4' }}
+        style={{ background: '#59A2AF' }}
       />
       <div
         className="fixed bottom-0 left-0 w-64 h-64 rounded-full opacity-10 -translate-x-1/2 translate-y-1/2 pointer-events-none"
-        style={{ background: '#170df2' }}
+        style={{ background: '#2D6198' }}
       />
 
       <div className="w-full max-w-md relative z-10">
@@ -78,7 +78,7 @@ export default function DashboardLoginPage() {
           {/* Top bar */}
           <div
             className="px-8 py-6 flex flex-col items-center"
-            style={{ background: '#f8f7ff' }}
+            style={{ background: '#f5f9fa' }}
           >
             <Image src={logo} alt="Prime Edge" height={48} className="mb-3" />
             <p className="text-xs text-gray-400 font-medium tracking-wide uppercase">
@@ -131,8 +131,8 @@ export default function DashboardLoginPage() {
                   autoComplete="email"
                   className="w-full pl-10 pr-4 py-3 rounded-lg text-sm border border-gray-200 focus:outline-none transition-all"
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#6f068d'
-                    e.target.style.boxShadow = '0 0 0 3px rgba(111,6,141,0.1)'
+                    e.target.style.borderColor = '#9B097A'
+                    e.target.style.boxShadow = '0 0 0 3px rgba(155,9,122,0.1)'
                   }}
                   onBlur={(e) => {
                     e.target.style.borderColor = '#e5e7eb'
@@ -161,8 +161,8 @@ export default function DashboardLoginPage() {
                   autoComplete="current-password"
                   className="w-full pl-10 pr-12 py-3 rounded-lg text-sm border border-gray-200 focus:outline-none transition-all"
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#6f068d'
-                    e.target.style.boxShadow = '0 0 0 3px rgba(111,6,141,0.1)'
+                    e.target.style.borderColor = '#9B097A'
+                    e.target.style.boxShadow = '0 0 0 3px rgba(155,9,122,0.1)'
                   }}
                   onBlur={(e) => {
                     e.target.style.borderColor = '#e5e7eb'
