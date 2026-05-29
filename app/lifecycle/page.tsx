@@ -469,7 +469,7 @@ export default function LifecyclePage() {
                           <div
                             className="absolute inset-0"
                             style={{
-                              background: `linear-gradient(135deg, ${stage.color}dd 0%, ${stage.color}aa 100%)`,
+                              background: `linear-gradient(135deg, ${stage.color}66 0%, ${stage.color}44 100%)`,
                             }}
                           />
                           {/* Content over image */}

@@ -359,7 +359,7 @@ export default function ServicesPage() {
                           <div
                             className="absolute inset-0"
                             style={{
-                              background: `linear-gradient(135deg, ${service.accent}cc 0%, ${service.accent}99 100%)`,
+                              background: `linear-gradient(135deg, ${service.accent}60 0%, ${service.accent}40 100%)`,
                             }}
                           />
                           {/* Content over image */}
