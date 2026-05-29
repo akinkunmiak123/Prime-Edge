@@ -67,7 +67,7 @@ export default function FloatingButtons() {
         <div
           className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110 active:scale-95"
           style={{
-            background: 'linear-gradient(135deg, #6f068d, #520568)',
+            background: 'linear-gradient(135deg, #9B097A, #9B097A)',
             boxShadow: '0 4px 20px rgba(111,6,141,0.4)',
           }}
         >
