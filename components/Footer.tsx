@@ -61,11 +61,15 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Column 1 — Brand */}
             <div className="lg:col-span-1">
-              <div className="mb-5">
-                <Image src={logo} alt="Prime Edge Accountants" height={72} />
+              <div className="mb-0 max-w-[120px] sm:max-w-[150px] md:max-w-[220px]">
+                <Image
+                  src={logo}
+                  alt="Prime Edge Accountants"
+                  className="w-full h-auto"
+                />
               </div>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
-                Trusted accounting and financial advisory services for
+                Trusted accounting and fina cial advisory services for
                 individuals and businesses across Gloucestershire and beyond.
               </p>
 
