@@ -259,7 +259,7 @@ export default function BookingPage() {
           style={{ background: '#59A2AF' }}
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl lg:max-w-xl">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
@@ -276,6 +276,81 @@ export default function BookingPage() {
               Choose your service, pick a date and time, and we will get back to
               you to confirm your booking and arrange payment.
             </p>
+          </div>
+
+          {/* Hero image */}
+          <div className="hidden lg:flex items-center justify-center absolute right-8 top-1/2 -translate-y-1/2 xl:right-16">
+            <div
+              className="relative w-72 h-72 xl:w-80 xl:h-80"
+              style={{
+                borderRadius: '50% 45% 55% 50% / 45% 55% 45% 55%',
+                overflow: 'hidden',
+                border: '3px solid rgba(255,255,255,0.15)',
+                boxShadow:
+                  '0 0 60px rgba(116,142,196,0.3), 0 0 120px rgba(111,6,141,0.2)',
+              }}
+            >
+              <div
+                className="absolute inset-0 z-10"
+                style={{
+                  background:
+                    'linear-gradient(135deg, rgba(111,6,141,0.15) 0%, rgba(23,13,242,0.1) 100%)',
+                }}
+              />
+              <img
+                src="/Book-A-Session.avif"
+                alt="Book a consultation with Prime Edge"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Floating badge 1 */}
+            <div
+              className="absolute -bottom-4 -left-6 px-4 py-3 rounded-xl shadow-lg z-20"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#f0eef8' }}
+                >
+                  <Calendar size={14} style={{ color: '#6f068d' }} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900">
+                    Easy Booking
+                  </p>
+                  <p className="text-xs text-gray-400">4 Simple Steps</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating badge 2 */}
+            <div
+              className="absolute -top-4 -right-4 px-4 py-3 rounded-xl shadow-lg z-20"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#f0eef8' }}
+                >
+                  <CheckCircle size={14} style={{ color: '#6f068d' }} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900">
+                    Free Advisory
+                  </p>
+                  <p className="text-xs text-gray-400">No Obligation</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

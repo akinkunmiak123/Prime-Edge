@@ -72,11 +72,23 @@ export default function Navbar() {
             // className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-20'}`}
           >
             {/* Logo */}
-            <Link href="/" className="flex items-center group">
+            <Link href="/" className="hidden lg:flex items-center group">
               <Image
                 src={logo}
                 alt="Prime Edge Accountants logo"
                 className="h-auto sm:h-19 lg:h-23 w-auto"
+                priority
+              />
+            </Link>
+
+            {/* Mobile Logo */}
+            <Link href="/" className="flex lg:hidden items-center group">
+              <Image
+                src={logo}
+                alt="Prime Edge Accountants logo"
+                width={100}
+                height={90}
+                className="h-26 w-auto"
                 priority
               />
             </Link>
@@ -156,6 +168,7 @@ export default function Navbar() {
             <Image
               src={logo}
               alt="Prime Edge Accountants logo"
+              width={120}
               height={40}
               className="h-9 w-auto"
             />
