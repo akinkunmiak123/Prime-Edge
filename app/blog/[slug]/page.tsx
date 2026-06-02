@@ -31,6 +31,113 @@ const categoryColors: Record<string, string> = {
   General: '#6b7280',
 }
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
+function formatInlineMarkdown(text: string) {
+  return escapeHtml(text)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/__(.+?)__/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/_(.+?)_/g, '<em>$1</em>')
+    .replace(
+      /\[(.*?)\]\((.*?)\)/g,
+      '<a href="$2" style="color: #9B097A; text-decoration: underline">$1</a>',
+    )
+}
+
+function markdownToHtml(content: string) {
+  const lines = content.replace(/\r\n/g, '\n').split('\n')
+  let output = ''
+  let listType: 'ul' | 'ol' | null = null
+  let listOpen = false
+
+  const closeList = () => {
+    if (listOpen) {
+      output += `</${listType}>`
+      listOpen = false
+      listType = null
+    }
+  }
+
+  const flushParagraph = (paragraph: string) => {
+    if (!paragraph.trim()) return
+    output += `<p>${formatInlineMarkdown(paragraph.trim())}</p>`
+  }
+
+  let paragraph = ''
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim()
+    if (!line) {
+      flushParagraph(paragraph)
+      paragraph = ''
+      closeList()
+      continue
+    }
+
+    const headingMatch = line.match(/^(#{1,6})\s+(.*)$/)
+    const blockquoteMatch = line.match(/^>\s+(.*)$/)
+    const unorderedMatch = line.match(/^[-*+]\s+(.*)$/)
+    const orderedMatch = line.match(/^\d+\.\s+(.*)$/)
+
+    if (headingMatch) {
+      flushParagraph(paragraph)
+      paragraph = ''
+      closeList()
+      const level = headingMatch[1].length
+      output += `<h${level}>${formatInlineMarkdown(headingMatch[2])}</h${level}>`
+      continue
+    }
+
+    if (blockquoteMatch) {
+      flushParagraph(paragraph)
+      paragraph = ''
+      closeList()
+      output += `<blockquote style="border-left: 4px solid #9B097A; padding-left: 1rem; font-style: italic; color: #4b5563">${formatInlineMarkdown(blockquoteMatch[1])}</blockquote>`
+      continue
+    }
+
+    if (unorderedMatch) {
+      flushParagraph(paragraph)
+      paragraph = ''
+      if (listType !== 'ul') {
+        closeList()
+        listType = 'ul'
+        output += '<ul class="list-disc ml-6 space-y-2">'
+        listOpen = true
+      }
+      output += `<li>${formatInlineMarkdown(unorderedMatch[1])}</li>`
+      continue
+    }
+
+    if (orderedMatch) {
+      flushParagraph(paragraph)
+      paragraph = ''
+      if (listType !== 'ol') {
+        closeList()
+        listType = 'ol'
+        output += '<ol class="list-decimal ml-6 space-y-2">'
+        listOpen = true
+      }
+      output += `<li>${formatInlineMarkdown(orderedMatch[1])}</li>`
+      continue
+    }
+
+    paragraph += `${paragraph ? ' ' : ''}${line}`
+  }
+
+  flushParagraph(paragraph)
+  closeList()
+  return output
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
   const post = await getPostBySlug(slug)
@@ -107,7 +214,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Main content */}
-            <article className="lg:col-span-2">
+            <article className="lg:col-span-2 overflow-visible">
               {/* Featured image */}
               {post.image && (
                 <div className="mb-8 rounded-xl overflow-hidden">
@@ -119,20 +226,26 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
               )}
 
-              {/* MDX content */}
+              {/* Post content */}
               <div
-                className="prose prose-lg max-w-none"
+                className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-headings:mb-6 prose-headings:mt-8 prose-p:leading-8 prose-p:mb-6 prose-li:mb-3 prose-blockquote:border-l-4 prose-blockquote:pl-4 prose-a:underline hover:prose-a:no-underline"
                 style={
                   {
                     '--tw-prose-headings': '#0d0d0d',
                     '--tw-prose-body': '#4b5563',
                     '--tw-prose-links': '#9B097A',
                     '--tw-prose-bold': '#0d0d0d',
+                    '--tw-prose-code-bg': 'rgba(155, 9, 122, 0.1)',
+                    '--tw-prose-code': '#9B097A',
                     '--tw-prose-bullets': '#9B097A',
                     '--tw-prose-counters': '#9B097A',
+                    '--tw-prose-hr': '#e5e7eb',
+                    '--tw-prose-quote-borders': '#9B097A',
                   } as React.CSSProperties
                 }
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                dangerouslySetInnerHTML={{
+                  __html: markdownToHtml(post.content),
+                }}
               />
             </article>
 
