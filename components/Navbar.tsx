@@ -76,7 +76,7 @@ export default function Navbar() {
               <Image
                 src={logo}
                 alt="Prime Edge Accountants logo"
-                className="h-auto sm:h-19 lg:h-23 w-auto"
+                className="h-auto lg:h-27 w-auto"
                 priority
               />
             </Link>
@@ -88,7 +88,7 @@ export default function Navbar() {
                 alt="Prime Edge Accountants logo"
                 width={100}
                 height={90}
-                className="h-22 w-auto"
+                className="h-26 w-auto"
                 priority
               />
             </Link>

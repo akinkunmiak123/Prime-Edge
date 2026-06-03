@@ -239,15 +239,15 @@ export default function Footer() {
                       style={{ color: '#59A2AF' }}
                     />
                     <span>
-                      Cheltenham, Gloucestershire
+                      Based in Gloucestershire
                       <br />
-                      England & Wales
+                      Serving clients across the UK
                     </span>
                   </div>
                 </li>
               </ul>
 
-              {/* Office Hours Box */}
+              {/* Availability Box */}
               <div
                 className="mt-6 p-4 rounded-lg"
                 style={{
@@ -257,11 +257,13 @@ export default function Footer() {
               >
                 <p className="text-white/70 text-xs leading-relaxed">
                   <span className="text-white font-semibold block mb-1">
-                    Office Hours
+                    Response Hours
                   </span>
                   Mon – Fri: 9:00am – 5:30pm
                   <br />
-                  Sat: By appointment only
+                  <span className="text-white/50">
+                    We typically reply within a few hours
+                  </span>
                 </p>
               </div>
             </div>
@@ -273,8 +275,8 @@ export default function Footer() {
       <div className="py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/40 text-xs">
-            © {new Date().getFullYear()} Prime Edge Chartered Certified
-            Accountants. All rights reserved.
+            © {new Date().getFullYear()} Prime Edge Certified Accountants. All
+            rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

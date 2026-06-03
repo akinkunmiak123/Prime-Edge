@@ -81,7 +81,7 @@ export default function FloatingButtons() {
         style={{
           opacity: showWhatsApp ? 1 : 0,
           transform: showWhatsApp ? 'translateY(0)' : 'translateY(16px)',
-          pointerEvents: showWhatsApp ? 'auto' : 'none', // ✅ whole wrapper disabled
+          pointerEvents: 'none', // ✅ always none on wrapper
         }}
       >
         {/* Chat popup card */}
@@ -92,7 +92,7 @@ export default function FloatingButtons() {
             transform: waChatOpen
               ? 'scale(1) translateY(0)'
               : 'scale(0.85) translateY(8px)',
-            pointerEvents: waChatOpen ? 'auto' : 'none', // ✅ card disabled when closed
+            pointerEvents: waChatOpen ? 'auto' : 'none',
           }}
         >
           <div
@@ -177,8 +177,9 @@ export default function FloatingButtons() {
         <button
           onClick={() => setWaChatOpen(!waChatOpen)}
           aria-label="Chat on WhatsApp"
-          className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-200 hover:scale-110 active:scale-95 relative pointer-events-auto"
+          className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-200 hover:scale-110 active:scale-95 relative"
           style={{
+            pointerEvents: showWhatsApp ? 'auto' : 'none', // ✅ moved here from wrapper
             background: '#25D366',
             boxShadow: '0 4px 24px rgba(37,211,102,0.45)',
           }}

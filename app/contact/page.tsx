@@ -4,8 +4,12 @@ import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with Prime Edge Chartered Certified Accountants. Book a free discovery call, send us a message, or visit us in Cheltenham.',
+    'Get in touch with Prime Edge Chartered Certified Accountants. Drop us a WhatsApp, send an email, or book a free discovery call — we respond fast.',
 }
+const message = encodeURIComponent(
+  "Hi, I'd like to find out more about your services and get a free quote.",
+)
+
 
 const contactDetails = [
   {
@@ -23,21 +27,20 @@ const contactDetails = [
     description: 'We reply within one business day',
   },
   {
-    icon: MapPin,
-    label: 'Location',
-    value: '62,Symphony Road,Cheltenham GL51 6GJ',
-    href: null,
-    description: 'Serving clients across England & Wales',
+    icon: MessageSquare,
+    label: 'WhatsApp',
+    value: 'Message us on WhatsApp',
+    href: 'https://wa.me/441244565227?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20your%20services.',
+    description: 'Quickest way to reach us',
   },
   {
     icon: Clock,
-    label: 'Office Hours',
-    value: 'Mon – Fri: 9:00am – 5:30pm',
+    label: 'Response Time',
+    value: 'Within 1 Business Day',
     href: null,
-    description: 'Saturday by appointment only',
+    description: 'Mon – Fri, 9:00am – 5:30pm',
   },
 ]
-
 const faqs = [
   {
     q: 'How quickly can you take me on as a client?',
@@ -183,6 +186,46 @@ export default function ContactPage() {
       </section>
 
       {/* ════════════════════════════════
+    QUICK CONTACT STRIP
+════════════════════════════════ */}
+      <section className="py-6 border-b border-gray-100 bg-white sticky top-0 z-30 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-gray-500 text-sm font-medium">
+              In a hurry? Reach us instantly to get a free quote:
+            </p>
+            <div className="flex gap-3 flex-wrap justify-center">
+              <a
+                href="https://wa.me/441244565227?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
+                style={{ background: '#25D366' }}
+              >
+                {/* WhatsApp icon */}
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                WhatsApp Us
+              </a>
+              <a
+                href="mailto:info@primeedgeaccountants.co.uk"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:opacity-90"
+                style={{ background: '#eaf3f4', color: '#9B097A' }}
+              >
+                <Mail size={15} />
+                Send an Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════
           CONTACT DETAILS ROW
       ════════════════════════════════ */}
       <section className="py-12 bg-white border-b border-gray-100">
@@ -227,177 +270,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          LOCATION MAP
-      ════════════════════════════════ */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
-            <div>
-              <span className="section-label">Find Us</span>
-              <div className="purple-rule" />
-              <h2
-                className="text-3xl sm:text-4xl font-black text-gray-900"
-                style={{ fontFamily: 'Merriweather, serif' }}
-              >
-                Our Location
-              </h2>
-            </div>
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=62+Symphony+Road+Cheltenham+GL51+6GJ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary flex-shrink-0"
-            >
-              <MapPin size={16} />
-              Get Directions
-            </a>
-          </div>
-
-          {/* Map + address card */}
-          <div className="grid lg:grid-cols-3 gap-6">
-            {/* Map embed */}
-            <div
-              className="lg:col-span-2 rounded-2xl overflow-hidden shadow-sm"
-              style={{
-                border: '1px solid rgba(155,9,122,0.08)',
-                height: '420px',
-              }}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.1!2d-2.0823!3d51.8994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s62%20Symphony%20Road%2C%20Cheltenham%2C%20GL51%206GJ!5e0!3m2!1sen!2suk!4v1"
-                width="100%"
-                height="100%"
-                style={{
-                  border: 0,
-                  filter: 'hue-rotate(240deg) saturate(0.7) brightness(0.95)',
-                }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Prime Edge Accountants location"
-              />
-            </div>
-
-            {/* Address card */}
-            <div className="flex flex-col gap-4">
-              {/* Address */}
-              <div
-                className="rounded-2xl p-7 flex-1"
-                style={{
-                  background:
-                    'linear-gradient(135deg, #9B097A 0%, #74075B 100%)',
-                }}
-              >
-                <div className="flex items-center gap-3 mb-5">
-                  <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'rgba(255,255,255,0.15)' }}
-                  >
-                    <MapPin size={18} className="text-white" />
-                  </div>
-                  <h3
-                    className="font-bold text-white text-base"
-                    style={{ fontFamily: 'Merriweather, serif' }}
-                  >
-                    Office Address
-                  </h3>
-                </div>
-
-                <div className="space-y-1 mb-6">
-                  <p className="text-white font-semibold text-sm">
-                    Prime Edge Accountants
-                  </p>
-                  <p className="text-white/70 text-sm">62 Symphony Road</p>
-                  <p className="text-white/70 text-sm">Cheltenham</p>
-                  <p className="text-white/70 text-sm">GL51 6GJ</p>
-                  <p className="text-white/70 text-sm">England</p>
-                </div>
-
-                <div
-                  className="h-px w-full mb-5"
-                  style={{ background: 'rgba(255,255,255,0.15)' }}
-                />
-
-                {/* Contact details */}
-                <div className="space-y-3">
-                  <a
-                    href="tel:01244565227"
-                    className="flex items-center gap-3 text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    <Phone
-                      size={14}
-                      className="flex-shrink-0"
-                      style={{ color: '#59A2AF' }}
-                    />
-                    01244 565 227
-                  </a>
-                  <a
-                    href="mailto:info@primeedgeaccountants.co.uk"
-                    className="flex items-center gap-3 text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    <Mail
-                      size={14}
-                      className="flex-shrink-0"
-                      style={{ color: '#59A2AF' }}
-                    />
-                    info@primeedgeaccountants.co.uk
-                  </a>
-                </div>
-              </div>
-
-              {/* Hours card */}
-              <div
-                className="rounded-2xl p-6"
-                style={{
-                  background: '#f5f9fa',
-                  border: '1px solid rgba(155,9,122,0.08)',
-                }}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: '#eaf3f4' }}
-                  >
-                    <Clock size={16} style={{ color: '#9B097A' }} />
-                  </div>
-                  <h3
-                    className="font-bold text-gray-900 text-sm"
-                    style={{ fontFamily: 'Merriweather, serif' }}
-                  >
-                    Office Hours
-                  </h3>
-                </div>
-                <div className="space-y-2">
-                  {[
-                    { day: 'Monday – Friday', hours: '9:00am – 5:30pm' },
-                    { day: 'Saturday', hours: 'By appointment only' },
-                    { day: 'Sunday', hours: 'Closed' },
-                  ].map((row) => (
-                    <div
-                      key={row.day}
-                      className="flex items-center justify-between text-xs"
-                    >
-                      <span className="text-gray-500 font-medium">
-                        {row.day}
-                      </span>
-                      <span
-                        className="font-semibold"
-                        style={{
-                          color: row.hours === 'Closed' ? '#9ca3af' : '#9B097A',
-                        }}
-                      >
-                        {row.hours}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/*Location here*/}
 
       {/* ════════════════════════════════
           CONTACT FORM + FAQ
@@ -497,10 +370,15 @@ export default function ContactPage() {
             finances and how we can help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:01244565227" className="btn-white text-base px-8 py-4">
-              <Phone size={18} />
-              Call 01244 565 227
+            <a
+              href={`https://wa.me/441244565227?text=${message}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-white text-base px-8 py-4"
+            >
+              WhatsApp Us Now
             </a>
+
             <a
               href="mailto:info@primeedgeaccountants.co.uk"
               className="btn-outline text-base px-8 py-4"

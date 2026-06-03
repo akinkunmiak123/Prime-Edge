@@ -72,7 +72,7 @@ const services = [
 
 const stats = [
   { value: '200+', label: 'Clients Served' },
-  { value: '10+', label: 'Years Experience' },
+  { value: '1+', label: 'Years Experience' },
   { value: '6', label: 'Core Services' },
   { value: '98%', label: 'Client Retention' },
 ]
@@ -180,7 +180,7 @@ export default async function HomePage() {
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
-                Chartered Certified Accountants — Cheltenham
+                Certified Accountants — Cheltenham
               </span>
             </div>
 
@@ -207,11 +207,11 @@ export default async function HomePage() {
                 <ArrowRight size={18} />
               </Link>
               <Link
-                href="/services"
+                href="/contact"
                 className="btn-outline text-base px-7 py-4"
                 style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white' }}
               >
-                Explore Our Services
+                Get a Free Quote
               </Link>
             </div>
 
@@ -405,9 +405,13 @@ export default async function HomePage() {
           </div>
 
           {/* View all link */}
-          <div className="text-center mt-10">
+          <div className="text-center mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/services" className="btn-outline">
               View All Services
+              <ArrowRight size={16} />
+            </Link>
+            <Link href="/book" className="btn-primary">
+              Book Free Discovery Call
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -481,7 +485,7 @@ export default async function HomePage() {
                     className="text-5xl font-black mb-2"
                     style={{ fontFamily: 'Merriweather, serif' }}
                   >
-                    10+
+                    1+
                   </div>
                   <div className="text-white/80 text-lg mb-8">
                     Years Helping UK Businesses Thrive
@@ -644,6 +648,26 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
+          {/* CTA nudge after social proof */}
+          <div className="text-center mt-12">
+            <p className="text-gray-500 text-sm mb-4">
+              Ready to experience the same results?
+            </p>
+            <Link href="/book" className="btn-primary">
+              Book Your Free Discovery Call
+              <ArrowRight size={16} />
+            </Link>
+            <p className="text-gray-400 text-xs mt-3">
+              Not ready to book?{' '}
+              <Link
+                href="/contact"
+                style={{ color: '#9B097A' }}
+                className="font-semibold underline underline-offset-2"
+              >
+                Send us a quick message instead
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -773,8 +797,12 @@ export default async function HomePage() {
             Let&apos;s Talk About Your Business
           </h2>
           <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-            Book a free, no-obligation discovery call with one of our experts.
-            We will listen, advise, and show you exactly how we can help.
+            Book a free, no-obligation discovery call, or simply drop us a
+            message — we will get back to you promptly. You can also call us on{' '}
+            <a href="tel:01244565227" className="text-white font-semibold">
+              01244 565 227
+            </a>
+            .
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -782,14 +810,14 @@ export default async function HomePage() {
               <Calendar size={18} />
               Book Free Discovery Call
             </Link>
-            <a
-              href="tel:01244565227"
+            <Link
+              href="/contact"
               className="btn-outline text-base px-8 py-4"
               style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white' }}
             >
               <Phone size={18} />
-              Call 01244 565 227
-            </a>
+              Get a Free Quote
+            </Link>
           </div>
         </div>
       </section>
