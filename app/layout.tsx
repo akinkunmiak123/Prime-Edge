@@ -3,6 +3,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingButtons from '@/components/FloatingButtons'
+import AnalyticsProvider from '@/components/AnalyticsProvider'
 
 export const metadata: Metadata = {
   title: {
@@ -62,6 +63,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingButtons />
+        <AnalyticsProvider />
       </body>
     </html>
   )

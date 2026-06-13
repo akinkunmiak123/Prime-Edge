@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail, MapPin } from 'lucide-react'
@@ -278,7 +279,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Prime Edge Certified Accountants. All
             rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 flex-wrap justify-center">
             <Link
               href="/privacy-policy"
               className="text-white/40 text-xs hover:text-white/70 transition-colors"
@@ -286,11 +287,20 @@ export default function Footer() {
               Privacy Policy
             </Link>
             <Link
-              href="/contact"
+              href="/terms-of-service"
               className="text-white/40 text-xs hover:text-white/70 transition-colors"
             >
               Terms of Service
             </Link>
+            <button
+              onClick={() => {
+                localStorage.removeItem('pe_cookie_consent')
+                window.location.reload()
+              }}
+              className="text-white/40 text-xs hover:text-white/70 transition-colors"
+            >
+              Cookie Preferences
+            </button>
           </div>
         </div>
       </div>
