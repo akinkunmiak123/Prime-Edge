@@ -74,7 +74,7 @@ export default function ContactPage() {
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div
@@ -116,7 +116,7 @@ export default function ContactPage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(45,97,152,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -124,7 +124,7 @@ export default function ContactPage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(45,97,152,0.15) 0%, rgba(89,162,175,0.1) 100%)',
                 }}
               />
               <img
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <Phone size={14} style={{ color: '#9B097A' }} />
+                  <Phone size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -171,7 +171,7 @@ export default function ContactPage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <Clock size={14} style={{ color: '#9B097A' }} />
+                  <Clock size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -215,7 +215,7 @@ export default function ContactPage() {
               <a
                 href="mailto:info@primeedgeaccountants.co.uk"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:opacity-90"
-                style={{ background: '#eaf3f4', color: '#9B097A' }}
+                style={{ background: '#eaf3f4', color: '#2D6198' }}
               >
                 <Mail size={15} />
                 Send an Email
@@ -242,7 +242,7 @@ export default function ContactPage() {
                     className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                     style={{ background: '#eaf3f4' }}
                   >
-                    <Icon size={18} style={{ color: '#9B097A' }} />
+                    <Icon size={18} style={{ color: '#2D6198' }} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
@@ -314,13 +314,13 @@ export default function ContactPage() {
                     className="rounded-xl p-5"
                     style={{
                       background: '#f5f9fa',
-                      border: '1px solid rgba(155,9,122,0.08)',
+                      border: '1px solid rgba(45,97,152,0.08)',
                     }}
                   >
                     <div className="flex items-start gap-3">
                       <div
                         className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{ background: '#9B097A' }}
+                        style={{ background: '#2D6198' }}
                       >
                         <MessageSquare size={11} className="text-white" />
                       </div>
@@ -351,7 +351,7 @@ export default function ContactPage() {
         className="py-16 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div
@@ -378,7 +378,6 @@ export default function ContactPage() {
             >
               WhatsApp Us Now
             </a>
-
             <a
               href="mailto:info@primeedgeaccountants.co.uk"
               className="btn-outline text-base px-8 py-4"

@@ -24,10 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const categoryColors: Record<string, string> = {
-  Tax: '#9B097A',
-  Business: '#2D6198',
-  VAT: '#59A2AF',
-  Payroll: '#74075B',
+  Tax: '#2D6198',
+  Business: '#59A2AF',
+  VAT: '#1E4A73',
+  Payroll: '#85C4CE',
   General: '#6b7280',
 }
 
@@ -48,7 +48,7 @@ function formatInlineMarkdown(text: string) {
     .replace(/_(.+?)_/g, '<em>$1</em>')
     .replace(
       /\[(.*?)\]\((.*?)\)/g,
-      '<a href="$2" style="color: #9B097A; text-decoration: underline">$1</a>',
+      '<a href="$2" style="color: #2D6198; text-decoration: underline">$1</a>',
     )
 }
 
@@ -100,7 +100,7 @@ function markdownToHtml(content: string) {
       flushParagraph(paragraph)
       paragraph = ''
       closeList()
-      output += `<blockquote style="border-left: 4px solid #9B097A; padding-left: 1rem; font-style: italic; color: #4b5563">${formatInlineMarkdown(blockquoteMatch[1])}</blockquote>`
+      output += `<blockquote style="border-left: 4px solid #2D6198; padding-left: 1rem; font-style: italic; color: #4b5563">${formatInlineMarkdown(blockquoteMatch[1])}</blockquote>`
       continue
     }
 
@@ -154,7 +154,7 @@ export default async function BlogPostPage({ params }: Props) {
         className="py-16 lg:py-24 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div
@@ -233,14 +233,14 @@ export default async function BlogPostPage({ params }: Props) {
                   {
                     '--tw-prose-headings': '#0d0d0d',
                     '--tw-prose-body': '#4b5563',
-                    '--tw-prose-links': '#9B097A',
+                    '--tw-prose-links': '#2D6198',
                     '--tw-prose-bold': '#0d0d0d',
-                    '--tw-prose-code-bg': 'rgba(155, 9, 122, 0.1)',
-                    '--tw-prose-code': '#9B097A',
-                    '--tw-prose-bullets': '#9B097A',
-                    '--tw-prose-counters': '#9B097A',
+                    '--tw-prose-code-bg': 'rgba(45, 97, 152, 0.1)',
+                    '--tw-prose-code': '#2D6198',
+                    '--tw-prose-bullets': '#2D6198',
+                    '--tw-prose-counters': '#2D6198',
                     '--tw-prose-hr': '#e5e7eb',
-                    '--tw-prose-quote-borders': '#9B097A',
+                    '--tw-prose-quote-borders': '#2D6198',
                   } as React.CSSProperties
                 }
                 dangerouslySetInnerHTML={{
@@ -256,7 +256,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <div
                   className="rounded-xl p-6 text-white"
                   style={{
-                    background: 'linear-gradient(135deg, #9B097A, #74075B)',
+                    background: 'linear-gradient(135deg, #2D6198, #1E4A73)',
                   }}
                 >
                   <h3
@@ -282,7 +282,7 @@ export default async function BlogPostPage({ params }: Props) {
                   className="rounded-xl p-5"
                   style={{
                     background: 'white',
-                    border: '1px solid rgba(155,9,122,0.08)',
+                    border: '1px solid rgba(45,97,152,0.08)',
                   }}
                 >
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">

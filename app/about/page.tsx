@@ -87,7 +87,7 @@ const milestones = [
     year: '2024',
     title: '200+ Clients',
     description:
-      'Reached a milestone of over 200 active clients across Gloucestershire and beyond, with a 98% retention rate.',
+      'Reached a milestone of over 200 active clients across England and Wales, with a 98% retention rate.',
   },
 ]
 
@@ -129,7 +129,7 @@ export default function AboutPage() {
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div
@@ -157,8 +157,8 @@ export default function AboutPage() {
             </h1>
             <p className="text-white/75 text-lg leading-relaxed">
               We are a Cheltenham-based firm of Chartered Certified Accountants
-              dedicated to helping individuals and businesses across
-              Gloucestershire and the UK manage their finances with confidence.
+              dedicated to helping individuals and businesses across England and
+              Wales manage their finances with confidence.
             </p>
           </div>
 
@@ -171,7 +171,7 @@ export default function AboutPage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(45,97,152,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -179,7 +179,7 @@ export default function AboutPage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(45,97,152,0.15) 0%, rgba(89,162,175,0.1) 100%)',
                 }}
               />
               <img
@@ -202,7 +202,7 @@ export default function AboutPage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <CheckCircle size={14} style={{ color: '#9B097A' }} />
+                  <CheckCircle size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -226,10 +226,10 @@ export default function AboutPage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <Award size={14} style={{ color: '#9B097A' }} />
+                  <Award size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-900">10+ Years</p>
+                  <p className="text-xs font-bold text-gray-900">16+ Years</p>
                   <p className="text-xs text-gray-400">Trusted Experience</p>
                 </div>
               </div>
@@ -262,10 +262,10 @@ export default function AboutPage() {
                   only available to large corporations.
                 </p>
                 <p>
-                  Based in Cheltenham, we serve clients across Gloucestershire
-                  and throughout the UK. From sole traders just starting out to
-                  established limited companies, we tailor our services to meet
-                  your specific needs and goals.
+                  Based in Cheltenham, we serve clients across England and
+                  Wales. From sole traders just starting out to established
+                  limited companies, we tailor our services to meet your
+                  specific needs and goals.
                 </p>
                 <p>
                   What sets us apart is our commitment to being proactive. We do
@@ -285,7 +285,7 @@ export default function AboutPage() {
                     <CheckCircle
                       size={15}
                       className="flex-shrink-0"
-                      style={{ color: '#9B097A' }}
+                      style={{ color: '#2D6198' }}
                     />
                     {c}
                   </div>
@@ -299,7 +299,7 @@ export default function AboutPage() {
                 className="rounded-2xl p-10 text-white relative overflow-hidden"
                 style={{
                   background:
-                    'linear-gradient(135deg, #9B097A 0%, #74075B 100%)',
+                    'linear-gradient(135deg, #2D6198 0%, #1E4A73 100%)',
                 }}
               >
                 <div
@@ -316,7 +316,7 @@ export default function AboutPage() {
                   <div className="grid grid-cols-2 gap-6 mb-8">
                     {[
                       { value: '200+', label: 'Active Clients' },
-                      { value: '1+', label: 'Years Experience' },
+                      { value: '16+', label: 'Years Experience' },
                       { value: '98%', label: 'Client Retention' },
                       { value: '6', label: 'Core Services' },
                     ].map((stat) => (
@@ -376,7 +376,7 @@ export default function AboutPage() {
                     className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
                     style={{ background: '#eaf3f4' }}
                   >
-                    <Icon size={22} style={{ color: '#9B097A' }} />
+                    <Icon size={22} style={{ color: '#2D6198' }} />
                   </div>
                   <h3
                     className="font-bold text-gray-900 mb-2"
@@ -409,8 +409,8 @@ export default function AboutPage() {
               A Decade of Growth
             </h2>
             <p className="text-gray-500 leading-relaxed">
-              From our founding in Cheltenham to serving clients across the UK —
-              here are some of the milestones along the way.
+              From our founding in Cheltenham to serving clients across England
+              and Wales — here are some of the milestones along the way.
             </p>
           </div>
 
@@ -421,7 +421,7 @@ export default function AboutPage() {
               className="absolute left-8 top-0 bottom-0 w-px hidden sm:block"
               style={{
                 background:
-                  'linear-gradient(180deg, #9B097A, #59A2AF, #9B097A)',
+                  'linear-gradient(180deg, #2D6198, #59A2AF, #2D6198)',
               }}
             />
 
@@ -432,7 +432,7 @@ export default function AboutPage() {
                   <div
                     className="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-xs flex-shrink-0 relative z-10 shadow-md"
                     style={{
-                      background: index % 2 === 0 ? '#9B097A' : '#59A2AF',
+                      background: index % 2 === 0 ? '#2D6198' : '#59A2AF',
                       fontFamily: 'Merriweather, serif',
                     }}
                   >
@@ -444,7 +444,7 @@ export default function AboutPage() {
                     className="flex-1 rounded-xl p-6 mb-2"
                     style={{
                       background: '#f5f9fa',
-                      border: '1px solid rgba(155,9,122,0.08)',
+                      border: '1px solid rgba(45,97,152,0.08)',
                     }}
                   >
                     <h3
@@ -496,7 +496,7 @@ export default function AboutPage() {
                     className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4"
                     style={{ background: '#eaf3f4' }}
                   >
-                    <Icon size={24} style={{ color: '#9B097A' }} />
+                    <Icon size={24} style={{ color: '#2D6198' }} />
                   </div>
                   <h3
                     className="font-bold text-gray-900 mb-2"
@@ -521,7 +521,7 @@ export default function AboutPage() {
         className="py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div

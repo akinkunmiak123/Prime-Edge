@@ -7,6 +7,7 @@ import {
   TrendingUp,
   Receipt,
   Briefcase,
+  FileCheck,
   CheckCircle,
   ArrowRight,
   Phone,
@@ -36,7 +37,7 @@ const services = [
       'Management accounts and financial reporting',
       'VAT-ready records for seamless filing',
     ],
-    accent: '#9B097A',
+    accent: '#2D6198',
   },
   {
     id: 'accounts',
@@ -53,7 +54,7 @@ const services = [
       'Companies House and HMRC filing included',
       'Director loan account reconciliation',
     ],
-    accent: '#2D6198',
+    accent: '#59A2AF',
   },
   {
     id: 'payroll',
@@ -70,7 +71,7 @@ const services = [
       'Auto-enrolment pension administration',
       'P60s, P45s and payslip preparation',
     ],
-    accent: '#59A2AF',
+    accent: '#2D6198',
   },
   {
     id: 'tax',
@@ -87,7 +88,24 @@ const services = [
       'R&D tax relief claims',
       'HMRC enquiry support and representation',
     ],
-    accent: '#9B097A',
+    accent: '#59A2AF',
+  },
+  {
+    id: 'self-assessment',
+    icon: FileCheck,
+    title: 'Self Assessment Tax Return',
+    image: '/services/Self-Assessment.avif',
+    tagline: 'Filed accurately. Filed on time.',
+    description:
+      'Self assessment can be stressful and the penalties for getting it wrong — or getting it in late — are steep. We prepare and file your personal tax return for you, making sure every allowance and relief you are entitled to is claimed.',
+    points: [
+      'Full self-assessment return preparation and filing',
+      'Income from employment, dividends, property and savings',
+      'Sole trader and freelancer tax returns',
+      'Allowable expenses and tax relief maximisation',
+      'HMRC deadline management to avoid penalties',
+    ],
+    accent: '#2D6198',
   },
   {
     id: 'vat',
@@ -104,7 +122,7 @@ const services = [
       'Making Tax Digital (MTD) compliant filing',
       'VAT investigation support',
     ],
-    accent: '#2D6198',
+    accent: '#59A2AF',
   },
   {
     id: 'advisory',
@@ -121,7 +139,7 @@ const services = [
       'Business growth and scaling strategy',
       'Company formation and registered office services',
     ],
-    accent: '#59A2AF',
+    accent: '#2D6198',
   },
 ]
 
@@ -136,7 +154,7 @@ export default function ServicesPage() {
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         {/* Decorative circles */}
@@ -196,7 +214,7 @@ export default function ServicesPage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(45,97,152,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -204,7 +222,7 @@ export default function ServicesPage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(45,97,152,0.15) 0%, rgba(89,162,175,0.1) 100%)',
                 }}
               />
               <img
@@ -227,11 +245,11 @@ export default function ServicesPage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <CheckCircle size={14} style={{ color: '#9B097A' }} />
+                  <CheckCircle size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
-                    6 Core Services
+                    7 Core Services
                   </p>
                   <p className="text-xs text-gray-400">Fully Tailored</p>
                 </div>
@@ -251,7 +269,7 @@ export default function ServicesPage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <Briefcase size={14} style={{ color: '#9B097A' }} />
+                  <Briefcase size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">Fixed Fees</p>
@@ -431,7 +449,7 @@ export default function ServicesPage() {
         className="py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div

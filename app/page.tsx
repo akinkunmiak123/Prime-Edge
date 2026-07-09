@@ -72,7 +72,7 @@ const services = [
 
 const stats = [
   { value: '200+', label: 'Clients Served' },
-  { value: '1+', label: 'Years Experience' },
+  { value: '16+', label: 'Years Experience' },
   { value: '6', label: 'Core Services' },
   { value: '98%', label: 'Client Retention' },
 ]
@@ -161,7 +161,7 @@ export default async function HomePage() {
         className="relative overflow-hidden py-20 lg:py-32"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         {/* Decorative background circles */}
@@ -180,7 +180,7 @@ export default async function HomePage() {
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
-                Certified Accountants — Cheltenham
+                TAX • ACCOUNTING • PAYROLL • BUSINESS ADVICE
               </span>
             </div>
 
@@ -242,7 +242,7 @@ export default async function HomePage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(45,97,152,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -250,7 +250,7 @@ export default async function HomePage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(45,97,152,0.15) 0%, rgba(89,162,175,0.1) 100%)',
                 }}
               />
               <img
@@ -273,7 +273,7 @@ export default async function HomePage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <CheckCircle size={14} style={{ color: '#9B097A' }} />
+                  <CheckCircle size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -297,7 +297,7 @@ export default async function HomePage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <Star size={14} fill="#9B097A" style={{ color: '#9B097A' }} />
+                  <Star size={14} fill="#2D6198" style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -323,7 +323,7 @@ export default async function HomePage() {
                   className="text-3xl sm:text-4xl font-black mb-1"
                   style={{
                     fontFamily: 'Merriweather, serif',
-                    color: '#9B097A',
+                    color: '#2D6198',
                   }}
                 >
                   {stat.value}
@@ -375,7 +375,7 @@ export default async function HomePage() {
                   >
                     <Icon
                       size={22}
-                      style={{ color: '#9B097A' }}
+                      style={{ color: '#2D6198' }}
                       className="group-hover:text-white transition-colors"
                     />
                   </div>
@@ -394,7 +394,7 @@ export default async function HomePage() {
                   {/* Arrow */}
                   <div
                     className="flex items-center gap-1 text-sm font-semibold mt-auto"
-                    style={{ color: '#9B097A' }}
+                    style={{ color: '#2D6198' }}
                   >
                     Learn more
                     <ChevronRight size={15} />
@@ -450,7 +450,7 @@ export default async function HomePage() {
                         className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                         style={{ background: '#eaf3f4' }}
                       >
-                        <Icon size={18} style={{ color: '#9B097A' }} />
+                        <Icon size={18} style={{ color: '#2D6198' }} />
                       </div>
                       <div>
                         <h3 className="font-bold text-gray-900 text-sm mb-1">
@@ -472,7 +472,7 @@ export default async function HomePage() {
                 className="rounded-2xl p-10 text-white relative overflow-hidden"
                 style={{
                   background:
-                    'linear-gradient(135deg, #9B097A 0%, #74075B 100%)',
+                    'linear-gradient(135deg, #2D6198 0%, #1E4A73 100%)',
                 }}
               >
                 {/* Decorative circle */}
@@ -485,7 +485,7 @@ export default async function HomePage() {
                     className="text-5xl font-black mb-2"
                     style={{ fontFamily: 'Merriweather, serif' }}
                   >
-                    1+
+                    16+
                   </div>
                   <div className="text-white/80 text-lg mb-8">
                     Years Helping UK Businesses Thrive
@@ -553,7 +553,7 @@ export default async function HomePage() {
             <div
               className="hidden md:block absolute top-10 left-1/4 right-1/4 h-px"
               style={{
-                background: 'linear-gradient(90deg, #9B097A, #59A2AF, #9B097A)',
+                background: 'linear-gradient(90deg, #2D6198, #59A2AF, #2D6198)',
               }}
             />
 
@@ -561,13 +561,13 @@ export default async function HomePage() {
               <div
                 key={step.number}
                 className="relative bg-white rounded-xl p-8 text-center shadow-sm"
-                style={{ border: '1px solid rgba(155,9,122,0.08)' }}
+                style={{ border: '1px solid rgba(45,97,152,0.08)' }}
               >
                 {/* Step number */}
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 text-white font-black text-lg relative z-10"
                   style={{
-                    background: 'linear-gradient(135deg, #9B097A, #74075B)',
+                    background: 'linear-gradient(135deg, #2D6198, #1E4A73)',
                     fontFamily: 'Merriweather, serif',
                   }}
                 >
@@ -620,8 +620,8 @@ export default async function HomePage() {
                     <Star
                       key={i}
                       size={14}
-                      fill="#9B097A"
-                      style={{ color: '#9B097A' }}
+                      fill="#2D6198"
+                      style={{ color: '#2D6198' }}
                     />
                   ))}
                 </div>
@@ -634,7 +634,7 @@ export default async function HomePage() {
                   {/* Avatar placeholder */}
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                    style={{ background: '#9B097A' }}
+                    style={{ background: '#2D6198' }}
                   >
                     {t.name.charAt(0)}
                   </div>
@@ -661,7 +661,7 @@ export default async function HomePage() {
               Not ready to book?{' '}
               <Link
                 href="/contact"
-                style={{ color: '#9B097A' }}
+                style={{ color: '#2D6198' }}
                 className="font-semibold underline underline-offset-2"
               >
                 Send us a quick message instead
@@ -690,7 +690,7 @@ export default async function HomePage() {
             <Link
               href="/blog"
               className="text-sm font-semibold flex items-center gap-1 flex-shrink-0"
-              style={{ color: '#9B097A' }}
+              style={{ color: '#2D6198' }}
             >
               View All Posts <ChevronRight size={15} />
             </Link>
@@ -709,7 +709,7 @@ export default async function HomePage() {
                   key={post.slug}
                   href={`/blog/${post.slug}`}
                   className="blog-card bg-white rounded-xl overflow-hidden"
-                  style={{ border: '1px solid rgba(155,9,122,0.08)' }}
+                  style={{ border: '1px solid rgba(45,97,152,0.08)' }}
                 >
                   {/* Image or placeholder */}
                   {post.image ? (
@@ -729,7 +729,7 @@ export default async function HomePage() {
                     >
                       <BookOpen
                         size={32}
-                        style={{ color: '#9B097A', opacity: 0.3 }}
+                        style={{ color: '#2D6198', opacity: 0.3 }}
                       />
                     </div>
                   )}
@@ -739,7 +739,7 @@ export default async function HomePage() {
                     <div className="flex items-center justify-between mb-3">
                       <span
                         className="text-xs font-semibold px-3 py-1 rounded-full"
-                        style={{ background: '#eaf3f4', color: '#9B097A' }}
+                        style={{ background: '#eaf3f4', color: '#2D6198' }}
                       >
                         {post.category}
                       </span>
@@ -760,7 +760,7 @@ export default async function HomePage() {
 
                     <div
                       className="flex items-center gap-1 text-sm font-semibold mt-4"
-                      style={{ color: '#9B097A' }}
+                      style={{ color: '#2D6198' }}
                     >
                       Read more <ChevronRight size={14} />
                     </div>
@@ -779,7 +779,7 @@ export default async function HomePage() {
         className="py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         {/* Decorative circle */}

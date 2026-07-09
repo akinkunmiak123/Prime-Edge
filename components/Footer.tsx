@@ -70,7 +70,7 @@ export default function Footer() {
                 />
               </div>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
-                Trusted accounting and fina cial advisory services for
+                Trusted accounting and financial advisory services for
                 individuals and businesses across Gloucestershire and beyond.
               </p>
 

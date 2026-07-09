@@ -41,8 +41,8 @@ const stages = [
     ],
     outcome:
       'You launch with the right structure, the right registrations, and a clear picture of your finances from day one.',
-    color: '#9B097A',
-    bg: '#ffffff',
+    color: '#000000',
+    bg: '#dff2f7',
   },
   {
     id: 'growth',
@@ -63,7 +63,7 @@ const stages = [
     ],
     outcome:
       'You scale with financial clarity — knowing your numbers, controlling your cash, and optimising your tax position.',
-    color: '#2D6198',
+    color: '#000000',
     bg: '#f5f9fa',
   },
   {
@@ -85,8 +85,8 @@ const stages = [
     ],
     outcome:
       'Your business operates at peak efficiency — with a tax strategy that protects profit and a financial framework that drives decisions.',
-    color: '#59A2AF',
-    bg: '#ffffff',
+    color: '#000000',
+    bg: '#dff2f7',
   },
   {
     id: 'restructure',
@@ -107,7 +107,7 @@ const stages = [
     ],
     outcome:
       'Your restructure is handled efficiently, with minimal tax leakage and a structure built to support your next chapter.',
-    color: '#9B097A',
+    color: '#000000',
     bg: '#f5f9fa',
   },
   {
@@ -129,8 +129,8 @@ const stages = [
     ],
     outcome:
       'Your expansion is financially sound — with the right structures, the right compliance, and a clear view of group-wide performance.',
-    color: '#2D6198',
-    bg: '#ffffff',
+    color: '#000000',
+    bg: '#dff2f7',
   },
   {
     id: 'exit',
@@ -151,7 +151,7 @@ const stages = [
     ],
     outcome:
       'You exit on your terms — with maximum value realised, tax minimised, and a smooth transition for all stakeholders.',
-    color: '#59A2AF',
+    color: '#000000',
     bg: '#f5f9fa',
   },
 ]
@@ -167,7 +167,7 @@ export default function LifecyclePage() {
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div
@@ -198,24 +198,6 @@ export default function LifecyclePage() {
               Edge provides the right financial support at every stage of your
               business journey. We grow with you.
             </p>
-
-            {/* Stage jump links */}
-            <div className="flex flex-wrap gap-2">
-              {stages.map((s) => (
-                <a
-                  key={s.id}
-                  href={`#${s.id}`}
-                  className="text-xs font-medium px-4 py-2 rounded-full transition-all"
-                  style={{
-                    background: 'rgba(255,255,255,0.12)',
-                    color: 'white',
-                    border: '1px solid rgba(255,255,255,0.2)',
-                  }}
-                >
-                  {s.title}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Hero image */}
@@ -227,7 +209,7 @@ export default function LifecyclePage() {
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(45,97,152,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -235,7 +217,7 @@ export default function LifecyclePage() {
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(45,97,152,0.15) 0%, rgba(89,162,175,0.1) 100%)',
                 }}
               />
               <img
@@ -258,7 +240,7 @@ export default function LifecyclePage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <CheckCircle size={14} style={{ color: '#9B097A' }} />
+                  <CheckCircle size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -282,7 +264,7 @@ export default function LifecyclePage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <Rocket size={14} style={{ color: '#9B097A' }} />
+                  <Rocket size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -464,12 +446,37 @@ export default function LifecyclePage() {
                             src={stage.image}
                             alt={stage.title}
                             className="absolute inset-0 w-full h-full object-cover"
+                            style={{
+                              /* Increase brightness to make the image clearer.
+       Change 1.15 to:
+       1.0  = original
+       1.1  = slightly brighter
+       1.2  = brighter
+       1.3+ = very bright
+    */
+                              filter: 'brightness(1.15)',
+                            }}
                           />
-                          {/* Dark overlay */}
+                          {/* 
+  IMAGE OVERLAY
+  Increase/decrease these opacity values to control how visible
+  the background image is.
+
+  Current:
+  20 = very light overlay (image is much clearer)
+  10 = even lighter at the bottom
+
+  If you want the image darker later:
+  33, 44, 55, 66...
+*/}
                           <div
                             className="absolute inset-0"
                             style={{
-                              background: `linear-gradient(135deg, ${stage.color}66 0%, ${stage.color}44 100%)`,
+                              background: `linear-gradient(
+      135deg,
+      ${stage.color}99 0%,
+      ${stage.color}99 100%
+    )`,
                             }}
                           />
                           {/* Content over image */}
@@ -590,7 +597,7 @@ export default function LifecyclePage() {
         className="py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div

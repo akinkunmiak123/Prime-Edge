@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 }
 
 const categoryColors: Record<string, string> = {
-  Tax: '#9B097A',
-  Business: '#2D6198',
-  VAT: '#59A2AF',
-  Payroll: '#74075B',
+  Tax: '#2D6198',
+  Business: '#59A2AF',
+  VAT: '#1E4A73',
+  Payroll: '#85C4CE',
   General: '#6b7280',
 }
 
@@ -47,7 +47,7 @@ export default async function BlogPage({
         className="py-14 lg:py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div
@@ -83,7 +83,7 @@ export default async function BlogPage({
                 overflow: 'hidden',
                 border: '3px solid rgba(255,255,255,0.15)',
                 boxShadow:
-                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(155,9,122,0.2)',
+                  '0 0 60px rgba(89,162,175,0.3), 0 0 120px rgba(45,97,152,0.2)',
               }}
             >
               {/* Overlay tint */}
@@ -91,7 +91,7 @@ export default async function BlogPage({
                 className="absolute inset-0 z-10"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(155,9,122,0.15) 0%, rgba(45,97,152,0.1) 100%)',
+                    'linear-gradient(135deg, rgba(45,97,152,0.15) 0%, rgba(89,162,175,0.1) 100%)',
                 }}
               />
               <img
@@ -114,7 +114,7 @@ export default async function BlogPage({
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <BookOpen size={14} style={{ color: '#9B097A' }} />
+                  <BookOpen size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -138,7 +138,7 @@ export default async function BlogPage({
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
                   style={{ background: '#eaf3f4' }}
                 >
-                  <Calendar size={14} style={{ color: '#9B097A' }} />
+                  <Calendar size={14} style={{ color: '#2D6198' }} />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">
@@ -167,7 +167,7 @@ export default async function BlogPage({
                 style={{
                   background:
                     category === cat || (!category && cat === 'All')
-                      ? '#9B097A'
+                      ? '#2D6198'
                       : 'white',
                   color:
                     category === cat || (!category && cat === 'All')
@@ -176,7 +176,7 @@ export default async function BlogPage({
                   border: '1px solid',
                   borderColor:
                     category === cat || (!category && cat === 'All')
-                      ? '#9B097A'
+                      ? '#2D6198'
                       : '#e5e7eb',
                 }}
               >
@@ -192,7 +192,7 @@ export default async function BlogPage({
                 className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4"
                 style={{ background: '#eaf3f4' }}
               >
-                <BookOpen size={28} style={{ color: '#9B097A' }} />
+                <BookOpen size={28} style={{ color: '#2D6198' }} />
               </div>
               <h3
                 className="font-bold text-gray-900 text-xl mb-2"
@@ -215,7 +215,7 @@ export default async function BlogPage({
                     key={post.slug}
                     href={`/blog/${post.slug}`}
                     className="blog-card bg-white rounded-xl overflow-hidden flex flex-col"
-                    style={{ border: '1px solid rgba(155,9,122,0.08)' }}
+                    style={{ border: '1px solid rgba(45,97,152,0.08)' }}
                   >
                     {/* Image / placeholder */}
                     {post.image ? (
@@ -236,7 +236,7 @@ export default async function BlogPage({
                       >
                         <BookOpen
                           size={36}
-                          style={{ color: '#9B097A', opacity: 0.25 }}
+                          style={{ color: '#2D6198', opacity: 0.25 }}
                         />
                       </div>
                     )}
@@ -281,7 +281,7 @@ export default async function BlogPage({
                         </span>
                         <span
                           className="text-xs font-semibold flex items-center gap-1"
-                          style={{ color: '#9B097A' }}
+                          style={{ color: '#2D6198' }}
                         >
                           Read more <ChevronRight size={13} />
                         </span>

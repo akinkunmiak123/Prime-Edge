@@ -20,39 +20,34 @@
 
 /* ── CSS custom properties for font stacks ── */
 :root {
-  /* H1, H2, H4, H5, H6 — Century Gothic Bold */
   --font-heading: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-
-  /* H3 subheadings — Sans-Serif collection */
   --font-subheading:
     'Gill Sans', 'Gill Sans MT', Optima, Candara, Calibri, 'Trebuchet MS',
     Arial, Helvetica, sans-serif;
-
-  /* Body / paragraphs — Century Gothic Normal */
   --font-body: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 
 /* ── Brand tokens ── */
 @theme {
-  --color-primary: #9B097A;
-  --color-primary-dark: #74075B;
-  --color-primary-light: #B50D91;
-  --color-accent: #2D6198;
+  --color-primary: #2D6198;        /* was #9B097A */
+  --color-primary-dark: #1E4A73;   /* was #74075B */
+  --color-primary-light: #4A80B5;  /* was #B50D91 */
+  --color-accent: #59A2AF;         /* secondary blue, unchanged */
   --color-steel: #59A2AF;
   --color-steel-light: #85C4CE;
+  --color-brand-purple: #9B097A;   /* legacy accent, use sparingly (e.g. logo mark only) */
   --color-ink: #0d0d0d;
   --color-ink-soft: #2a2a2a;
   --color-muted: #6b7280;
   --color-surface-1: #f5f9fa;
   --color-surface-2: #eaf3f4;
 
-  /* Updated font tokens */
   --font-sans: var(--font-body);
   --font-serif: var(--font-heading);
 
-  --shadow-brand-sm: 0 2px 12px 0 rgba(155, 9, 122, 0.15);
-  --shadow-brand-md: 0 4px 24px 0 rgba(155, 9, 122, 0.25);
-  --shadow-brand-lg: 0 8px 48px 0 rgba(155, 9, 122, 0.3);
+  --shadow-brand-sm: 0 2px 12px 0 rgba(45, 97, 152, 0.15);
+  --shadow-brand-md: 0 4px 24px 0 rgba(45, 97, 152, 0.25);
+  --shadow-brand-lg: 0 8px 48px 0 rgba(45, 97, 152, 0.3);
 }
 
 /* ── Base ── */
@@ -66,7 +61,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Body — Century Gothic Normal */
 body {
   font-family: var(--font-body);
   font-weight: 400;
@@ -75,7 +69,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Global heading defaults */
 h1,
 h2,
 h4,
@@ -90,7 +83,6 @@ h3 {
   font-weight: 400;
 }
 
-/* Global paragraph default */
 p {
   font-family: var(--font-body);
   font-weight: 400;
@@ -103,21 +95,21 @@ p {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #9B097A;
+  color: #2D6198; /* was #9B097A */
 }
 
 .purple-rule {
   display: inline-block;
   width: 48px;
   height: 3px;
-  background: linear-gradient(90deg, #9B097A, #59A2AF);
+  background: linear-gradient(90deg, #2D6198, #59A2AF); /* was 9B097A → 59A2AF */
   border-radius: 2px;
   margin-bottom: 1rem;
 }
 
 /* ── Buttons ── */
 .btn-primary {
-  background: #9B097A;
+  background: #2D6198; /* was #9B097A */
   color: white;
   padding: 0.875rem 2rem;
   border-radius: 4px;
@@ -129,20 +121,20 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 2px solid #9B097A;
+  border: 2px solid #2D6198; /* was #9B097A */
   cursor: pointer;
   text-decoration: none;
 }
 .btn-primary:hover {
-  background: #74075B;
-  border-color: #74075B;
+  background: #1E4A73; /* was #74075B */
+  border-color: #1E4A73;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(155, 9, 122, 0.35);
+  box-shadow: 0 8px 24px rgba(45, 97, 152, 0.35);
 }
 
 .btn-outline {
   background: transparent;
-  color: #9B097A;
+  color: #2D6198; /* was #9B097A */
   padding: 0.875rem 2rem;
   border-radius: 4px;
   font-family: var(--font-body);
@@ -153,20 +145,20 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 2px solid #9B097A;
+  border: 2px solid #2D6198; /* was #9B097A */
   cursor: pointer;
   text-decoration: none;
 }
 .btn-outline:hover {
-  background: #9B097A;
+  background: #2D6198; /* was #9B097A */
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(155, 9, 122, 0.25);
+  box-shadow: 0 8px 24px rgba(45, 97, 152, 0.25);
 }
 
 .btn-white {
   background: white;
-  color: #9B097A;
+  color: #2D6198; /* was #9B097A */
   padding: 0.875rem 2rem;
   border-radius: 4px;
   font-family: var(--font-body);
@@ -205,11 +197,11 @@ p {
   left: 0;
   width: 0;
   height: 2px;
-  background: #9B097A;
+  background: #2D6198; /* was #9B097A */
   transition: width 0.25s ease;
 }
 .nav-link:hover {
-  color: #9B097A;
+  color: #2D6198; /* was #9B097A */
 }
 .nav-link:hover::after {
   width: 100%;
@@ -220,22 +212,22 @@ p {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  border: 1px solid rgba(155, 9, 122, 0.08);
+  border: 1px solid rgba(45, 97, 152, 0.08);
 }
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(155, 9, 122, 0.15);
-  border-color: rgba(155, 9, 122, 0.2);
+  box-shadow: 0 16px 48px rgba(45, 97, 152, 0.15);
+  border-color: rgba(45, 97, 152, 0.2);
 }
 
 .testimonial-card {
   background: white;
-  border-left: 4px solid #9B097A;
-  box-shadow: 0 2px 24px rgba(155, 9, 122, 0.08);
+  border-left: 4px solid #2D6198; /* was #9B097A */
+  box-shadow: 0 2px 24px rgba(45, 97, 152, 0.08);
   transition: box-shadow 0.3s ease;
 }
 .testimonial-card:hover {
-  box-shadow: 0 8px 32px rgba(155, 9, 122, 0.16);
+  box-shadow: 0 8px 32px rgba(45, 97, 152, 0.16);
 }
 
 .blog-card {
@@ -245,7 +237,7 @@ p {
 }
 .blog-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(155, 9, 122, 0.12);
+  box-shadow: 0 12px 40px rgba(45, 97, 152, 0.12);
 }
 
 /* ── Scrollbar ── */
@@ -256,16 +248,16 @@ p {
   background: #eaf3f4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #9B097A;
+  background: #2D6198; /* was #9B097A */
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #74075B;
+  background: #1E4A73; /* was #74075B */
 }
 
 /* ── Focus ring ── */
 :focus-visible {
-  outline: 2px solid #9B097A;
+  outline: 2px solid #2D6198; /* was #9B097A */
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -282,14 +274,12 @@ p {
   padding: 1.25rem 1.5rem;
 }
 
-/* Paragraphs — Century Gothic Normal */
 .ProseMirror p {
   font-family: var(--font-body);
   font-weight: 400;
   margin-bottom: 1rem;
 }
 
-/* H2 — Century Gothic Bold */
 .ProseMirror h2 {
   font-family: var(--font-heading);
   font-size: 1.4rem;
@@ -298,7 +288,6 @@ p {
   margin: 1.75rem 0 0.75rem;
 }
 
-/* H3 — Sans-Serif collection (subheading) */
 .ProseMirror h3 {
   font-family: var(--font-subheading);
   font-size: 1.15rem;
@@ -321,10 +310,10 @@ p {
   margin-bottom: 0.35rem;
 }
 .ProseMirror ul li::marker {
-  color: #9B097A;
+  color: #2D6198; /* was #9B097A */
 }
 .ProseMirror ol li::marker {
-  color: #9B097A;
+  color: #2D6198; /* was #9B097A */
   font-weight: 700;
 }
 .ProseMirror strong {
@@ -336,11 +325,11 @@ p {
 }
 .ProseMirror hr {
   border: none;
-  border-top: 2px solid rgba(155, 9, 122, 0.15);
+  border-top: 2px solid rgba(45, 97, 152, 0.15);
   margin: 2rem 0;
 }
 .ProseMirror blockquote {
-  border-left: 4px solid #9B097A;
+  border-left: 4px solid #2D6198; /* was #9B097A */
   padding: 0.75rem 1.25rem;
   background: #f5f9fa;
   border-radius: 0 8px 8px 0;

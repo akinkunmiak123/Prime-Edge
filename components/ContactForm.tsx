@@ -28,10 +28,10 @@ const services = [
   'Payroll Services',
   'Tax Planning & Filing',
   'VAT Registration & Filing',
+  'Making Tax Digital Registration & Filing',
   'Business Advisory',
   'Not sure — need advice',
 ]
-
 const inputBase =
   'w-full px-4 py-3 rounded-lg text-sm border border-gray-200 text-gray-700 outline-none transition-all placeholder-gray-300'
 
