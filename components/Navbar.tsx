@@ -100,13 +100,13 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className="nav-link"
-                  style={pathname === link.href ? { color: '#9B097A' } : {}}
+                  style={pathname === link.href ? { color: '#2D6198' } : {}}
                 >
                   {link.label}
                   {pathname === link.href && (
                     <span
                       className="absolute bottom-0 left-0 w-full h-0.5"
-                      style={{ background: '#9B097A' }}
+                      style={{ background: '#2D6198' }}
                     />
                   )}
                 </Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
                 href="tel:01244565227"
                 className="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-800 transition-colors"
               >
-                <Phone size={14} style={{ color: '#9B097A' }} />
+                <Phone size={14} style={{ color: '#2D6198' }} />
                 <span>01244 565 227</span>
               </a>
               <Link href="/book" className="btn-primary !py-2.5 !px-5 !text-sm">
@@ -134,7 +134,7 @@ export default function Navbar() {
               aria-label="Toggle navigation menu"
             >
               {mobileOpen ? (
-                <X size={22} style={{ color: '#9B097A' }} />
+                <X size={22} style={{ color: '#2D6198' }} />
               ) : (
                 <Menu size={22} className="text-gray-700" />
               )}
@@ -189,7 +189,7 @@ export default function Navbar() {
                 className="px-4 py-3 rounded-lg text-sm font-medium transition-all"
                 style={
                   pathname === link.href
-                    ? { background: '#9B097A', color: 'white' }
+                    ? { background: '#2D6198', color: 'white' }
                     : { color: '#2a2a2a' }
                 }
               >
@@ -204,7 +204,7 @@ export default function Navbar() {
               href="tel:01244565227"
               className="flex items-center gap-2 text-sm text-gray-500"
             >
-              <Phone size={14} style={{ color: '#9B097A' }} />
+              <Phone size={14} style={{ color: '#2D6198' }} />
               <span>01244 565 227</span>
             </a>
             <Link href="/book" className="btn-primary justify-center">
