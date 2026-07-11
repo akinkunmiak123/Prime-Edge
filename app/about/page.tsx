@@ -75,19 +75,19 @@ const milestones = [
     year: '2019',
     title: 'Cloud Accounting',
     description:
-      'Became certified advisors for Xero and QuickBooks, helping clients move to modern cloud-based accounting systems.',
+      'Became certified partners with Sage, FreeAgent and Xero, helping clients move to modern cloud-based accounting systems.',
   },
   {
     year: '2022',
     title: 'MTD Ready',
     description:
-      "Led our entire client base through HMRC's Making Tax Digital transition — ahead of the industry average.",
+      "Guided clients through HMRC's Making Tax Digital transition with a smooth, well-planned rollout.",
   },
   {
     year: '2024',
-    title: '200+ Clients',
+    title: 'Continued Growth',
     description:
-      'Reached a milestone of over 200 active clients across England and Wales, with a 98% retention rate.',
+      'Grew our client base across England and Wales, built on long-term relationships and word-of-mouth referrals.',
   },
 ]
 
@@ -406,7 +406,7 @@ export default function AboutPage() {
               className="text-3xl sm:text-4xl font-black text-gray-900 mb-4"
               style={{ fontFamily: 'Merriweather, serif' }}
             >
-              A Decade of Growth
+              Our Story of Growth
             </h2>
             <p className="text-gray-500 leading-relaxed">
               From our founding in Cheltenham to serving clients across England
