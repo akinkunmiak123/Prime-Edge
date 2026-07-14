@@ -86,14 +86,14 @@ export default function CookieConsent({
         className="relative pointer-events-auto w-full sm:w-[440px] sm:m-5 rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden"
         style={{
           background: 'white',
-          border: '1px solid rgba(155,9,122,0.12)',
+          border: '1px solid rgba(45,97,152,0.12)',
         }}
       >
         {/* Header */}
         <div
           className="px-6 py-5 flex items-center justify-between"
           style={{
-            background: 'linear-gradient(135deg, #9B097A, #74075B)',
+            background: 'linear-gradient(135deg, #2D6198, #1E4A73)',
           }}
         >
           <div className="flex items-center gap-3">
@@ -134,7 +134,7 @@ export default function CookieConsent({
           <button
             onClick={() => setShowDetails(!showDetails)}
             className="flex items-center gap-1.5 text-xs font-semibold mb-4 transition-colors"
-            style={{ color: '#9B097A' }}
+            style={{ color: '#2D6198' }}
           >
             {showDetails ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
             {showDetails ? 'Hide cookie details' : 'Manage cookie preferences'}
@@ -148,7 +148,7 @@ export default function CookieConsent({
                 className="rounded-xl p-4 flex items-start justify-between gap-4"
                 style={{
                   background: '#f5f9fa',
-                  border: '1px solid rgba(155,9,122,0.08)',
+                  border: '1px solid rgba(45,97,152,0.08)',
                 }}
               >
                 <div className="flex items-start gap-3">
@@ -156,7 +156,7 @@ export default function CookieConsent({
                     className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                     style={{ background: '#eaf3f4' }}
                   >
-                    <Shield size={14} style={{ color: '#9B097A' }} />
+                    <Shield size={14} style={{ color: '#2D6198' }} />
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 text-xs mb-0.5">
@@ -171,7 +171,7 @@ export default function CookieConsent({
                 {/* Always on toggle */}
                 <div
                   className="flex-shrink-0 w-10 h-6 rounded-full flex items-center px-1 cursor-not-allowed"
-                  style={{ background: '#9B097A' }}
+                  style={{ background: '#2D6198' }}
                 >
                   <div className="w-4 h-4 rounded-full bg-white ml-auto" />
                 </div>
@@ -182,7 +182,7 @@ export default function CookieConsent({
                 className="rounded-xl p-4 flex items-start justify-between gap-4"
                 style={{
                   background: '#f5f9fa',
-                  border: `1px solid ${consent.analytics ? 'rgba(155,9,122,0.2)' : 'rgba(155,9,122,0.08)'}`,
+                  border: `1px solid ${consent.analytics ? 'rgba(45,97,152,0.2)' : 'rgba(45,97,152,0.08)'}`,
                 }}
               >
                 <div className="flex items-start gap-3">
@@ -190,7 +190,7 @@ export default function CookieConsent({
                     className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                     style={{ background: '#eaf3f4' }}
                   >
-                    <BarChart2 size={14} style={{ color: '#9B097A' }} />
+                    <BarChart2 size={14} style={{ color: '#2D6198' }} />
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 text-xs mb-0.5">
@@ -210,7 +210,7 @@ export default function CookieConsent({
                   }
                   className="flex-shrink-0 w-10 h-6 rounded-full flex items-center px-1 transition-all"
                   style={{
-                    background: consent.analytics ? '#9B097A' : '#d1d5db',
+                    background: consent.analytics ? '#2D6198' : '#d1d5db',
                   }}
                   aria-label="Toggle analytics cookies"
                 >

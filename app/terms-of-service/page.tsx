@@ -137,7 +137,7 @@ export default function TermsOfServicePage() {
         className="py-16 lg:py-20 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, #9B097A 0%, #74075B 50%, #0d0d0d 100%)',
+            'linear-gradient(135deg, #2D6198 0%, #1E4A73 50%, #0d0d0d 100%)',
         }}
       >
         <div
@@ -176,7 +176,7 @@ export default function TermsOfServicePage() {
             className="rounded-2xl p-7 mb-10"
             style={{
               background: 'white',
-              border: '1px solid rgba(155,9,122,0.08)',
+              border: '1px solid rgba(45,97,152,0.08)',
             }}
           >
             <p className="text-gray-600 leading-relaxed text-sm">
@@ -190,7 +190,7 @@ export default function TermsOfServicePage() {
               <Link
                 href="/privacy-policy"
                 className="font-semibold underline"
-                style={{ color: '#9B097A' }}
+                style={{ color: '#2D6198' }}
               >
                 Privacy Policy
               </Link>
@@ -203,7 +203,7 @@ export default function TermsOfServicePage() {
             className="rounded-2xl p-7 mb-10"
             style={{
               background: 'white',
-              border: '1px solid rgba(155,9,122,0.08)',
+              border: '1px solid rgba(45,97,152,0.08)',
             }}
           >
             <h2
@@ -218,7 +218,7 @@ export default function TermsOfServicePage() {
                   <a
                     href={`#${s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
                     className="text-sm transition-colors hover:underline"
-                    style={{ color: '#9B097A' }}
+                    style={{ color: '#2D6198' }}
                   >
                     {s.title}
                   </a>
@@ -236,14 +236,14 @@ export default function TermsOfServicePage() {
                 className="rounded-2xl p-7 scroll-mt-28"
                 style={{
                   background: 'white',
-                  border: '1px solid rgba(155,9,122,0.08)',
+                  border: '1px solid rgba(45,97,152,0.08)',
                 }}
               >
                 <h2
                   className="font-bold text-gray-900 text-lg mb-4"
                   style={{
                     fontFamily: 'Merriweather, serif',
-                    color: '#9B097A',
+                    color: '#2D6198',
                   }}
                 >
                   {s.title}
@@ -267,7 +267,7 @@ export default function TermsOfServicePage() {
             <Link
               href="/privacy-policy"
               className="text-sm font-semibold"
-              style={{ color: '#9B097A' }}
+              style={{ color: '#2D6198' }}
             >
               ← View Privacy Policy
             </Link>
