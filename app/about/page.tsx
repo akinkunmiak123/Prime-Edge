@@ -58,39 +58,6 @@ const credentials = [
   'Professional Indemnity Insured',
 ]
 
-const milestones = [
-  {
-    year: '2013',
-    title: 'Founded',
-    description:
-      'Prime Edge was established in Cheltenham with a mission to provide personal, high-quality accounting services to local businesses.',
-  },
-  {
-    year: '2016',
-    title: 'ACCA Accreditation',
-    description:
-      'Achieved full ACCA Chartered Certified Accountant status, cementing our commitment to professional excellence.',
-  },
-  {
-    year: '2019',
-    title: 'Cloud Accounting',
-    description:
-      'Became certified partners with Sage, FreeAgent and Xero, helping clients move to modern cloud-based accounting systems.',
-  },
-  {
-    year: '2022',
-    title: 'MTD Ready',
-    description:
-      "Guided clients through HMRC's Making Tax Digital transition with a smooth, well-planned rollout.",
-  },
-  {
-    year: '2024',
-    title: 'Continued Growth',
-    description:
-      'Grew our client base across England and Wales, built on long-term relationships and word-of-mouth referrals.',
-  },
-]
-
 const whyUs = [
   {
     icon: Users,
@@ -390,76 +357,6 @@ export default function AboutPage() {
                 </div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════
-          TIMELINE / MILESTONES
-      ════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="section-label">Our Journey</span>
-            <div className="purple-rule mx-auto" />
-            <h2
-              className="text-3xl sm:text-4xl font-black text-gray-900 mb-4"
-              style={{ fontFamily: 'Merriweather, serif' }}
-            >
-              Our Story of Growth
-            </h2>
-            <p className="text-gray-500 leading-relaxed">
-              From our founding in Cheltenham to serving clients across England
-              and Wales — here are some of the milestones along the way.
-            </p>
-          </div>
-
-          {/* Timeline */}
-          <div className="relative max-w-3xl mx-auto">
-            {/* Vertical line */}
-            <div
-              className="absolute left-8 top-0 bottom-0 w-px hidden sm:block"
-              style={{
-                background:
-                  'linear-gradient(180deg, #2D6198, #59A2AF, #2D6198)',
-              }}
-            />
-
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div key={milestone.year} className="flex gap-6 items-start">
-                  {/* Year bubble */}
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-xs flex-shrink-0 relative z-10 shadow-md"
-                    style={{
-                      background: index % 2 === 0 ? '#2D6198' : '#59A2AF',
-                      fontFamily: 'Merriweather, serif',
-                    }}
-                  >
-                    {milestone.year}
-                  </div>
-
-                  {/* Content */}
-                  <div
-                    className="flex-1 rounded-xl p-6 mb-2"
-                    style={{
-                      background: '#f5f9fa',
-                      border: '1px solid rgba(45,97,152,0.08)',
-                    }}
-                  >
-                    <h3
-                      className="font-bold text-gray-900 mb-1"
-                      style={{ fontFamily: 'Merriweather, serif' }}
-                    >
-                      {milestone.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      {milestone.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

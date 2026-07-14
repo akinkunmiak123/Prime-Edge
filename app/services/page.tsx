@@ -33,7 +33,7 @@ const services = [
     points: [
       'Monthly or quarterly bookkeeping packages',
       'Bank reconciliation and transaction categorisation',
-      'Cloud accounting setup (Xero, QuickBooks, Sage)',
+      'Cloud accounting setup (Sage, FreeAgent and Xero)',
       'Management accounts and financial reporting',
       'VAT-ready records for seamless filing',
     ],
@@ -50,6 +50,7 @@ const services = [
     points: [
       'Statutory accounts for limited companies and LLPs',
       'Self-assessment tax returns for sole traders',
+      'Making Tax Digital (MTD) returns for sole traders and landlords',
       'Partnership accounts and returns',
       'Companies House and HMRC filing included',
       'Director loan account reconciliation',
@@ -137,7 +138,6 @@ const services = [
       'Cash flow forecasting and management',
       'Budgeting and financial modelling',
       'Business growth and scaling strategy',
-      'Company formation and registered office services',
     ],
     accent: '#2D6198',
   },

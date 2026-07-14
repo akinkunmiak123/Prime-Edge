@@ -242,7 +242,7 @@ export default function Footer() {
                     <span>
                       Based in Gloucestershire
                       <br />
-                      Serving clients across the UK
+                      Serving clients across England and Wales.
                     </span>
                   </div>
                 </li>

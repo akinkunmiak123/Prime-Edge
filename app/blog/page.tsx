@@ -69,7 +69,7 @@ export default async function BlogPage({
               Our Blog
             </h1>
             <p className="text-white/75 text-lg leading-relaxed">
-              Tax tips, business advice, and financial insights from the Prime
+              Tax tips, business advisory, and financial insights from the Prime
               Edge team — written in plain English.
             </p>
           </div>

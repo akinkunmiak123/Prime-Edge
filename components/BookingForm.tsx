@@ -9,8 +9,9 @@ import {
   Mail,
   Phone,
   Building2,
-  MessageSquare,
   PoundSterling,
+  Briefcase,
+  MessageSquare,
 } from 'lucide-react'
 
 type FormData = {
@@ -32,8 +33,9 @@ const turnoverOptions = [
   '£1M to £2M',
   'Above £2M',
 ]
+
 const services = [
-  'Get A Free Quote',
+  'Not sure — need advice',
   'Bookkeeping',
   'Account Preparation & Filing',
   'Payroll Services',
@@ -43,12 +45,14 @@ const services = [
   'VAT Registration & Filing',
   'Making Tax Digital Registration & Filing',
   'Business Advisory',
-  'Not sure — need advice',
 ]
+
 const inputBase =
   'w-full px-4 py-3 rounded-lg text-sm border border-gray-200 text-gray-700 outline-none transition-all placeholder-gray-300'
 
-export default function ContactForm() {
+type Status = 'idle' | 'sending' | 'success' | 'error'
+
+export default function BookingForm() {
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
@@ -58,8 +62,6 @@ export default function ContactForm() {
     service: '',
     message: '',
   })
-  type Status = 'idle' | 'sending' | 'success' | 'error'
-
   const [status, setStatus] = useState<Status>('idle')
 
   const handleChange = (
@@ -75,8 +77,8 @@ export default function ContactForm() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >,
   ) => {
-    e.target.style.borderColor = '#6f068d'
-    e.target.style.boxShadow = '0 0 0 3px rgba(111,6,141,0.1)'
+    e.target.style.borderColor = '#2D6198'
+    e.target.style.boxShadow = '0 0 0 3px rgba(45,97,152,0.1)'
   }
 
   const handleBlur = (
@@ -94,6 +96,7 @@ export default function ContactForm() {
     if (
       !form.name ||
       !form.email ||
+      !form.phone ||
       !form.company ||
       !form.turnover ||
       !form.message
@@ -105,7 +108,7 @@ export default function ContactForm() {
     setStatus('sending')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/api/booking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -115,17 +118,8 @@ export default function ContactForm() {
 
       if (data.success) {
         setStatus('success')
-        setForm({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          turnover: '',
-          service: '',
-          message: '',
-        })
       } else {
-        console.error('Form error:', data.error)
+        console.error('Booking form error:', data.error)
         setStatus('error')
       }
     } catch (err) {
@@ -153,17 +147,17 @@ export default function ContactForm() {
           className="font-bold text-gray-900 text-xl mb-2"
           style={{ fontFamily: 'Merriweather, serif' }}
         >
-          Message Sent!
+          Request Received!
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed mb-6">
-          Thank you for getting in touch. A member of our team will respond
-          within one business day.
+          Thank you for getting in touch. A member of our team will contact you
+          within one business day to arrange your free discovery call.
         </p>
         <button
           onClick={() => setStatus('idle')}
           className="btn-outline text-sm"
         >
-          Send Another Message
+          Send Another Request
         </button>
       </div>
     )
@@ -171,7 +165,6 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Error message */}
       {status === 'error' && (
         <div
           className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm"
@@ -182,8 +175,7 @@ export default function ContactForm() {
           }}
         >
           <AlertCircle size={15} className="flex-shrink-0" />
-          Please fill in your name, email, company name, annual turnover and
-          message.
+          Please fill in your name, email, phone, company, turnover and message.
         </div>
       )}
 
@@ -191,7 +183,7 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-            Full Name <span style={{ color: '#6f068d' }}>*</span>
+            Full Name <span style={{ color: '#2D6198' }}>*</span>
           </label>
           <div className="relative">
             <User
@@ -213,7 +205,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-            Email Address <span style={{ color: '#6f068d' }}>*</span>
+            Email Address <span style={{ color: '#2D6198' }}>*</span>
           </label>
           <div className="relative">
             <Mail
@@ -239,7 +231,7 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-            Phone Number
+            Phone Number <span style={{ color: '#2D6198' }}>*</span>
           </label>
           <div className="relative">
             <Phone
@@ -255,12 +247,13 @@ export default function ContactForm() {
               onBlur={handleBlur}
               placeholder="07700 900000"
               className={`${inputBase} pl-10`}
+              required
             />
           </div>
         </div>
         <div>
           <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-            Company Name <span style={{ color: '#6f068d' }}>*</span>
+            Company Name <span style={{ color: '#2D6198' }}>*</span>
           </label>
           <div className="relative">
             <Building2
@@ -286,7 +279,7 @@ export default function ContactForm() {
       <div>
         <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
           Annual Turnover / Gross Sales{' '}
-          <span style={{ color: '#6f068d' }}>*</span>
+          <span style={{ color: '#2D6198' }}>*</span>
         </label>
         <div className="relative">
           <PoundSterling
@@ -317,27 +310,34 @@ export default function ContactForm() {
         <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
           Service You Are Interested In
         </label>
-        <select
-          name="service"
-          value={form.service}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          className={inputBase}
-        >
-          <option value="">Select a service...</option>
-          {services.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
+        <div className="relative">
+          <Briefcase
+            size={15}
+            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-300"
+          />
+          <select
+            name="service"
+            value={form.service}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className={`${inputBase} pl-10`}
+          >
+            <option value="">Select a service...</option>
+            {services.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* Message */}
       <div>
         <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-          Your Message <span style={{ color: '#6f068d' }}>*</span>
+          Tell Us About Your Business{' '}
+          <span style={{ color: '#2D6198' }}>*</span>
         </label>
         <div className="relative">
           <MessageSquare
@@ -350,7 +350,7 @@ export default function ContactForm() {
             onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            placeholder="Tell us a bit about your situation and how we can help..."
+            placeholder="Tell us a bit about your business and what you'd like help with, and we'll be in touch to arrange your free discovery call..."
             rows={5}
             className={`${inputBase} pl-10 resize-none leading-relaxed`}
             required
@@ -391,14 +391,14 @@ export default function ContactForm() {
         ) : (
           <>
             <Send size={16} />
-            Send Message
+            Request My Free Discovery Call
           </>
         )}
       </button>
 
       <p className="text-xs text-gray-400 text-center">
         We typically respond within one business day. Fields marked{' '}
-        <span style={{ color: '#6f068d' }}>*</span> are required.
+        <span style={{ color: '#2D6198' }}>*</span> are required.
       </p>
     </form>
   )

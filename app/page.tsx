@@ -17,6 +17,7 @@ import {
   ChevronRight,
 } from 'lucide-react'
 import { getAllPosts, formatDate } from '@/lib/posts'
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget'
 
 /* ── Data ── */
 const services = [
@@ -125,7 +126,9 @@ const steps = [
   },
 ]
 
-const testimonials = [
+/* Fallback testimonials — only shown if GOOGLE_PLACES_API_KEY /
+   GOOGLE_PLACE_ID are not yet set, or the live fetch fails. */
+const fallbackTestimonials = [
   {
     name: 'Sarah M.',
     role: 'Director, Retail Business',
@@ -152,6 +155,7 @@ const testimonials = [
 /* ── Page ── */
 export default async function HomePage() {
   const blogPosts = (await getAllPosts()).slice(0, 3)
+
   return (
     <>
       {/* ════════════════════════════════
@@ -180,7 +184,7 @@ export default async function HomePage() {
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-8" style={{ background: '#59A2AF' }} />
               <span className="text-xs font-semibold tracking-widest uppercase text-white/70">
-                TAX • ACCOUNTING • PAYROLL • BUSINESS ADVICE
+                TAX • ACCOUNTING • PAYROLL • BUSINESS ADVISORY
               </span>
             </div>
 
@@ -596,7 +600,7 @@ export default async function HomePage() {
       </section>
 
       {/* ════════════════════════════════
-          TESTIMONIALS
+          TESTIMONIALS / LIVE GOOGLE REVIEWS
       ════════════════════════════════ */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -611,8 +615,15 @@ export default async function HomePage() {
             </h2>
           </div>
 
+          {/* Live Google Reviews widget — renders nothing until
+              NEXT_PUBLIC_ELFSIGHT_WIDGET_ID is set, so the fallback
+              cards below are what visitors see in the meantime */}
+          <div className="mb-14">
+            <GoogleReviewsWidget />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
+            {fallbackTestimonials.map((t) => (
               <div key={t.name} className="testimonial-card rounded-xl p-7">
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
@@ -631,7 +642,6 @@ export default async function HomePage() {
                 </p>
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  {/* Avatar placeholder */}
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
                     style={{ background: '#2D6198' }}
@@ -648,6 +658,7 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
+
           {/* CTA nudge after social proof */}
           <div className="text-center mt-12">
             <p className="text-gray-500 text-sm mb-4">
