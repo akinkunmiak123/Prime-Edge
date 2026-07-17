@@ -154,7 +154,7 @@ export default function BookingPage() {
               </a>
 
               <a
-                href="https://wa.me/447570229041?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20discovery%20call."
+                href="https://wa.me/447570229041?text=Hi%2C%20I%27d%20like%20to%20book%20a%20discovery%20call."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 px-6 py-5 hover:bg-gray-50 transition-colors"
