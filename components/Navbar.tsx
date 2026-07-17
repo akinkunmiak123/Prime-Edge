@@ -123,7 +123,7 @@ export default function Navbar() {
                 <span>01244 565 227</span>
               </a>
               <Link href="/book" className="btn-primary !py-2.5 !px-5 !text-sm">
-                Book Free Call
+                Book A Call
               </Link>
             </div>
 
@@ -208,7 +208,7 @@ export default function Navbar() {
               <span>01244 565 227</span>
             </a>
             <Link href="/book" className="btn-primary justify-center">
-              Book Free Discovery Call
+              Book A Discovery Call
             </Link>
           </div>
         </div>

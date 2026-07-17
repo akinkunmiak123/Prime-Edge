@@ -37,7 +37,7 @@ export default function Footer() {
                 Ready to take control of your finances?
               </h3>
               <p className="text-white/80 text-sm">
-                Book a free discovery call with our expert team today.
+                Book a discovery call with our expert team today.
               </p>
             </div>
             <div className="flex gap-3 flex-shrink-0 flex-wrap justify-center">

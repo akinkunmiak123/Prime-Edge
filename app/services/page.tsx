@@ -464,13 +464,13 @@ export default function ServicesPage() {
             Not Sure Which Service You Need?
           </h2>
           <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Book a free discovery call and we will assess your situation and
+            Book a discovery call and we will assess your situation and
             recommend exactly the right support for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/book" className="btn-white text-base px-8 py-4">
               <Calendar size={18} />
-              Book Free Discovery Call
+              Book A Discovery Call
             </Link>
             <a
               href="tel:01244565227"

@@ -103,7 +103,7 @@ export default function ContactPage() {
             <p className="text-white/75 text-lg leading-relaxed">
               Whether you are ready to switch accountants, just starting out, or
               simply want some advice — we would love to hear from you. Book a
-              free call or drop us a message below.
+              call or drop us a message below.
             </p>
           </div>
 

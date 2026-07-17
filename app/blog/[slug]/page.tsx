@@ -266,14 +266,14 @@ export default async function BlogPostPage({ params }: Props) {
                     Need help with this?
                   </h3>
                   <p className="text-white/75 text-sm mb-5 leading-relaxed">
-                    Our team is here to help. Book a free discovery call and we
+                    Our team is here to help. Book a discovery call and we
                     will talk through your situation.
                   </p>
                   <Link
                     href="/book"
                     className="btn-white text-sm w-full justify-center"
                   >
-                    Book Free Call
+                    Book A Call
                   </Link>
                 </div>
 

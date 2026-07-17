@@ -108,7 +108,7 @@ const reasons = [
 const steps = [
   {
     number: '01',
-    title: 'Book a Free Discovery Call',
+    title: 'Book a Discovery Call',
     description:
       'Tell us about your business, your challenges, and your goals. No obligation — just an honest conversation.',
   },
@@ -207,7 +207,7 @@ export default async function HomePage() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link href="/book" className="btn-white text-base px-7 py-4">
-                Book Free Discovery Call
+                Book Discovery Call
                 <ArrowRight size={18} />
               </Link>
               <Link
@@ -215,7 +215,7 @@ export default async function HomePage() {
                 className="btn-outline text-base px-7 py-4"
                 style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white' }}
               >
-                Get a Free Quote
+                Get a Quote
               </Link>
             </div>
 
@@ -415,7 +415,7 @@ export default async function HomePage() {
               <ArrowRight size={16} />
             </Link>
             <Link href="/book" className="btn-primary">
-              Book Free Discovery Call
+              Book Discovery Call
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -521,7 +521,7 @@ export default async function HomePage() {
                       href="/contact"
                       className="btn-white text-sm px-6 py-3"
                     >
-                      Start Your Free Consultation
+                      Start Your Consultation
                       <ArrowRight size={15} />
                     </Link>
                   </div>
@@ -592,7 +592,7 @@ export default async function HomePage() {
 
           <div className="text-center mt-10">
             <Link href="/book" className="btn-primary">
-              Book Your Free Call Today
+              Book Your Call Today
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -630,7 +630,7 @@ export default async function HomePage() {
               Ready to experience the same results?
             </p>
             <Link href="/book" className="btn-primary">
-              Book Your Free Discovery Call
+              Book Your Discovery Call
               <ArrowRight size={16} />
             </Link>
             <p className="text-gray-400 text-xs mt-3">
@@ -784,7 +784,7 @@ export default async function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/book" className="btn-white text-base px-8 py-4">
               <Calendar size={18} />
-              Book Free Discovery Call
+              Book Discovery Call
             </Link>
             <Link
               href="/contact"
@@ -792,7 +792,7 @@ export default async function HomePage() {
               style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white' }}
             >
               <Phone size={18} />
-              Get a Free Quote
+              Get a Quote
             </Link>
           </div>
         </div>

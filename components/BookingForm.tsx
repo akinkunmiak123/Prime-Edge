@@ -151,7 +151,7 @@ export default function BookingForm() {
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed mb-6">
           Thank you for getting in touch. A member of our team will contact you
-          within one business day to arrange your free discovery call.
+          within one business day to arrange your discovery call.
         </p>
         <button
           onClick={() => setStatus('idle')}
@@ -391,7 +391,7 @@ export default function BookingForm() {
         ) : (
           <>
             <Send size={16} />
-            Request My Free Discovery Call
+            Request My Discovery Call
           </>
         )}
       </button>

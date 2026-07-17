@@ -439,7 +439,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/book" className="btn-white text-base px-8 py-4">
               <Calendar size={18} />
-              Book Free Discovery Call
+              Book Discovery Call
             </Link>
             <a
               href="tel:01244565227"

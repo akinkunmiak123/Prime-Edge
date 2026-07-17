@@ -3,7 +3,7 @@ import { CheckCircle, Clock, Phone, Mail, MessageSquare } from 'lucide-react'
 import BookingForm from '@/components/BookingForm'
 
 export const metadata: Metadata = {
-  title: 'Book a Free Discovery Call',
+  title: 'Book a Discovery Call',
   description:
     'Request a free, no-obligation discovery call with Prime Edge Chartered Certified Accountants. Tell us about your business and we will be in touch within one business day.',
 }
