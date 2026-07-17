@@ -39,9 +39,9 @@ export default function FloatingButtons() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const whatsappNumber = '447XXXXXXXXX'
+  const whatsappNumber = '447570229041'
   const whatsappMessage = encodeURIComponent(
-    'Hello, I would like to enquire about your accounting services.'
+    'Hello, I would like to enquire about your services.'
   )
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 

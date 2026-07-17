@@ -30,7 +30,7 @@ const contactDetails = [
     icon: MessageSquare,
     label: 'WhatsApp',
     value: 'Message us on WhatsApp',
-    href: 'https://wa.me/441244565227?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20your%20services.',
+    href: 'https://wa.me/447570229041?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20your%20services.',
     description: 'Quickest way to reach us',
   },
   {
@@ -196,7 +196,7 @@ export default function ContactPage() {
             </p>
             <div className="flex gap-3 flex-wrap justify-center">
               <a
-                href="https://wa.me/441244565227?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20your%20services."
+                href="https://wa.me/447570229041?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
@@ -371,7 +371,7 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`https://wa.me/441244565227?text=${message}`}
+              href={`https://wa.me/447570229041?text=${message}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-white text-base px-8 py-4"

@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin, Pencil } from 'lucide-react'
 import logo from '../app/logo.svg'
 
 const services = [
@@ -230,6 +230,21 @@ export default function Footer() {
                       style={{ color: '#59A2AF' }}
                     />
                     <span>info@primeedgeaccountants.co.uk</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/447570229041"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 text-white/60 text-sm hover:text-white transition-colors"
+                  >
+                    <Pencil
+                      size={15}
+                      className="mt-0.5 flex-shrink-0"
+                      style={{ color: '#59A2AF' }}
+                    />
+                    <span>+44 7570229041</span>
                   </a>
                 </li>
                 <li>

@@ -622,42 +622,7 @@ export default async function HomePage() {
             <GoogleReviewsWidget />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {fallbackTestimonials.map((t) => (
-              <div key={t.name} className="testimonial-card rounded-xl p-7">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      size={14}
-                      fill="#2D6198"
-                      style={{ color: '#2D6198' }}
-                    />
-                  ))}
-                </div>
-                {/* Quote */}
-                <p className="text-gray-600 text-sm leading-relaxed mb-5 italic">
-                  &ldquo;{t.content}&rdquo;
-                </p>
-                {/* Author */}
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                    style={{ background: '#2D6198' }}
-                  >
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 text-sm">
-                      {t.name}
-                    </div>
-                    <div className="text-gray-400 text-xs">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+ 
 
           {/* CTA nudge after social proof */}
           <div className="text-center mt-12">
