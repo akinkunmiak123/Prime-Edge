@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: 'Business Lifecycle',
   description:
-    'Prime Edge supports your business at every stage — from start-up and growth through to exit and succession. Discover how we can help at each phase.',
+    'Prime Edge supports your business at every stage from start-up and growth through to exit and succession. Discover how we can help at each phase.',
 }
 
 /* ── Data ── */
@@ -30,7 +30,7 @@ const stages = [
     image: '/lifestyle/Start-Up.avif',
     subtitle: 'Laying the right foundations',
     description:
-      'Starting a business is exciting — but getting the financial and legal foundations right from day one is critical. We help new businesses launch with confidence, structure, and a clear financial plan.',
+      'Starting a business is exciting but getting the financial and legal foundations right from day one is critical. We help new businesses launch with confidence, structure, and a clear financial plan.',
     services: [
       'Business structure advice (sole trader vs limited company)',
       'Company formation and registration',
@@ -62,7 +62,7 @@ const stages = [
       'Growth finance and funding support',
     ],
     outcome:
-      'You scale with financial clarity — knowing your numbers, controlling your cash, and optimising your tax position.',
+      'You scale with financial clarity knowing your numbers, controlling your cash, and optimising your tax position.',
     color: '#000000',
     bg: '#f5f9fa',
   },
@@ -84,7 +84,7 @@ const stages = [
       'KPI reporting and benchmarking',
     ],
     outcome:
-      'Your business operates at peak efficiency — with a tax strategy that protects profit and a financial framework that drives decisions.',
+      'Your business operates at peak efficiency with a tax strategy that protects profit and a financial framework that drives decisions.',
     color: '#000000',
     bg: '#dff2f7',
   },
@@ -128,7 +128,7 @@ const stages = [
       'Cross-border employee tax planning',
     ],
     outcome:
-      'Your expansion is financially sound — with the right structures, the right compliance, and a clear view of group-wide performance.',
+      'Your expansion is financially sound with the right structures, the right compliance, and a clear view of group-wide performance.',
     color: '#000000',
     bg: '#dff2f7',
   },
@@ -140,7 +140,7 @@ const stages = [
     image: '/lifestyle/Succession.avif',
     subtitle: 'Realising your value',
     description:
-      'When the time comes to exit your business — whether through a sale, management buyout, or succession — we help you maximise the value you receive and minimise the tax you pay on exit.',
+      'When the time comes to exit your business whether through a sale, management buyout, or succession we help you maximise the value you receive and minimise the tax you pay on exit.',
     services: [
       'Business valuation and exit planning',
       'Capital gains tax planning and Business Asset Disposal Relief',
@@ -150,7 +150,7 @@ const stages = [
       'Post-exit personal tax planning',
     ],
     outcome:
-      'You exit on your terms — with maximum value realised, tax minimised, and a smooth transition for all stakeholders.',
+      'You exit on your terms with maximum value realised, tax minimised, and a smooth transition for all stakeholders.',
     color: '#000000',
     bg: '#f5f9fa',
   },

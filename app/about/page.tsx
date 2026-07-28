@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Prime Edge Chartered Certified Accountants — our story, our values, and our commitment to helping UK businesses and individuals thrive financially.',
+    'Learn about Prime Edge Chartered Certified Accountants our story, our values, and our commitment to helping UK businesses and individuals thrive financially.',
 }
 
 /* ── Data ── */
@@ -27,7 +27,7 @@ const values = [
     icon: Heart,
     title: 'Client First',
     description:
-      'Every decision we make starts with what is best for our clients. We are not just accountants — we are partners in your financial success.',
+      'Every decision we make starts with what is best for our clients. We are not just accountants we are partners in your financial success.',
   },
   {
     icon: Shield,
@@ -39,7 +39,7 @@ const values = [
     icon: Lightbulb,
     title: 'Proactive Thinking',
     description:
-      'We do not wait for problems to arise. We look ahead, plan ahead, and keep you ahead — identifying opportunities and risks before they reach you.',
+      'We do not wait for problems to arise. We look ahead, plan ahead, and keep you ahead identifying opportunities and risks before they reach you.',
   },
   {
     icon: Target,
@@ -63,7 +63,7 @@ const whyUs = [
     icon: Users,
     title: 'A Real Relationship',
     description:
-      'You will always speak to a qualified accountant who knows your file — not a junior, not a call centre.',
+      'You will always speak to a qualified accountant who knows your file not a junior, not a call centre.',
   },
   {
     icon: Clock,
@@ -81,7 +81,7 @@ const whyUs = [
     icon: Award,
     title: 'Highly Qualified',
     description:
-      'Our team holds the highest professional qualifications in the industry — so you can trust the advice you receive.',
+      'Our team holds the highest professional qualifications in the industry so you can trust the advice you receive.',
   },
 ]
 
@@ -224,7 +224,7 @@ export default function AboutPage() {
               <div className="space-y-4 text-gray-500 leading-relaxed">
                 <p>
                   Prime Edge Chartered Certified Accountants was founded with a
-                  clear purpose — to provide businesses and individuals with the
+                  clear purpose to provide businesses and individuals with the
                   kind of personal, expert financial support that was previously
                   only available to large corporations.
                 </p>
@@ -236,7 +236,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   What sets us apart is our commitment to being proactive. We do
-                  not just process numbers — we understand your business,
+                  not just process numbers we understand your business,
                   anticipate challenges, and deliver advice that makes a real
                   difference to your bottom line.
                 </p>

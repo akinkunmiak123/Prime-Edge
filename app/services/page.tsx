@@ -29,7 +29,7 @@ const services = [
     image: '/services/bookkeeping.avif',
     tagline: 'Clear records. Confident decisions.',
     description:
-      'Accurate bookkeeping is the foundation of a healthy business. We maintain up-to-date, organised financial records that give you a real-time picture of your business performance — so you always know where you stand.',
+      'Accurate bookkeeping is the foundation of a healthy business. We maintain up-to-date, organised financial records that give you a real-time picture of your business performance so you always know where you stand.',
     points: [
       'Monthly or quarterly bookkeeping packages',
       'Bank reconciliation and transaction categorisation',
@@ -46,7 +46,7 @@ const services = [
     image: '/services/Account Preparation.avif',
     tagline: 'Compliant, accurate, always on time.',
     description:
-      'We prepare your annual statutory accounts in full compliance with UK accounting standards and file them with Companies House and HMRC before every deadline — so you never face a late filing penalty.',
+      'We prepare your annual statutory accounts in full compliance with UK accounting standards and file them with Companies House and HMRC before every deadline so you never face a late filing penalty.',
     points: [
       'Statutory accounts for limited companies and LLPs',
       'Self-assessment tax returns for sole traders',
@@ -64,7 +64,7 @@ const services = [
     image: '/services/Payroll Services.avif',
     tagline: 'Your team paid right, every time.',
     description:
-      'Managing payroll is time-consuming and full of compliance risk. We run your entire payroll function — from calculating wages and deductions to submitting RTI reports to HMRC — so your team is always paid correctly and on time.',
+      'Managing payroll is time-consuming and full of compliance risk. We run your entire payroll function from calculating wages and deductions to submitting RTI reports to HMRC so your team is always paid correctly and on time.',
     points: [
       'Weekly, fortnightly, or monthly payroll runs',
       'PAYE, National Insurance and pension calculations',
@@ -81,7 +81,7 @@ const services = [
     image: '/services/Tax Filing.avif',
     tagline: 'Pay less. Stay compliant. Plan ahead.',
     description:
-      'Reactive tax returns are not enough. We take a proactive approach to your tax position — identifying legitimate reliefs, planning ahead, and ensuring you never pay a penny more tax than you are legally required to.',
+      'Reactive tax returns are not enough. We take a proactive approach to your tax position identifying legitimate reliefs, planning ahead, and ensuring you never pay a penny more tax than you are legally required to.',
     points: [
       'Corporation tax planning and filing',
       'Personal self-assessment tax returns',
@@ -98,7 +98,7 @@ const services = [
     image: '/services/Self-Assessment.avif',
     tagline: 'Filed accurately. Filed on time.',
     description:
-      'Self assessment can be stressful and the penalties for getting it wrong — or getting it in late — are steep. We prepare and file your personal tax return for you, making sure every allowance and relief you are entitled to is claimed.',
+      'Self assessment can be stressful and the penalties for getting it wrong or getting it in late are steep. We prepare and file your personal tax return for you, making sure every allowance and relief you are entitled to is claimed.',
     points: [
       'Full self-assessment return preparation and filing',
       'Income from employment, dividends, property and savings',
@@ -132,7 +132,7 @@ const services = [
     image: '/services/Business Advisory.avif',
     tagline: 'Strategy, clarity and direction.',
     description:
-      'Beyond compliance, we act as a strategic partner to your business. Whether you are starting out, looking to scale, planning a sale, or navigating a difficult period — we provide the financial insight and commercial advice you need to move forward with confidence.',
+      'Beyond compliance, we act as a strategic partner to your business. Whether you are starting out, looking to scale, planning a sale, or navigating a difficult period we provide the financial insight and commercial advice you need to move forward with confidence.',
     points: [
       'Business start-up advice and structure planning',
       'Cash flow forecasting and management',

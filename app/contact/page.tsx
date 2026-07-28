@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with Prime Edge Chartered Certified Accountants. Drop us a WhatsApp, send an email, or book a free discovery call — we respond fast.',
+    'Get in touch with Prime Edge Chartered Certified Accountants. Drop us a WhatsApp, send an email, or book a free discovery call we respond fast.',
 }
 const message = encodeURIComponent(
   "Hi, I'd like to find out more about your services and get a free quote.",
@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     q: 'What information do I need to bring to my first call?',
-    a: 'Nothing formal — just a general idea of your business, your current challenges, and what you are hoping we can help with.',
+    a: 'Nothing formal just a general idea of your business, your current challenges, and what you are hoping we can help with.',
   },
   {
     q: 'Do you charge for the initial consultation?',
@@ -102,7 +102,7 @@ export default function ContactPage() {
             </h1>
             <p className="text-white/75 text-lg leading-relaxed">
               Whether you are ready to switch accountants, just starting out, or
-              simply want some advice — we would love to hear from you. Book a
+              simply want some advice we would love to hear from you. Book a
               call or drop us a message below.
             </p>
           </div>
@@ -232,40 +232,41 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactDetails.map((item) => {
-              const Icon = item.icon
-              return (
-                <div
-                  key={item.label}
-                  className="flex items-start gap-4 p-5 rounded-xl service-card bg-white"
-                >
-                  <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: '#eaf3f4' }}
-                  >
-                    <Icon size={18} style={{ color: '#2D6198' }} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
-                      {item.label}
-                    </p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="font-semibold text-gray-900 text-sm hover:text-primary transition-colors block mb-0.5 break-all"
-                        style={{ color: '#0d0d0d' }}
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="font-semibold text-gray-900 text-sm mb-0.5">
-                        {item.value}
-                      </p>
-                    )}
-                    <p className="text-xs text-gray-400">{item.description}</p>
-                  </div>
-                </div>
-              )
-            })}
+  const Icon = item.icon
+  return (
+    <div
+      key={item.label}
+      className="flex items-start gap-4 p-5 rounded-xl service-card bg-white min-w-0"
+    >
+      <div
+        className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+        style={{ background: '#eaf3f4' }}
+      >
+        <Icon size={18} style={{ color: '#2D6198' }} />
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
+          {item.label}
+        </p>
+        {item.href ? (
+          <a
+            href={item.href}
+            title={item.value}
+            className="font-semibold text-gray-900 text-sm hover:text-primary transition-colors block mb-0.5 truncate"
+            style={{ color: '#0d0d0d' }}
+          >
+            {item.value}
+          </a>
+        ) : (
+          <p className="font-semibold text-gray-900 text-sm mb-0.5 truncate" title={item.value}>
+            {item.value}
+          </p>
+        )}
+        <p className="text-xs text-gray-400">{item.description}</p>
+      </div>
+    </div>
+  )
+})}
           </div>
         </div>
       </section>

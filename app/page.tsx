@@ -34,7 +34,7 @@ const services = [
     icon: FileText,
     title: 'Account Preparation & Filing',
     description:
-      'We prepare and file your statutory accounts with Companies House and HMRC accurately and on time — every time.',
+      'We prepare and file your statutory accounts with Companies House and HMRC accurately and on time every time.',
     href: '/services#accounts',
   },
   {
@@ -66,7 +66,7 @@ const services = [
     icon: Briefcase,
     title: 'Business Advisory',
     description:
-      'Strategic guidance tailored to your goals — whether you are starting up, scaling, or planning your next move.',
+      'Strategic guidance tailored to your goals whether you are starting up, scaling, or planning your next move.',
     href: '/services#advisory',
   },
 ]
@@ -83,7 +83,7 @@ const reasons = [
     icon: Shield,
     title: 'Fully Qualified & Regulated',
     description:
-      'We are Chartered Certified Accountants — regulated by ACCA, giving you peace of mind that your finances are in expert hands.',
+      'We are Chartered Certified Accountants regulated by ACCA, giving you peace of mind that your finances are in expert hands.',
   },
   {
     icon: Users,
@@ -95,7 +95,7 @@ const reasons = [
     icon: TrendingUp,
     title: 'Proactive, Not Reactive',
     description:
-      'We do not just file numbers — we look ahead, identify opportunities, and alert you to issues before they become problems.',
+      'We do not just file numbers we look ahead, identify opportunities, and alert you to issues before they become problems.',
   },
   {
     icon: Award,
@@ -110,7 +110,7 @@ const steps = [
     number: '01',
     title: 'Book a Discovery Call',
     description:
-      'Tell us about your business, your challenges, and your goals. No obligation — just an honest conversation.',
+      'Tell us about your business, your challenges, and your goals. No obligation just an honest conversation.',
   },
   {
     number: '02',
@@ -122,7 +122,7 @@ const steps = [
     number: '03',
     title: 'We Handle Everything',
     description:
-      'Once onboarded, we take care of your accounts, tax, and compliance — so you can focus on running your business.',
+      'Once onboarded, we take care of your accounts, tax, and compliance so you can focus on running your business.',
   },
 ]
 
@@ -201,7 +201,7 @@ export default async function HomePage() {
             <p className="text-white/75 text-lg sm:text-xl mb-10 leading-relaxed max-w-2xl">
               Expert tax, bookkeeping, payroll and business advisory services
               for individuals and businesses across Gloucestershire. We handle
-              the numbers — you focus on growth.
+              the numbers you focus on growth.
             </p>
 
             {/* CTAs */}
@@ -357,7 +357,7 @@ export default async function HomePage() {
               Services Built Around Your Business
             </h2>
             <p className="text-gray-500 leading-relaxed">
-              From day-to-day bookkeeping to strategic tax planning — we offer a
+              From day-to-day bookkeeping to strategic tax planning we offer a
               full suite of accounting services tailored to your needs.
             </p>
           </div>
@@ -440,7 +440,7 @@ export default async function HomePage() {
               </h2>
               <p className="text-gray-500 leading-relaxed mb-10">
                 We believe accounting should be proactive, personal, and
-                transparent. We partner with our clients for the long term —
+                transparent. We partner with our clients for the long term
                 helping them pay less tax, stay compliant, and grow with
                 confidence.
               </p>
@@ -774,7 +774,7 @@ export default async function HomePage() {
           </h2>
           <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
             Book a free, no-obligation discovery call, or simply drop us a
-            message — we will get back to you promptly. You can also call us on{' '}
+            message we will get back to you promptly. You can also call us on{' '}
             <a href="tel:01244565227" className="text-white font-semibold">
               01244 565 227
             </a>
