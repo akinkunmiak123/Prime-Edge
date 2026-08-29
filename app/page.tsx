@@ -73,7 +73,7 @@ const services = [
 
 const stats = [
   { value: '200+', label: 'Clients Served' },
-  { value: '16+', label: 'Years Experience' },
+  { value: '16+', label: 'Years Accounting Expertise' },
   { value: '6', label: 'Core Services' },
   { value: '98%', label: 'Client Retention' },
 ]
@@ -492,7 +492,7 @@ export default async function HomePage() {
                     16+
                   </div>
                   <div className="text-white/80 text-lg mb-8">
-                    Years Helping UK Businesses Thrive
+                    Years of Professional Experience
                   </div>
 
                   <div className="space-y-4">
@@ -621,8 +621,6 @@ export default async function HomePage() {
           <div className="mb-14">
             <GoogleReviewsWidget />
           </div>
-
- 
 
           {/* CTA nudge after social proof */}
           <div className="text-center mt-12">

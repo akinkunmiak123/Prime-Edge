@@ -283,7 +283,7 @@ export default function AboutPage() {
                   <div className="grid grid-cols-2 gap-6 mb-8">
                     {[
                       { value: '200+', label: 'Active Clients' },
-                      { value: '16+', label: 'Years Experience' },
+                      { value: '16+', label: 'Years Accounting Expertise' },
                       { value: '98%', label: 'Client Retention' },
                       { value: '6', label: 'Core Services' },
                     ].map((stat) => (
