@@ -22,6 +22,30 @@ const quickLinks = [
   { label: 'Contact Us', href: '/contact' },
 ]
 
+const areasWeCover = [
+  {
+    label: 'Payroll Services Cheltenham',
+    href: '/services/payroll-cheltenham',
+  },
+  { label: 'Bookkeeping Cheltenham', href: '/services/bookkeeping-cheltenham' },
+  {
+    label: 'Tax Accountant Cheltenham',
+    href: '/services/tax-accountant-cheltenham',
+  },
+  {
+    label: 'Small Business Accountant Cheltenham',
+    href: '/services/small-business-accountant-cheltenham',
+  },
+  {
+    label: 'Startup Accountant Cheltenham',
+    href: '/services/startup-accountant-cheltenham',
+  },
+  {
+    label: 'Accountant for Contractors Gloucestershire',
+    href: '/services/contractor-accountant-gloucestershire',
+  },
+]
+
 export default function Footer() {
   return (
     <footer style={{ background: '#0d0d0d' }} className="text-white">
@@ -283,6 +307,30 @@ export default function Footer() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Areas We Cover ── */}
+      <div className="py-6 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-white/40 text-xs font-semibold tracking-wide uppercase mb-3">
+            Areas We Cover
+          </p>
+          <div className="flex flex-wrap gap-x-2 gap-y-2">
+            {areasWeCover.map((link, i) => (
+              <span key={link.href} className="flex items-center">
+                <Link
+                  href={link.href}
+                  className="text-white/50 text-xs hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+                {i < areasWeCover.length - 1 && (
+                  <span className="text-white/20 ml-2">•</span>
+                )}
+              </span>
+            ))}
           </div>
         </div>
       </div>

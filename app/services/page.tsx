@@ -38,6 +38,8 @@ const services = [
       'VAT-ready records for seamless filing',
     ],
     accent: '#2D6198',
+    localHref: '/services/bookkeeping-cheltenham',
+    localLabel: 'Bookkeeping in Cheltenham',
   },
   {
     id: 'accounts',
@@ -56,6 +58,8 @@ const services = [
       'Director loan account reconciliation',
     ],
     accent: '#59A2AF',
+    localHref: '/services/small-business-accountant-cheltenham',
+    localLabel: 'Small Business Accountant Cheltenham',
   },
   {
     id: 'payroll',
@@ -73,6 +77,8 @@ const services = [
       'P60s, P45s and payslip preparation',
     ],
     accent: '#2D6198',
+    localHref: '/services/payroll-cheltenham',
+    localLabel: 'Payroll Services Cheltenham',
   },
   {
     id: 'tax',
@@ -90,6 +96,8 @@ const services = [
       'HMRC enquiry support and representation',
     ],
     accent: '#59A2AF',
+    localHref: '/services/tax-accountant-cheltenham',
+    localLabel: 'Tax Accountant Cheltenham',
   },
   {
     id: 'self-assessment',
@@ -107,6 +115,8 @@ const services = [
       'HMRC deadline management to avoid penalties',
     ],
     accent: '#2D6198',
+    localHref: '/services/contractor-accountant-gloucestershire',
+    localLabel: 'Accountant for Contractors Gloucestershire',
   },
   {
     id: 'vat',
@@ -124,6 +134,8 @@ const services = [
       'VAT investigation support',
     ],
     accent: '#59A2AF',
+    localHref: null,
+    localLabel: null,
   },
   {
     id: 'advisory',
@@ -140,6 +152,8 @@ const services = [
       'Business growth and scaling strategy',
     ],
     accent: '#2D6198',
+    localHref: '/services/startup-accountant-cheltenham',
+    localLabel: 'Startup Accountant Cheltenham',
   },
 ]
 
@@ -348,10 +362,24 @@ export default function ServicesPage() {
                       ))}
                     </ul>
 
-                    <Link href="/contact" className="btn-primary">
-                      Enquire About This Service
-                      <ArrowRight size={16} />
-                    </Link>
+                    {/* CTA buttons */}
+                    <div className="flex flex-wrap items-center gap-4">
+                      <Link href="/contact" className="btn-primary">
+                        Enquire About This Service
+                        <ArrowRight size={16} />
+                      </Link>
+
+                      {service.localHref && (
+                        <Link
+                          href={service.localHref}
+                          className="text-sm font-semibold inline-flex items-center gap-1.5 transition-all"
+                          style={{ color: service.accent }}
+                        >
+                          Learn More About {service.localLabel}
+                          <ArrowRight size={14} />
+                        </Link>
+                      )}
+                    </div>
                   </div>
 
                   {/* Visual column */}
