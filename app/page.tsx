@@ -19,6 +19,44 @@ import {
 import { getAllPosts, formatDate } from '@/lib/posts'
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget'
 
+/* ── Structured data — matches Google Business Profile NAP exactly ── */
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AccountingService',
+  name: 'Prime Edge Accountants',
+  image: 'https://primeedgeaccountants.co.uk/accounting.avif',
+  url: 'https://primeedgeaccountants.co.uk',
+  telephone: '+441244565227',
+  email: 'info@primeedgeaccountants.co.uk',
+  priceRange: '££',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '62 Symphony Road',
+    addressLocality: 'Cheltenham',
+    postalCode: 'GL51 6GJ',
+    addressCountry: 'GB',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Cheltenham' },
+    { '@type': 'AdministrativeArea', name: 'Gloucestershire' },
+    { '@type': 'Country', name: 'United Kingdom' },
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '17:30',
+    },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/company/prime-edge-chartered-certified-accountants/',
+    'https://www.instagram.com/primeedgeaccountants',
+    'https://www.facebook.com/share/1B2DmLE8PA/',
+    'https://x.com/primeedgeaccts',
+  ],
+}
+
 /* ── Data ── */
 const services = [
   {
@@ -158,6 +196,11 @@ export default async function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ════════════════════════════════
           HERO
       ════════════════════════════════ */}
