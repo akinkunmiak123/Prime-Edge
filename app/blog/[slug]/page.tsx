@@ -54,6 +54,7 @@ function markdownToHtml(content: string) {
   let output = ''
   let listType: 'ul' | 'ol' | null = null
   let listOpen = false
+  let olCounter = 0
 
   const closeList = () => {
     if (listOpen) {
@@ -70,12 +71,22 @@ function markdownToHtml(content: string) {
 
   let paragraph = ''
 
-  for (const rawLine of lines) {
-    const line = rawLine.trim()
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim()
+
     if (!line) {
       flushParagraph(paragraph)
       paragraph = ''
-      closeList()
+
+      // Look ahead: keep the list open if the next non-empty line continues it
+      let j = i + 1
+      while (j < lines.length && !lines[j].trim()) j++
+      const next = j < lines.length ? lines[j].trim() : ''
+      const continues =
+        (listType === 'ol' && /^\d+\.\s+/.test(next)) ||
+        (listType === 'ul' && /^[-*+]\s+/.test(next))
+
+      if (!continues) closeList()
       continue
     }
 
@@ -83,14 +94,14 @@ function markdownToHtml(content: string) {
     const boldHeadingMatch = line.match(/^\*\*(.+?)\*\*:?$/)
     const blockquoteMatch = line.match(/^>\s+(.*)$/)
     const unorderedMatch = line.match(/^[-*+]\s+(.*)$/)
-    const orderedMatch = line.match(/^\d+\.\s+(.*)$/)
+    const orderedMatch = line.match(/^(\d+)\.\s+(.*)$/)
 
     if (headingMatch || boldHeadingMatch) {
       flushParagraph(paragraph)
       paragraph = ''
       closeList()
+      olCounter = 0
       if (headingMatch) {
-        // never render another h1 inside the article
         const level = Math.max(2, headingMatch[1].length)
         output += `<h${level}>${formatInlineMarkdown(headingMatch[2])}</h${level}>`
       } else if (boldHeadingMatch) {
@@ -126,13 +137,19 @@ function markdownToHtml(content: string) {
       if (listType !== 'ol') {
         closeList()
         listType = 'ol'
-        output += '<ol>'
+        const written = parseInt(orderedMatch[1], 10)
+        const start = written > 1 ? written : olCounter + 1
+        olCounter = start - 1
+        output += `<ol start="${start}">`
         listOpen = true
       }
-      output += `<li>${formatInlineMarkdown(orderedMatch[1])}</li>`
+      olCounter += 1
+      output += `<li>${formatInlineMarkdown(orderedMatch[2])}</li>`
       continue
     }
 
+    // Plain text: never leave a paragraph inside an open list
+    if (listOpen) closeList()
     paragraph += `${paragraph ? ' ' : ''}${line}`
   }
 
