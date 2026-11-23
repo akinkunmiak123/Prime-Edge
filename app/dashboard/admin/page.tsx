@@ -83,25 +83,45 @@ export default function AdminPage() {
   }
 
   const categoryColors: Record<string, string> = {
-    Tax: '#9B097A',
-    Business: '#170df2',
-    VAT: '#748ec4',
-    Payroll: '#520568',
+    Tax: '#2D6198',
+    Business: '#59A2AF',
+    VAT: '#1E4A73',
+    Payroll: '#85C4CE',
     General: '#6b7280',
   }
 
+  const renderActions = (slug: string) => (
+    <div className="flex items-center justify-end gap-1">
+      <Link
+        href={`/blog/${slug}`}
+        target="_blank"
+        className="p-2 rounded-lg text-gray-400 hover:text-blue-600 hover:bg-blue-50 transition-all"
+        title="View post"
+      >
+        <Eye size={16} />
+      </Link>
+      <button
+        onClick={() => setDeleteSlug(slug)}
+        className="p-2 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition-all"
+        title="Delete post"
+      >
+        <Trash2 size={16} />
+      </button>
+    </div>
+  )
+
   return (
-    <div className="min-h-screen" style={{ background: '#f8f7ff' }}>
+    <div className="min-h-screen" style={{ background: '#f5f9fa' }}>
       {/* ── Admin Navbar ── */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <Image src={logo} alt="Prime Edge" height={36} />
-              <div className="h-6 w-px bg-gray-200" />
+              <div className="h-6 w-px bg-gray-200 hidden sm:block" />
               <span
-                className="text-sm font-bold tracking-wide"
-                style={{ color: '#9B097A', fontFamily: 'Merriweather, serif' }}
+                className="hidden sm:inline text-sm font-bold tracking-wide"
+                style={{ color: '#2D6198', fontFamily: 'var(--font-heading)' }}
               >
                 Admin Dashboard
               </span>
@@ -133,7 +153,7 @@ export default function AdminPage() {
           <div>
             <h1
               className="text-2xl font-black text-gray-900"
-              style={{ fontFamily: 'Merriweather, serif' }}
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
               Blog Posts
             </h1>
@@ -178,17 +198,17 @@ export default function AdminPage() {
               <div
                 key={stat.label}
                 className="bg-white rounded-xl p-5"
-                style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+                style={{ border: '1px solid rgba(45,97,152,0.08)' }}
               >
                 <div className="flex items-center gap-3 mb-1">
-                  <Icon size={15} style={{ color: '#9B097A' }} />
+                  <Icon size={15} style={{ color: '#2D6198' }} />
                   <span className="text-xs text-gray-400">{stat.label}</span>
                 </div>
                 <div
                   className="text-2xl font-black"
                   style={{
-                    fontFamily: 'Merriweather, serif',
-                    color: '#9B097A',
+                    fontFamily: 'var(--font-heading)',
+                    color: '#2D6198',
                   }}
                 >
                   {stat.value}
@@ -198,32 +218,32 @@ export default function AdminPage() {
           })}
         </div>
 
-        {/* ── Posts table ── */}
+        {/* ── Posts ── */}
         {loading ? (
           <div
             className="bg-white rounded-xl p-12 text-center"
-            style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+            style={{ border: '1px solid rgba(45,97,152,0.08)' }}
           >
             <div
               className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin mx-auto"
-              style={{ borderColor: '#9B097A', borderTopColor: 'transparent' }}
+              style={{ borderColor: '#2D6198', borderTopColor: 'transparent' }}
             />
             <p className="text-gray-400 text-sm mt-3">Loading posts...</p>
           </div>
         ) : posts.length === 0 ? (
           <div
-            className="bg-white rounded-xl p-16 text-center"
-            style={{ border: '1px solid rgba(111,6,141,0.08)' }}
+            className="bg-white rounded-xl p-10 sm:p-16 text-center"
+            style={{ border: '1px solid rgba(45,97,152,0.08)' }}
           >
             <div
               className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4"
-              style={{ background: '#f0eef8' }}
+              style={{ background: '#eaf3f4' }}
             >
-              <FileText size={28} style={{ color: '#9B097A' }} />
+              <FileText size={28} style={{ color: '#2D6198' }} />
             </div>
             <h3
               className="font-bold text-gray-900 mb-2"
-              style={{ fontFamily: 'Merriweather, serif' }}
+              style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
             >
               No posts yet
             </h3>
@@ -236,124 +256,158 @@ export default function AdminPage() {
             </Link>
           </div>
         ) : (
-          <div
-            className="bg-white rounded-xl overflow-hidden"
-            style={{ border: '1px solid rgba(111,6,141,0.08)' }}
-          >
-            {/* Table header */}
-            <div className="grid grid-cols-12 gap-4 px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wide border-b border-gray-100">
-              <div className="col-span-5">Title</div>
-              <div className="col-span-2 hidden sm:block">Category</div>
-              <div className="col-span-2 hidden md:block">Date</div>
-              <div className="col-span-2 hidden sm:block">Author</div>
-              <div className="col-span-1 text-right">Actions</div>
-            </div>
+          <>
+            {/* ── Desktop table (md and up) ── */}
+            <div
+              className="hidden md:block bg-white rounded-xl overflow-hidden"
+              style={{ border: '1px solid rgba(45,97,152,0.08)' }}
+            >
+              <div className="grid grid-cols-12 gap-4 px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wide border-b border-gray-100">
+                <div className="col-span-5">Title</div>
+                <div className="col-span-2">Category</div>
+                <div className="col-span-2">Date</div>
+                <div className="col-span-2">Author</div>
+                <div className="col-span-1 text-right">Actions</div>
+              </div>
 
-            {/* Table rows */}
-            {posts.map((post, index) => {
-              const color =
-                categoryColors[post.category] || categoryColors.General
-              return (
-                <div
-                  key={post.slug}
-                  className="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-gray-50 transition-colors"
-                  style={{
-                    borderBottom:
-                      index < posts.length - 1 ? '1px solid #f3f4f6' : 'none',
-                  }}
-                >
-                  {/* Title */}
-                  <div className="col-span-5 flex items-center gap-3 min-w-0">
-                    {post.image ? (
-                      <img
-                        src={post.image}
-                        alt=""
-                        className="w-10 h-10 rounded-lg object-cover flex-shrink-0"
-                      />
-                    ) : (
-                      <div
-                        className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={{ background: '#f0eef8' }}
-                      >
-                        <FileText size={14} style={{ color: '#9B097A' }} />
+              {posts.map((post, index) => {
+                const color =
+                  categoryColors[post.category] || categoryColors.General
+                return (
+                  <div
+                    key={post.slug}
+                    className="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-gray-50 transition-colors"
+                    style={{
+                      borderBottom:
+                        index < posts.length - 1 ? '1px solid #f3f4f6' : 'none',
+                    }}
+                  >
+                    <div className="col-span-5 flex items-center gap-3 min-w-0">
+                      {post.image ? (
+                        <img
+                          src={post.image}
+                          alt=""
+                          className="w-10 h-10 rounded-lg object-cover flex-shrink-0"
+                        />
+                      ) : (
+                        <div
+                          className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                          style={{ background: '#eaf3f4' }}
+                        >
+                          <FileText size={14} style={{ color: '#2D6198' }} />
+                        </div>
+                      )}
+                      <div className="min-w-0">
+                        <p className="font-semibold text-gray-900 text-sm truncate">
+                          {post.title}
+                        </p>
+                        <p className="text-gray-400 text-xs truncate">
+                          /blog/{post.slug}
+                        </p>
                       </div>
-                    )}
-                    <div className="min-w-0">
-                      <p className="font-semibold text-gray-900 text-sm truncate">
-                        {post.title}
-                      </p>
-                      <p className="text-gray-400 text-xs truncate hidden sm:block">
-                        /blog/{post.slug}
-                      </p>
                     </div>
-                  </div>
 
-                  {/* Category */}
-                  <div className="col-span-2 hidden sm:block">
-                    <span
-                      className="text-xs font-semibold px-2.5 py-1 rounded-full"
-                      style={{
-                        background: `${color}15`,
-                        color: color,
-                      }}
-                    >
-                      {post.category}
-                    </span>
-                  </div>
+                    <div className="col-span-2">
+                      <span
+                        className="text-xs font-semibold px-2.5 py-1 rounded-full"
+                        style={{ background: `${color}15`, color }}
+                      >
+                        {post.category}
+                      </span>
+                    </div>
 
-                  {/* Date */}
-                  <div className="col-span-2 hidden md:block">
-                    <span className="text-sm text-gray-500">
+                    <div className="col-span-2 text-sm text-gray-500">
                       {new Date(post.date).toLocaleDateString('en-GB', {
                         day: 'numeric',
                         month: 'short',
                         year: 'numeric',
                       })}
-                    </span>
-                  </div>
+                    </div>
 
-                  {/* Author */}
-                  <div className="col-span-2 hidden sm:block">
-                    <span className="text-sm text-gray-500 truncate">
+                    <div className="col-span-2 text-sm text-gray-500 truncate">
                       {post.author}
-                    </span>
-                  </div>
+                    </div>
 
-                  {/* Actions */}
-                  <div className="col-span-1 sm:col-span-1 flex items-center justify-end gap-2">
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      target="_blank"
-                      className="p-1.5 rounded-lg text-gray-400 hover:text-blue-600 hover:bg-blue-50 transition-all"
-                      title="View post"
-                    >
-                      <Eye size={15} />
-                    </Link>
-                    <button
-                      onClick={() => setDeleteSlug(post.slug)}
-                      className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition-all"
-                      title="Delete post"
-                    >
-                      <Trash2 size={15} />
-                    </button>
+                    <div className="col-span-1">{renderActions(post.slug)}</div>
                   </div>
-                </div>
-              )
-            })}
-          </div>
+                )
+              })}
+            </div>
+
+            {/* ── Mobile cards (below md) ── */}
+            <div className="md:hidden space-y-3">
+              {posts.map((post) => {
+                const color =
+                  categoryColors[post.category] || categoryColors.General
+                return (
+                  <div
+                    key={post.slug}
+                    className="bg-white rounded-xl p-4"
+                    style={{ border: '1px solid rgba(45,97,152,0.08)' }}
+                  >
+                    <div className="flex items-start gap-3">
+                      {post.image ? (
+                        <img
+                          src={post.image}
+                          alt=""
+                          className="w-14 h-14 rounded-lg object-cover flex-shrink-0"
+                        />
+                      ) : (
+                        <div
+                          className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
+                          style={{ background: '#eaf3f4' }}
+                        >
+                          <FileText size={18} style={{ color: '#2D6198' }} />
+                        </div>
+                      )}
+
+                      <div className="min-w-0 flex-1">
+                        <p className="font-semibold text-gray-900 text-sm leading-snug line-clamp-2">
+                          {post.title}
+                        </p>
+                        <p className="text-gray-400 text-xs truncate mt-1">
+                          /blog/{post.slug}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between gap-3 mt-4 pt-3 border-t border-gray-100">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 min-w-0">
+                        <span
+                          className="text-xs font-semibold px-2.5 py-1 rounded-full"
+                          style={{ background: `${color}15`, color }}
+                        >
+                          {post.category}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                          {new Date(post.date).toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'short',
+                            year: 'numeric',
+                          })}
+                        </span>
+                        <span className="text-xs text-gray-400 truncate">
+                          {post.author}
+                        </span>
+                      </div>
+                      {renderActions(post.slug)}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </>
         )}
       </div>
 
       {/* ── Delete Confirmation Modal ── */}
       {deleteSlug && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setDeleteSlug(null)}
           />
-          {/* Modal */}
-          <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 z-10">
+          <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 sm:p-8 z-10">
             <button
               onClick={() => setDeleteSlug(null)}
               className="absolute top-4 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -369,8 +423,8 @@ export default function AdminPage() {
             </div>
 
             <h3
-              className="text-xl font-black text-gray-900 text-center mb-2"
-              style={{ fontFamily: 'Merriweather, serif' }}
+              className="text-xl text-gray-900 text-center mb-2"
+              style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
             >
               Delete Post?
             </h3>
@@ -384,7 +438,7 @@ export default function AdminPage() {
               This action cannot be undone.
             </p>
 
-            <div className="flex gap-3">
+            <div className="flex flex-col-reverse sm:flex-row gap-3">
               <button
                 onClick={() => setDeleteSlug(null)}
                 className="btn-outline flex-1 justify-center"
